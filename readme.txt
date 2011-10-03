@@ -16,6 +16,7 @@ You can edit and share this template with WordPress users.
 
 If you will install this plugin, You will be very easy to edit posts and pages.
 
+* [GitHub](https://github.com/miya0001/TinyMCE-Templates)
 * [Plugin Homepage](http://firegoby.theta.ne.jp/wp/tinymce_templates) (Japanese)
 * [Support](http://wordpress.org/tags/tinymce-templates)
 

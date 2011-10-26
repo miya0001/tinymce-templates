@@ -33,12 +33,13 @@ THE SOFTWARE.
 define('TINYMCE_TEMPLATES_PLUGIN_URL', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)));
 define('TINYMCE_TEMPLATES_DOMAIN', 'tinymce_templates');
 
-require_once(dirname(__FILE__).'/includes/addrewriterules.class.php');
+require_once(dirname(__FILE__).'/includes/class-addrewriterules.php');
 require_once(dirname(__FILE__).'/includes/mceplugins.class.php');
 require_once(dirname(__FILE__).'/includes/TinyMCETemplate.class.php');
 require_once(dirname(__FILE__).'/includes/MceTemplatesAdmin.class.php');
 
 $MceTemplates = new MceTemplates();
+register_activation_hook(__FILE__, 'flush_rewrite_rules');
 register_activation_hook (__FILE__, array(&$MceTemplates, 'activation'));
 //register_deactivation_hook (__FILE__, array(&$MceTemplates, 'deactivation'));
 
@@ -46,6 +47,9 @@ class MceTemplates{
 
 function __construct()
 {
+    if (!is_admin()) {
+        return;
+    }
     add_action('admin_menu', array(&$this, 'loadAdmin'));
     add_filter('plugin_row_meta', array(&$this, 'plugin_row_meta'), 10, 2);
 }

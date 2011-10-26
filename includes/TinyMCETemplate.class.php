@@ -8,7 +8,7 @@ class TinyMCETemplate{
 
     function __construct()
     {
-        new AddRewriteRules(
+        new WP_AddRewriteRules(
             'wp-admin/mce_templates.js$',
             'mce_templates',
             array(&$this, 'get_templates')

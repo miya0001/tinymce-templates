@@ -173,10 +173,10 @@ class MceTemplatesAdmin{
         echo "<h3>".__("Share", TINYMCE_TEMPLATES_DOMAIN)."</h3>";
         echo "<select name=\"share\" id=\"share\">";
         if ($share == 1) {
-            echo "<option value=\"1\" selected=\"selected\">".__("Share", TINYMCE_TEMPLATES_DOMAIN)."</option>";
+            echo "<option value=\"1\" selected=\"selected\">".__("Shared", TINYMCE_TEMPLATES_DOMAIN)."</option>";
             echo "<option value=\"0\">".__("Private", TINYMCE_TEMPLATES_DOMAIN)."</option>";
         } else {
-            echo "<option value=\"1\">".__("Share", TINYMCE_TEMPLATES_DOMAIN)."</option>";
+            echo "<option value=\"1\">".__("Shared", TINYMCE_TEMPLATES_DOMAIN)."</option>";
             echo "<option value=\"0\" selected=\"selected\">".__("Private", TINYMCE_TEMPLATES_DOMAIN)."</option>";
         }
         echo "</select>";

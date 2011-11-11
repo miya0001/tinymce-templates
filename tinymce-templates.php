@@ -40,10 +40,40 @@ new tinymceTemplates();
 
 class tinymceTemplates {
 
-private $post_type  = 'tinymcetemplates';
-private $meta_param = '_tinymcetemplates-share';
-private $table      = 'mce_template';
+private $post_type   = 'tinymcetemplates';
+private $meta_param  = '_tinymcetemplates-share';
+private $table       = 'mce_template';
 private $base_url;
+private $translators = array(
+    'Takayuki Miyauchi' => array(
+        'lang' => 'Japanese',
+        'url'  => 'http://twitter.com/#!/miya0001',
+    ),
+    'Andrea Bersi' => array(
+        'lang' => 'Italian',
+        'url'  => 'http://www.andreabersi.com/',
+    ),
+    'Tobias Bergius' => array(
+        'lang' => 'Swedish',
+        'url'  => '',
+    ),
+    'Martin Lettner' => array(
+        'lang' => 'German',
+        'url'  => 'http://www.martinlettner.info/',
+    ),
+    'David Bravo' => array(
+        'lang' => 'Spanish',
+        'url'  => 'http://www.dimensionmultimedia.com/',
+    ),
+    'Frank Groeneveld' => array(
+        'lang' => 'Dutch',
+        'url'  => 'http://ivaldi.nl/',
+    ),
+    'HAROUY Jean-Michel' => array(
+        'lang' => 'French',
+        'url'  => 'http://www.laposte.net/',
+    ),
+);
 
 function __construct()
 {
@@ -200,16 +230,51 @@ private function addCustomPostType()
 public function addMetaBox()
 {
     add_meta_box(
-        'add_meta_box-share',
+        'tinymce_templates-share',
         __('Share', TINYMCE_TEMPLATES_DOMAIN),
-        array(&$this, 'showMetaBox'),
+        array(&$this, 'sharedMetaBox'),
+        $this->post_type,
+        'side',
+        'low'
+    );
+    add_meta_box(
+        'tinymce_templates-translators',
+        __('Translators', TINYMCE_TEMPLATES_DOMAIN),
+        array(&$this, 'translatorsMetaBox'),
         $this->post_type,
         'side',
         'low'
     );
 }
 
-public function showMetaBox($post, $box)
+public function translatorsMetaBox($post, $box)
+{
+    echo '<ul>';
+    foreach ($this->translators as $u => $p) {
+        if ($p['url']) {
+            printf(
+                '<li><a href="%s">%s</a> (%s)</li>',
+                esc_attr($p['url']),
+                esc_html($u),
+                esc_html($p['lang'])
+            );
+        } else {
+            printf(
+                '<li>%s (%s)</li>',
+                esc_html($u),
+                esc_html($p['lang'])
+            );
+        }
+    }
+    echo '</ul>';
+    echo '<p>';
+    echo '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CU8N3N2Q9DA8U">';
+    echo '<img src="'.$this->base_url.'/paypal.png">';
+    echo '</a>';
+    echo '</p>';
+}
+
+public function sharedMetaBox($post, $box)
 {
     $share = get_post_meta($post->ID, $this->meta_param, true);
     echo '<select name="'.$this->meta_param.'">';

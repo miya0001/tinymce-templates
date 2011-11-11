@@ -39,7 +39,7 @@ new tinymceTemplates();
 
 
 class tinymceTemplates {
-
+private $db_version  = '2';
 private $post_type   = 'tinymcetemplates';
 private $meta_param  = '_tinymcetemplates-share';
 private $table       = 'mce_template';
@@ -154,6 +154,10 @@ public function admin_head(){
     if (get_post_type() === $this->post_type) {
         global $hook_suffix;
         if ($hook_suffix === 'post.php' || $hook_suffix === 'post-new.php') {
+            if (get_option("tinymce_templates_db_version") != $this->db_version) {
+                $this->activation();
+                update_option("tinymce_templates_db_version", $this->db_version);
+            }
             echo '<style>#visibility{display:none;}</style>';
         }
     }

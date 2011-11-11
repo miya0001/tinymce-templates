@@ -230,6 +230,12 @@ public function get_templates(){
             $p = get_post($_GET['template_id']);
             if ($p->post_status === 'publish') {
                 if ($u->ID === $p->post_author) {
+                    echo apply_filters(
+                        "tinymce_templates",
+                        wpautop($p->post_content),
+                        stripslashes($p->post_content)
+                    );
+                } else {
                     $share = get_post_meta($p->ID, $this->meta_param, true);
                     if ($share) {
                         echo apply_filters(

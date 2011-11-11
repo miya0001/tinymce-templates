@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://firegoby.theta.ne.jp/wp/tinymce_templates
 Description: Manage & Add Tiny MCE template.
 Author: Takayuki Miyauchi
-Version: 2.0.0
+Version: 2.1.0
 Author URI: http://firegoby.theta.ne.jp/
 */
 

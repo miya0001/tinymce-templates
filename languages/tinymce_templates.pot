@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 05:10+0900\n"
+"POT-Creation-Date: 2011-11-11 20:30+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,92 +17,50 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../includes/MceTemplatesAdmin.class.php:34
-#: ../includes/MceTemplatesAdmin.class.php:156 ../tinymce_templates.php:103
-msgid "Edit Templates"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:38
-msgid "Templates permanently deleted."
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:46
-#: ../includes/MceTemplatesAdmin.class.php:55
-msgid "Name"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:47
-#: ../includes/MceTemplatesAdmin.class.php:56
-msgid "Description"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:48
-#: ../includes/MceTemplatesAdmin.class.php:57
-msgid "Author"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:49
-#: ../includes/MceTemplatesAdmin.class.php:58
-#: ../includes/MceTemplatesAdmin.class.php:169
-#: ../includes/MceTemplatesAdmin.class.php:172
-#: ../includes/MceTemplatesAdmin.class.php:175
-msgid "Share"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:94
-msgid "Shared"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:96
-#: ../includes/MceTemplatesAdmin.class.php:173
-#: ../includes/MceTemplatesAdmin.class.php:176
-msgid "Private"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:103
-msgid "Delete checked items"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:113
-msgid "Template saved."
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:124
-msgid "All entry must not be blank."
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:158 ../tinymce_templates.php:111
-msgid "Add New Templates"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:163
-msgid "Template Name"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:165
-msgid "Template Description"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:167
-msgid "Template Contents"
-msgstr ""
-
-#: ../includes/MceTemplatesAdmin.class.php:180
-msgid "Save Template"
-msgstr ""
-
-#: ../tinymce_templates.php:94
-msgid "tinyMCE Templates"
-msgstr ""
-
-#: ../tinymce_templates.php:95
+#: ../tinymce-templates.php:157 ../tinymce-templates.php:159
 msgid "Templates"
 msgstr ""
 
-#: ../tinymce_templates.php:104
-msgid "Edit"
+#: ../tinymce-templates.php:160
+msgid "Add New Template"
 msgstr ""
 
-#: ../tinymce_templates.php:112
+#: ../tinymce-templates.php:161
+msgid "Edit Template"
+msgstr ""
+
+#: ../tinymce-templates.php:162
 msgid "Add New"
+msgstr ""
+
+#: ../tinymce-templates.php:163
+msgid "New Template"
+msgstr ""
+
+#: ../tinymce-templates.php:164
+msgid "View Template"
+msgstr ""
+
+#: ../tinymce-templates.php:165
+msgid "No templatess found."
+msgstr ""
+
+#: ../tinymce-templates.php:167
+msgid "No templates found in Trash."
+msgstr ""
+
+#: ../tinymce-templates.php:170
+msgid "Search Templates"
+msgstr ""
+
+#: ../tinymce-templates.php:198
+msgid "Share"
+msgstr ""
+
+#: ../tinymce-templates.php:210
+msgid "Private"
+msgstr ""
+
+#: ../tinymce-templates.php:212 ../tinymce-templates.php:214
+msgid "Shared"
 msgstr ""

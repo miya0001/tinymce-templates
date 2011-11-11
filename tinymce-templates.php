@@ -54,6 +54,11 @@ function __construct()
     add_action('save_post', array(&$this, 'save_post'));
     add_filter('mce_css', array(&$this, 'mce_css'));
     add_action('admin_head', array(&$this, 'admin_head'));
+    new WP_AddRewriteRules(
+        'wp-admin/mce_templates.js$',
+        'mce_templates',
+        array(&$this, 'get_templates')
+    );
 }
 
 public function activation()
@@ -104,22 +109,17 @@ public function mce_css($css)
 }
 
 public function admin_head(){
-    global $wp_rewrite;
     $plugin = $this->base_url.'/mce_plugins/plugins/template/editor_plugin.js';
     $lang   = dirname(__FILE__).'/mce_plugins/plugins/template/langs/langs.php';
     $url    = home_url();
-    if ($wp_rewrite->using_permalinks()) {
-        $this->list_url = $url.'/wp-admin/mce_templates.js';
-    } else {
-        $this->list_url = $url.'/?mce_templates=1';
-    }
-    $inits['template_external_list_url'] = $this->list_url;
+    $list_url = add_query_arg('mce_templates', 1, home_url('/'));
+    $inits['template_external_list_url'] = $list_url;
     new mcePlugins(
         'template',
         $plugin,
         $lang,
         array(&$this, 'addButton'),
-        array()
+        $inits
     );
 }
 
@@ -214,6 +214,55 @@ public function showMetaBox($post, $box)
         echo '<option value="1">'.__('Shared', TINYMCE_TEMPLATES_DOMAIN).'</option>';
     }
     echo '</select>';
+}
+
+public function get_templates(){
+    if (is_user_logged_in() && get_query_var('mce_templates')) {
+        $u = wp_get_current_user();
+        header( 'Content-Type: application/x-javascript; charset=UTF-8' );
+        if (isset($_GET['template_id']) && intval($_GET['template_id'])) {
+            $p = get_post($_GET['template_id']);
+            if ($p->post_status === 'publish') {
+                if ($u->ID === $p->post_author) {
+                    $share = get_post_meta($p->ID, $this->meta_param, true);
+                    if ($share) {
+                        echo apply_filters(
+                            "tinymce_templates",
+                            wpautop($p->post_content),
+                            stripslashes($p->post_content)
+                        );
+                    }
+                }
+            }
+            exit;
+        }
+        $p = array(
+            'post_status' => 'publish',
+            'post_type'   => $this->post_type,
+            'orderby'     => 'date',
+            'order'       => 'DESC',
+        );
+        $posts = get_posts($p);
+        echo 'var tinyMCETemplateList = [';
+        $arr = array();
+        $list_url = add_query_arg('mce_templates', 1, home_url('/'));
+        foreach ($posts as $p) {
+            if ($u->ID !== $p->post_author) {
+                $share = get_post_meta($p->ID, $this->meta_param, true);
+                if (!$share) {
+                    continue;
+                }
+            }
+            $ID = esc_html($p->ID);
+            $name = esc_html($p->post_title);
+            $desc = esc_html($p->post_excerpt);
+            $url  = add_query_arg('template_id', $ID, $list_url);
+            $arr[] = "[\"{$name}\", \"{$url}\", \"{$desc}\"]";
+        }
+        echo join(',', $arr);
+        echo ']';
+        exit;
+    }
 }
 
 } // end class tinymceTemplates

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 05:06+0900\n"
+"POT-Creation-Date: 2011-11-11 20:30+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,92 +17,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ..//includes/MceTemplatesAdmin.class.php:34
-#: ..//includes/MceTemplatesAdmin.class.php:156 ..//tinymce_templates.php:103
-msgid "Edit Templates"
-msgstr "テンプレートを編集"
-
-#: ..//includes/MceTemplatesAdmin.class.php:38
-msgid "Templates permanently deleted."
-msgstr "テンプレートを削除しました。"
-
-#: ..//includes/MceTemplatesAdmin.class.php:46
-#: ..//includes/MceTemplatesAdmin.class.php:55
-msgid "Name"
-msgstr "名前"
-
-#: ..//includes/MceTemplatesAdmin.class.php:47
-#: ..//includes/MceTemplatesAdmin.class.php:56
-msgid "Description"
-msgstr "説明"
-
-#: ..//includes/MceTemplatesAdmin.class.php:48
-#: ..//includes/MceTemplatesAdmin.class.php:57
-msgid "Author"
-msgstr "作成者"
-
-#: ..//includes/MceTemplatesAdmin.class.php:49
-#: ..//includes/MceTemplatesAdmin.class.php:58
-#: ..//includes/MceTemplatesAdmin.class.php:169
-#: ..//includes/MceTemplatesAdmin.class.php:172
-#: ..//includes/MceTemplatesAdmin.class.php:175
-msgid "Share"
-msgstr "共有"
-
-#: ..//includes/MceTemplatesAdmin.class.php:94
-msgid "Shared"
-msgstr "共有"
-
-#: ..//includes/MceTemplatesAdmin.class.php:96
-#: ..//includes/MceTemplatesAdmin.class.php:173
-#: ..//includes/MceTemplatesAdmin.class.php:176
-msgid "Private"
-msgstr "個人"
-
-#: ..//includes/MceTemplatesAdmin.class.php:103
-msgid "Delete checked items"
-msgstr "選択したアイテムを削除"
-
-#: ..//includes/MceTemplatesAdmin.class.php:113
-msgid "Template saved."
-msgstr "テンプレートを保存しました。"
-
-#: ..//includes/MceTemplatesAdmin.class.php:124
-msgid "All entry must not be blank."
-msgstr "すべての項目に入力してください。"
-
-#: ..//includes/MceTemplatesAdmin.class.php:158 ..//tinymce_templates.php:111
-msgid "Add New Templates"
-msgstr "テンプレートの新規登録"
-
-#: ..//includes/MceTemplatesAdmin.class.php:163
-msgid "Template Name"
-msgstr "テンプレート名"
-
-#: ..//includes/MceTemplatesAdmin.class.php:165
-msgid "Template Description"
-msgstr "テンプレートの説明"
-
-#: ..//includes/MceTemplatesAdmin.class.php:167
-msgid "Template Contents"
-msgstr "テンプレート"
-
-#: ..//includes/MceTemplatesAdmin.class.php:180
-msgid "Save Template"
-msgstr "テンプレートを保存"
-
-#: ..//tinymce_templates.php:94
-msgid "tinyMCE Templates"
-msgstr "テンプレートを編集"
-
-#: ..//tinymce_templates.php:95
+#: ../tinymce-templates.php:157 ../tinymce-templates.php:159
 msgid "Templates"
 msgstr "テンプレート"
 
-#: ..//tinymce_templates.php:104
-msgid "Edit"
-msgstr "編集"
+#: ../tinymce-templates.php:160
+msgid "Add New Template"
+msgstr "テンプレートの新規登録"
 
-#: ..//tinymce_templates.php:112
+#: ../tinymce-templates.php:161
+msgid "Edit Template"
+msgstr "テンプレートを編集"
+
+#: ../tinymce-templates.php:162
 msgid "Add New"
 msgstr "新規追加"
+
+#: ../tinymce-templates.php:163
+msgid "New Template"
+msgstr "新しいテンプレート"
+
+#: ../tinymce-templates.php:164
+msgid "View Template"
+msgstr "テンプレートを表示"
+
+#: ../tinymce-templates.php:165
+msgid "No templatess found."
+msgstr "テンプレートが見つかりませんでした。"
+
+#: ../tinymce-templates.php:167
+msgid "No templates found in Trash."
+msgstr "ゴミ箱内にテンプレートが見つかりませんでした。"
+
+#: ../tinymce-templates.php:170
+msgid "Search Templates"
+msgstr "テンプレートを検索"
+
+#: ../tinymce-templates.php:198
+msgid "Share"
+msgstr "共有"
+
+#: ../tinymce-templates.php:210
+msgid "Private"
+msgstr "個人"
+
+#: ../tinymce-templates.php:212 ../tinymce-templates.php:214
+msgid "Shared"
+msgstr "共有"
+
+#~ msgid "Templates permanently deleted."
+#~ msgstr "テンプレートを削除しました。"
+
+#~ msgid "Name"
+#~ msgstr "名前"
+
+#~ msgid "Description"
+#~ msgstr "説明"
+
+#~ msgid "Author"
+#~ msgstr "作成者"
+
+#~ msgid "Delete checked items"
+#~ msgstr "選択したアイテムを削除"
+
+#~ msgid "Template saved."
+#~ msgstr "テンプレートを保存しました。"
+
+#~ msgid "All entry must not be blank."
+#~ msgstr "すべての項目に入力してください。"
+
+#~ msgid "Template Name"
+#~ msgstr "テンプレート名"
+
+#~ msgid "Template Description"
+#~ msgstr "テンプレートの説明"
+
+#~ msgid "Template Contents"
+#~ msgstr "テンプレート"
+
+#~ msgid "tinyMCE Templates"
+#~ msgstr "テンプレートを編集"
+
+#~ msgid "Edit"
+#~ msgstr "編集"

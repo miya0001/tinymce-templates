@@ -121,6 +121,12 @@ public function admin_head(){
         array(&$this, 'addButton'),
         $inits
     );
+    if (get_post_type() === $this->post_type) {
+        global $hook_suffix;
+        if ($hook_suffix === 'post.php' || $hook_suffix === 'post-new.php') {
+            echo '<style>#visibility{display:none;}</style>';
+        }
+    }
 }
 
 public function admin_menu()

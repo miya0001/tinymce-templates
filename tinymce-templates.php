@@ -93,8 +93,12 @@ function __construct()
 
 public function activation()
 {
+    if (get_option("tinymce_templates_db_version") == $this->db_version) {
+        return;
+    }
+
     global $wpdb;
-    // do update function
+    update_option("tinymce_templates_db_version", $this->db_version);
     $sql = $wpdb->prepare('show tables like %s', $wpdb->prefix.$this->table);
     if ($wpdb->get_var($sql)) {
         $sql = "select * from ".mysql_real_escape_string($wpdb->prefix.$this->table);
@@ -156,7 +160,6 @@ public function admin_head(){
         if ($hook_suffix === 'post.php' || $hook_suffix === 'post-new.php') {
             if (get_option("tinymce_templates_db_version") != $this->db_version) {
                 $this->activation();
-                update_option("tinymce_templates_db_version", $this->db_version);
             }
             echo '<style>#visibility{display:none;}</style>';
         }

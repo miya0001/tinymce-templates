@@ -42,6 +42,7 @@ class tinymceTemplates {
 
 private $post_type  = 'tinymcetemplates';
 private $meta_param = '_tinymcetemplates-share';
+private $table      = 'mce_template';
 private $base_url;
 
 function __construct()
@@ -57,7 +58,29 @@ function __construct()
 
 public function activation()
 {
+    global $wpdb;
     // do update function
+    $sql = $wpdb->prepare('show tables like %s', $wpdb->prefix.$this->table);
+    if ($wpdb->get_var($sql)) {
+        $sql = "select * from ".mysql_real_escape_string($wpdb->prefix.$this->table);
+        $res = $wpdb->get_results($sql);
+        foreach ($res as $tpl) {
+            $post = array();
+            $post['post_title']   = $tpl->name;
+            $post['post_content'] = $tpl->html;
+            $post['post_excerpt'] = $tpl->desc;
+            $post['post_author']  = $tpl->author;
+            $post['post_date']    = $tpl->modified;
+            $post['post_type']    = $this->post_type;
+            $post['post_status']    = 'publish';
+            $id = wp_insert_post($post);
+            if ($id) {
+                update_post_meta($id, $this->meta_param, $tpl->share);
+            }
+        }
+        $sql = 'drop table '.$wpdb->prefix.$this->table;
+        $wpdb->query($sql);
+    }
     // do  flush rewrite rules
     flush_rewrite_rules();
 }
@@ -105,7 +128,7 @@ public function admin_menu()
     remove_meta_box('slugdiv', $this->post_type, 'normal');
 }
 
-public function savePostMeta($id)
+public function save_post($id)
 {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
         return $id;

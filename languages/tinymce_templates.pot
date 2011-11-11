@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-11 20:30+0900\n"
+"POT-Creation-Date: 2011-11-12 03:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,50 +17,54 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../tinymce-templates.php:157 ../tinymce-templates.php:159
+#: ../tinymce-templates.php:203 ../tinymce-templates.php:205
 msgid "Templates"
 msgstr ""
 
-#: ../tinymce-templates.php:160
+#: ../tinymce-templates.php:206
 msgid "Add New Template"
 msgstr ""
 
-#: ../tinymce-templates.php:161
+#: ../tinymce-templates.php:207
 msgid "Edit Template"
 msgstr ""
 
-#: ../tinymce-templates.php:162
+#: ../tinymce-templates.php:208
 msgid "Add New"
 msgstr ""
 
-#: ../tinymce-templates.php:163
+#: ../tinymce-templates.php:209
 msgid "New Template"
 msgstr ""
 
-#: ../tinymce-templates.php:164
+#: ../tinymce-templates.php:210
 msgid "View Template"
 msgstr ""
 
-#: ../tinymce-templates.php:165
+#: ../tinymce-templates.php:211
 msgid "No templatess found."
 msgstr ""
 
-#: ../tinymce-templates.php:167
+#: ../tinymce-templates.php:213
 msgid "No templates found in Trash."
 msgstr ""
 
-#: ../tinymce-templates.php:170
+#: ../tinymce-templates.php:216
 msgid "Search Templates"
 msgstr ""
 
-#: ../tinymce-templates.php:198
+#: ../tinymce-templates.php:244
 msgid "Share"
 msgstr ""
 
-#: ../tinymce-templates.php:210
+#: ../tinymce-templates.php:252
+msgid "Translators"
+msgstr ""
+
+#: ../tinymce-templates.php:291
 msgid "Private"
 msgstr ""
 
-#: ../tinymce-templates.php:212 ../tinymce-templates.php:214
+#: ../tinymce-templates.php:293 ../tinymce-templates.php:295
 msgid "Shared"
 msgstr ""

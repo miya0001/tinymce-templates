@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: TinyMCE Templates
-Plugin URI: http://firegoby.theta.ne.jp/wp/tinymce_templates
+Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: Manage & Add Tiny MCE template.
 Author: Takayuki Miyauchi
 Version: 2.2.0
-Author URI: http://firegoby.theta.ne.jp/
+Author URI: http://wpist.me/
 */
 
 /*
@@ -47,7 +47,7 @@ private $base_url;
 private $translators = array(
     'Takayuki Miyauchi' => array(
         'lang' => 'Japanese',
-        'url'  => 'http://twitter.com/#!/miya0001',
+        'url'  => 'http://wpist.me/',
     ),
     'Andrea Bersi' => array(
         'lang' => 'Italian',

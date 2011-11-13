@@ -16,8 +16,9 @@ You can edit and share this template with WordPress users.
 
 If you will install this plugin, You will be very easy to edit posts and pages.
 
-* [GitHub](https://github.com/miya0001/TinyMCE-Templates)
-* [Plugin Homepage](http://firegoby.theta.ne.jp/wp/tinymce_templates) (Japanese)
+* [GitHub](https://github.com/miya0001/tinymce-templates)
+* [Plugin Homepage (en)](http://wpist.me/wp/tinymce-templates/)
+* [Plugin Homepage (ja)](http://firegoby.theta.ne.jp/wp/tinymce_templates)
 * [Support](http://wordpress.org/tags/tinymce-templates)
 
 = Some features: =
@@ -28,7 +29,7 @@ If you will install this plugin, You will be very easy to edit posts and pages.
 
 = Translators: =
 
-* Japanese(ja) - [Takayuki Miyauchi](http://firegoby.theta.ne.jp/)
+* Japanese(ja) - [Takayuki Miyauchi](http://wpist.me/)
 * Italian(it_IT) - [Andrea Bersi](http://www.andreabersi.com)
 * Swedish(sv_SE) - Tobias Bergius
 * German(de_DE) - [Martin Lettner](http://www.martinlettner.info/)
@@ -58,8 +59,8 @@ The author must acknowledge the thing that the operation guarantee and the suppo
 
 == Contact ==
 
-* email to miya[at]theta.ne.jp
-* twitter @miya0001
+* http://wpist.me/
+* twitter @wpist_me
 
 == Special Thanks ==
 

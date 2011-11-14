@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: Manage & Add Tiny MCE template.
 Author: Takayuki Miyauchi
-Version: 2.3.0
+Version: 2.4.0
 Author URI: http://wpist.me/
 */
 
@@ -30,7 +30,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-require_once(dirname(__FILE__).'/includes/class-addrewriterules.php');
 require_once(dirname(__FILE__).'/includes/mceplugins.class.php');
 
 define('TINYMCE_TEMPLATES_DOMAIN', 'tinymce_templates');
@@ -84,11 +83,7 @@ function __construct()
     add_action('save_post', array(&$this, 'save_post'));
     add_filter('mce_css', array(&$this, 'mce_css'));
     add_action('admin_head', array(&$this, 'admin_head'));
-    new WP_AddRewriteRules(
-        'wp-admin/mce_templates.js$',
-        'mce_templates',
-        array(&$this, 'get_templates')
-    );
+    add_action('wp_ajax_tinymce_templates', array(&$this, 'wp_ajax'));
 }
 
 public function activation()
@@ -145,9 +140,12 @@ public function mce_css($css)
 public function admin_head(){
     $plugin = $this->base_url.'/mce_plugins/plugins/template/editor_plugin.js';
     $lang   = dirname(__FILE__).'/mce_plugins/plugins/template/langs/langs.php';
-    $url    = home_url();
-    $list_url = add_query_arg('mce_templates', 1, home_url('/'));
-    $inits['template_external_list_url'] = $list_url;
+    $url    = admin_url('admin-ajax.php');
+    $url = add_query_arg('action', 'tinymce_templates', $url);
+    $url = add_query_arg('action', 'tinymce_templates', $url);
+    $nonce = wp_create_nonce("tinymce_templates");
+    $url = add_query_arg('nonce', $nonce, $url);
+    $inits['template_external_list_url'] = $url;
     new mcePlugins(
         'template',
         $plugin,
@@ -299,60 +297,66 @@ public function sharedMetaBox($post, $box)
     echo '</select>';
 }
 
-public function get_templates(){
-    if (is_user_logged_in() && get_query_var('mce_templates')) {
-        $u = wp_get_current_user();
-        header( 'Content-Type: application/x-javascript; charset=UTF-8' );
-        if (isset($_GET['template_id']) && intval($_GET['template_id'])) {
-            $p = get_post($_GET['template_id']);
-            if ($p->post_status === 'publish') {
-                if ($u->ID === $p->post_author) {
+public function wp_ajax(){
+    nocache_headers();
+    if (!wp_verify_nonce($_GET['nonce'], 'tinymce_templates')) {
+        return;
+    }
+    $u = wp_get_current_user();
+    header( 'Content-Type: application/x-javascript; charset=UTF-8' );
+    if (isset($_GET['template_id']) && intval($_GET['template_id'])) {
+        $p = get_post($_GET['template_id']);
+        if ($p->post_status === 'publish') {
+            if ($u->ID === $p->post_author) {
+                echo apply_filters(
+                    "tinymce_templates",
+                    wpautop($p->post_content),
+                    stripslashes($p->post_content)
+                );
+            } else {
+                $share = get_post_meta($p->ID, $this->meta_param, true);
+                if ($share) {
                     echo apply_filters(
                         "tinymce_templates",
                         wpautop($p->post_content),
                         stripslashes($p->post_content)
                     );
-                } else {
-                    $share = get_post_meta($p->ID, $this->meta_param, true);
-                    if ($share) {
-                        echo apply_filters(
-                            "tinymce_templates",
-                            wpautop($p->post_content),
-                            stripslashes($p->post_content)
-                        );
-                    }
                 }
             }
-            exit;
         }
-        $p = array(
-            'post_status' => 'publish',
-            'post_type'   => $this->post_type,
-            'orderby'     => 'date',
-            'order'       => 'DESC',
-            'numberposts' => -1,
-        );
-        $posts = get_posts($p);
-        echo 'var tinyMCETemplateList = [';
-        $arr = array();
-        $list_url = add_query_arg('mce_templates', 1, home_url('/'));
-        foreach ($posts as $p) {
-            if ($u->ID !== $p->post_author) {
-                $share = get_post_meta($p->ID, $this->meta_param, true);
-                if (!$share) {
-                    continue;
-                }
-            }
-            $ID = esc_html($p->ID);
-            $name = esc_html($p->post_title);
-            $desc = esc_html($p->post_excerpt);
-            $url  = add_query_arg('template_id', $ID, $list_url);
-            $arr[] = "[\"{$name}\", \"{$url}\", \"{$desc}\"]";
-        }
-        echo join(',', $arr);
-        echo ']';
         exit;
     }
+    $p = array(
+        'post_status' => 'publish',
+        'post_type'   => $this->post_type,
+        'orderby'     => 'date',
+        'order'       => 'DESC',
+        'numberposts' => -1,
+    );
+    $posts = get_posts($p);
+    echo 'var tinyMCETemplateList = [';
+    $arr = array();
+    $url    = admin_url('admin-ajax.php');
+    $url = add_query_arg('action', 'tinymce_templates', $url);
+    $url = add_query_arg('action', 'tinymce_templates', $url);
+    $nonce = wp_create_nonce("tinymce_templates");
+    $url = add_query_arg('nonce', $nonce, $url);
+    foreach ($posts as $p) {
+        if ($u->ID !== $p->post_author) {
+            $share = get_post_meta($p->ID, $this->meta_param, true);
+            if (!$share) {
+                continue;
+            }
+        }
+        $ID = esc_html($p->ID);
+        $name = esc_html($p->post_title);
+        $desc = esc_html($p->post_excerpt);
+        $url  = add_query_arg('template_id', $ID, $url);
+        $arr[] = "[\"{$name}\", \"{$url}\", \"{$desc}\"]";
+    }
+    echo join(',', $arr);
+    echo ']';
+    exit;
 }
 
 } // end class tinymceTemplates

@@ -115,8 +115,6 @@ public function activation()
         $sql = 'drop table '.$wpdb->prefix.$this->table;
         $wpdb->query($sql);
     }
-    // do  flush rewrite rules
-    flush_rewrite_rules();
 }
 
 public function plugins_loaded()
@@ -334,7 +332,6 @@ public function wp_ajax(){
         'numberposts' => -1,
     );
     $posts = get_posts($p);
-    echo 'var tinyMCETemplateList = [';
     $arr = array();
     $url    = admin_url('admin-ajax.php');
     $url = add_query_arg('action', 'tinymce_templates', $url);
@@ -348,14 +345,13 @@ public function wp_ajax(){
                 continue;
             }
         }
-        $ID = esc_html($p->ID);
+        $ID = intval($p->ID);
         $name = esc_html($p->post_title);
         $desc = esc_html($p->post_excerpt);
         $url  = add_query_arg('template_id', $ID, $url);
-        $arr[] = "[\"{$name}\", \"{$url}\", \"{$desc}\"]";
+        $arr[] = array($name, $url, $desc);
     }
-    echo join(',', $arr);
-    echo ']';
+    echo 'var tinyMCETemplateList = '.json_encode($arr);
     exit;
 }
 

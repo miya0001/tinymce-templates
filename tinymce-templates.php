@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: Manage & Add Tiny MCE template.
 Author: Takayuki Miyauchi
-Version: 2.2.0
+Version: 2.3.0
 Author URI: http://wpist.me/
 */
 
@@ -184,8 +184,10 @@ public function save_post($id)
 
     $p = get_post($id);
     if ($p->post_type === $this->post_type) {
-        if (isset($_POST[$this->meta_param])) {
+        if (isset($_POST[$this->meta_param]) && $_POST[$this->meta_param]) {
             update_post_meta($id, $this->meta_param, 1);
+        } else {
+            delete_post_meta($id, $this->meta_param);
         }
     }
 }
@@ -328,6 +330,7 @@ public function get_templates(){
             'post_type'   => $this->post_type,
             'orderby'     => 'date',
             'order'       => 'DESC',
+            'numberposts' => -1,
         );
         $posts = get_posts($p);
         echo 'var tinyMCETemplateList = [';

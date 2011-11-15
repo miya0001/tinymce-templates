@@ -76,10 +76,9 @@ private $translators = array(
 
 function __construct()
 {
-    register_activation_hook(__FILE__, array(&$this, 'activation'));
     $this->base_url = WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__));
+    register_activation_hook(__FILE__, array(&$this, 'activation'));
     add_action('plugins_loaded', array(&$this, 'plugins_loaded'));
-    add_action('admin_menu', array(&$this, 'admin_menu'));
     add_action('save_post', array(&$this, 'save_post'));
     add_filter('mce_css', array(&$this, 'mce_css'));
     add_action('admin_head', array(&$this, 'admin_head'));
@@ -129,23 +128,26 @@ public function plugins_loaded()
 
 public function mce_css($css)
 {
-    $files = preg_split("/,/", $css);
+    $files   = preg_split("/,/", $css);
     $files[] = $this->base_url.'/editor.css';
-    $files = array_map('trim', $files);
+    $files   = array_map('trim', $files);
     return join(",", $files);
 }
 
 public function admin_head(){
     $plugin = $this->base_url.'/mce_plugins/plugins/template/editor_plugin.js';
     $lang   = dirname(__FILE__).'/mce_plugins/plugins/template/langs/langs.php';
+
     $url    = admin_url('admin-ajax.php');
-    $url = add_query_arg('action', 'tinymce_templates', $url);
-    $url = add_query_arg('action', 'tinymce_templates', $url);
-    $nonce = wp_create_nonce("tinymce_templates");
-    $url = add_query_arg('nonce', $nonce, $url);
+    $url    = add_query_arg('action', 'tinymce_templates', $url);
+    $url    = add_query_arg('action', 'tinymce_templates', $url);
+    $nonce  = wp_create_nonce("tinymce_templates");
+    $url    = add_query_arg('nonce', $nonce, $url);
+
     $inits['template_external_list_url'] = $url;
-    $inits['template_popup_width'] = 600;
-    $inits['template_popup_height'] = 500;
+    $inits['template_popup_width']       = 600;
+    $inits['template_popup_height']      = 500;
+
     new mcePlugins(
         'template',
         $plugin,
@@ -153,23 +155,20 @@ public function admin_head(){
         array(&$this, 'addButton'),
         $inits
     );
+
     if (get_post_type() === $this->post_type) {
         if (get_option("tinymce_templates_db_version") != $this->db_version) {
             $this->activation();
         }
         global $hook_suffix;
         if ($hook_suffix === 'post.php' || $hook_suffix === 'post-new.php') {
+            remove_meta_box('slugdiv', $this->post_type, 'normal');
             if (get_option("tinymce_templates_db_version") != $this->db_version) {
                 $this->activation();
             }
             echo '<style>#visibility{display:none;}</style>';
         }
     }
-}
-
-public function admin_menu()
-{
-    remove_meta_box('slugdiv', $this->post_type, 'normal');
 }
 
 public function save_post($id)
@@ -247,6 +246,7 @@ public function addMetaBox()
         'side',
         'low'
     );
+
     add_meta_box(
         'tinymce_templates-translators',
         __('Translators', TINYMCE_TEMPLATES_DOMAIN),
@@ -334,12 +334,14 @@ public function wp_ajax(){
         'numberposts' => -1,
     );
     $posts = get_posts($p);
-    $arr = array();
+
     $url    = admin_url('admin-ajax.php');
     $url = add_query_arg('action', 'tinymce_templates', $url);
     $url = add_query_arg('action', 'tinymce_templates', $url);
     $nonce = wp_create_nonce("tinymce_templates");
     $url = add_query_arg('nonce', $nonce, $url);
+
+    $arr = array();
     foreach ($posts as $p) {
         if ($u->ID !== $p->post_author) {
             $share = get_post_meta($p->ID, $this->meta_param, true);

@@ -144,6 +144,8 @@ public function admin_head(){
     $nonce = wp_create_nonce("tinymce_templates");
     $url = add_query_arg('nonce', $nonce, $url);
     $inits['template_external_list_url'] = $url;
+    $inits['template_popup_width'] = 600;
+    $inits['template_popup_height'] = 500;
     new mcePlugins(
         'template',
         $plugin,

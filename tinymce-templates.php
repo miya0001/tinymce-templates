@@ -32,12 +32,10 @@ THE SOFTWARE.
 
 require_once(dirname(__FILE__).'/includes/mceplugins.class.php');
 
-define('TINYMCE_TEMPLATES_DOMAIN', 'tinymce_templates');
-
 new tinymceTemplates();
 
-
 class tinymceTemplates {
+
 private $db_version  = '2';
 private $post_type   = 'tinymcetemplates';
 private $meta_param  = '_tinymcetemplates-share';
@@ -119,7 +117,7 @@ public function activation()
 public function plugins_loaded()
 {
     load_plugin_textdomain(
-        TINYMCE_TEMPLATES_DOMAIN,
+        'tinymce_templates',
         false,
         dirname(plugin_basename(__FILE__)).'/languages'
     );
@@ -178,7 +176,7 @@ public function display_post_states($stat)
     global $post;
     $share = get_post_meta($post->ID, $this->meta_param, true);
     if ($share) {
-        $stat[] = __('Shared', TINYMCE_TEMPLATES_DOMAIN);
+        $stat[] = __('Shared', 'tinymce_templates');
     }
     return $stat;
 }
@@ -211,20 +209,20 @@ public function addButton($buttons = array())
 private function addCustomPostType()
 {
     $args = array(
-        'label' => __('Templates', TINYMCE_TEMPLATES_DOMAIN),
+        'label' => __('Templates', 'tinymce_templates'),
         'labels' => array(
-            'singular_name' => __('Templates', TINYMCE_TEMPLATES_DOMAIN),
-            'add_new_item' => __('Add New Template', TINYMCE_TEMPLATES_DOMAIN),
-            'edit_item' => __('Edit Template', TINYMCE_TEMPLATES_DOMAIN),
-            'add_new' => __('Add New', TINYMCE_TEMPLATES_DOMAIN),
-            'new_item' => __('New Template', TINYMCE_TEMPLATES_DOMAIN),
-            'view_item' => __('View Template', TINYMCE_TEMPLATES_DOMAIN),
-            'not_found' => __('No templatess found.', TINYMCE_TEMPLATES_DOMAIN),
+            'singular_name' => __('Templates', 'tinymce_templates'),
+            'add_new_item' => __('Add New Template', 'tinymce_templates'),
+            'edit_item' => __('Edit Template', 'tinymce_templates'),
+            'add_new' => __('Add New', 'tinymce_templates'),
+            'new_item' => __('New Template', 'tinymce_templates'),
+            'view_item' => __('View Template', 'tinymce_templates'),
+            'not_found' => __('No templatess found.', 'tinymce_templates'),
             'not_found_in_trash' => __(
                 'No templates found in Trash.',
-                TINYMCE_TEMPLATES_DOMAIN
+                'tinymce_templates'
             ),
-            'search_items' => __('Search Templates', TINYMCE_TEMPLATES_DOMAIN),
+            'search_items' => __('Search Templates', 'tinymce_templates'),
         ),
         'public' => false,
         'publicly_queryable' => false,
@@ -252,7 +250,7 @@ public function addMetaBox()
 {
     add_meta_box(
         'tinymce_templates-share',
-        __('Share', TINYMCE_TEMPLATES_DOMAIN),
+        __('Share', 'tinymce_templates'),
         array(&$this, 'sharedMetaBox'),
         $this->post_type,
         'side',
@@ -261,7 +259,7 @@ public function addMetaBox()
 
     add_meta_box(
         'tinymce_templates-translators',
-        __('Translators', TINYMCE_TEMPLATES_DOMAIN),
+        __('Translators', 'tinymce_templates'),
         array(&$this, 'translatorsMetaBox'),
         $this->post_type,
         'side',
@@ -300,11 +298,11 @@ public function sharedMetaBox($post, $box)
 {
     $share = get_post_meta($post->ID, $this->meta_param, true);
     echo '<select name="'.$this->meta_param.'">';
-    echo '<option value="0">'.__('Private', TINYMCE_TEMPLATES_DOMAIN).'</option>';
+    echo '<option value="0">'.__('Private', 'tinymce_templates').'</option>';
     if ($share) {
-        echo '<option value="1" selected="selected">'.__('Shared', TINYMCE_TEMPLATES_DOMAIN).'</option>';
+        echo '<option value="1" selected="selected">'.__('Shared', 'tinymce_templates').'</option>';
     } else {
-        echo '<option value="1">'.__('Shared', TINYMCE_TEMPLATES_DOMAIN).'</option>';
+        echo '<option value="1">'.__('Shared', 'tinymce_templates').'</option>';
     }
     echo '</select>';
 }

@@ -167,8 +167,20 @@ public function admin_head(){
                 $this->activation();
             }
             echo '<style>#visibility{display:none;}</style>';
+        } elseif ($hook_suffix === 'edit.php') {
+            add_filter("display_post_states", array(&$this, "display_post_states"));
         }
     }
+}
+
+public function display_post_states($stat)
+{
+    global $post;
+    $share = get_post_meta($post->ID, $this->meta_param, true);
+    if ($share) {
+        $stat[] = __('Shared', TINYMCE_TEMPLATES_DOMAIN);
+    }
+    return $stat;
 }
 
 public function save_post($id)

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 05:10+0900\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
+"POT-Creation-Date: 2011-11-18 16:44:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Tobias Bergius <bergius.tobias@gmail.com>\n"
 "Language: Swedish\n"
@@ -14,92 +14,114 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../includes/MceTemplatesAdmin.class.php:34
-#: ../includes/MceTemplatesAdmin.class.php:156 ../tinymce_templates.php:103
-msgid "Edit Templates"
-msgstr "Redigera mallar"
-
-#: ../includes/MceTemplatesAdmin.class.php:38
-msgid "Templates permanently deleted."
-msgstr "Mallarna permanent borttagna."
-
-#: ../includes/MceTemplatesAdmin.class.php:46
-#: ../includes/MceTemplatesAdmin.class.php:55
-msgid "Name"
-msgstr "Namn"
-
-#: ../includes/MceTemplatesAdmin.class.php:47
-#: ../includes/MceTemplatesAdmin.class.php:56
-msgid "Description"
-msgstr "Beskrivning"
-
-#: ../includes/MceTemplatesAdmin.class.php:48
-#: ../includes/MceTemplatesAdmin.class.php:57
-msgid "Author"
-msgstr "Författare"
-
-#: ../includes/MceTemplatesAdmin.class.php:49
-#: ../includes/MceTemplatesAdmin.class.php:58
-#: ../includes/MceTemplatesAdmin.class.php:169
-#: ../includes/MceTemplatesAdmin.class.php:172
-#: ../includes/MceTemplatesAdmin.class.php:175
-msgid "Share"
-msgstr "Dela"
-
-#: ../includes/MceTemplatesAdmin.class.php:94
+#: tinymce-templates.php:179 tinymce-templates.php:303
+#: tinymce-templates.php:305
 msgid "Shared"
 msgstr "Delad"
 
-#: ../includes/MceTemplatesAdmin.class.php:96
-#: ../includes/MceTemplatesAdmin.class.php:173
-#: ../includes/MceTemplatesAdmin.class.php:176
-msgid "Private"
-msgstr "Privat"
-
-#: ../includes/MceTemplatesAdmin.class.php:103
-msgid "Delete checked items"
-msgstr "Ta bort markerade"
-
-#: ../includes/MceTemplatesAdmin.class.php:113
-msgid "Template saved."
-msgstr "Mall sparad."
-
-#: ../includes/MceTemplatesAdmin.class.php:124
-msgid "All entry must not be blank."
-msgstr "Alla fält måste fyllas i."
-
-#: ../includes/MceTemplatesAdmin.class.php:158 ../tinymce_templates.php:111
-msgid "Add New Templates"
-msgstr "Skapa ny mall"
-
-#: ../includes/MceTemplatesAdmin.class.php:163
-msgid "Template Name"
-msgstr "Namn"
-
-#: ../includes/MceTemplatesAdmin.class.php:165
-msgid "Template Description"
-msgstr "Beskrivning"
-
-#: ../includes/MceTemplatesAdmin.class.php:167
-msgid "Template Contents"
-msgstr "Innehåll"
-
-#: ../includes/MceTemplatesAdmin.class.php:180
-msgid "Save Template"
-msgstr "Spara mall"
-
-#: ../tinymce_templates.php:94
-msgid "tinyMCE Templates"
-msgstr "tinyMCE-mallar"
-
-#: ../tinymce_templates.php:95
+#: tinymce-templates.php:212 tinymce-templates.php:214
 msgid "Templates"
 msgstr "Mallar"
 
-#: ../tinymce_templates.php:104
-msgid "Edit"
-msgstr "Redigera"
+#: tinymce-templates.php:215
+#, fuzzy
+msgid "Add New Template"
+msgstr "Skapa ny mall"
 
-#: ../tinymce_templates.php:112
+#: tinymce-templates.php:216
+#, fuzzy
+msgid "Edit Template"
+msgstr "Redigera mallar"
+
+#: tinymce-templates.php:217
 msgid "Add New"
 msgstr "Skapa ny"
+
+#: tinymce-templates.php:218
+#, fuzzy
+msgid "New Template"
+msgstr "Skapa ny mall"
+
+#: tinymce-templates.php:219
+#, fuzzy
+msgid "View Template"
+msgstr "Spara mall"
+
+#: tinymce-templates.php:220
+msgid "No templatess found."
+msgstr ""
+
+#: tinymce-templates.php:221
+msgid "No templates found in Trash."
+msgstr ""
+
+#: tinymce-templates.php:225
+#, fuzzy
+msgid "Search Templates"
+msgstr "Spara mall"
+
+#: tinymce-templates.php:253
+msgid "Share"
+msgstr "Dela"
+
+#: tinymce-templates.php:262
+msgid "Translators"
+msgstr ""
+
+#: tinymce-templates.php:301
+msgid "Private"
+msgstr "Privat"
+
+#. Plugin Name of the plugin/theme
+#, fuzzy
+msgid "TinyMCE Templates"
+msgstr "tinyMCE-mallar"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wpist.me/wp/tinymce-templates/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Manage & Add Tiny MCE template."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Takayuki Miyauchi"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://wpist.me/"
+msgstr ""
+
+#~ msgid "Templates permanently deleted."
+#~ msgstr "Mallarna permanent borttagna."
+
+#~ msgid "Name"
+#~ msgstr "Namn"
+
+#~ msgid "Description"
+#~ msgstr "Beskrivning"
+
+#~ msgid "Author"
+#~ msgstr "Författare"
+
+#~ msgid "Delete checked items"
+#~ msgstr "Ta bort markerade"
+
+#~ msgid "Template saved."
+#~ msgstr "Mall sparad."
+
+#~ msgid "All entry must not be blank."
+#~ msgstr "Alla fält måste fyllas i."
+
+#~ msgid "Template Name"
+#~ msgstr "Namn"
+
+#~ msgid "Template Description"
+#~ msgstr "Beskrivning"
+
+#~ msgid "Template Contents"
+#~ msgstr "Innehåll"
+
+#~ msgid "Edit"
+#~ msgstr "Redigera"

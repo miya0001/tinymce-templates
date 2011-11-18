@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-15 18:37+0900\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
+"POT-Creation-Date: 2011-11-18 16:44:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,58 +17,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../tinymce-templates.php:179 ../tinymce-templates.php:303
-#: ../tinymce-templates.php:305
+#: tinymce-templates.php:179 tinymce-templates.php:303
+#: tinymce-templates.php:305
 msgid "Shared"
 msgstr "共有"
 
-#: ../tinymce-templates.php:212 ../tinymce-templates.php:214
+#: tinymce-templates.php:212 tinymce-templates.php:214
 msgid "Templates"
 msgstr "テンプレート"
 
-#: ../tinymce-templates.php:215
+#: tinymce-templates.php:215
 msgid "Add New Template"
 msgstr "テンプレートの新規登録"
 
-#: ../tinymce-templates.php:216
+#: tinymce-templates.php:216
 msgid "Edit Template"
 msgstr "テンプレートを編集"
 
-#: ../tinymce-templates.php:217
+#: tinymce-templates.php:217
 msgid "Add New"
 msgstr "新規追加"
 
-#: ../tinymce-templates.php:218
+#: tinymce-templates.php:218
 msgid "New Template"
 msgstr "新しいテンプレート"
 
-#: ../tinymce-templates.php:219
+#: tinymce-templates.php:219
 msgid "View Template"
 msgstr "テンプレートを表示"
 
-#: ../tinymce-templates.php:220
+#: tinymce-templates.php:220
 msgid "No templatess found."
 msgstr "テンプレートが見つかりませんでした。"
 
-#: ../tinymce-templates.php:222
+#: tinymce-templates.php:221
 msgid "No templates found in Trash."
 msgstr "ゴミ箱内にテンプレートが見つかりませんでした。"
 
-#: ../tinymce-templates.php:225
+#: tinymce-templates.php:225
 msgid "Search Templates"
 msgstr "テンプレートを検索"
 
-#: ../tinymce-templates.php:253
+#: tinymce-templates.php:253
 msgid "Share"
 msgstr "共有"
 
-#: ../tinymce-templates.php:262
+#: tinymce-templates.php:262
 msgid "Translators"
 msgstr "翻訳者"
 
-#: ../tinymce-templates.php:301
+#: tinymce-templates.php:301
 msgid "Private"
 msgstr "個人"
+
+#. Plugin Name of the plugin/theme
+#, fuzzy
+msgid "TinyMCE Templates"
+msgstr "テンプレートを編集"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wpist.me/wp/tinymce-templates/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Manage & Add Tiny MCE template."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Takayuki Miyauchi"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://wpist.me/"
+msgstr ""
 
 #~ msgid "Templates permanently deleted."
 #~ msgstr "テンプレートを削除しました。"
@@ -99,9 +120,6 @@ msgstr "個人"
 
 #~ msgid "Template Contents"
 #~ msgstr "テンプレート"
-
-#~ msgid "tinyMCE Templates"
-#~ msgstr "テンプレートを編集"
 
 #~ msgid "Edit"
 #~ msgstr "編集"

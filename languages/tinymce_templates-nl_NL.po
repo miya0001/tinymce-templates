@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 05:10+0900\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
+"POT-Creation-Date: 2011-11-18 16:44:17+00:00\n"
 "PO-Revision-Date: 2011-04-15 08:54+0100\n"
 "Last-Translator: Frank Groeneveld <frank@ivaldi.nl>\n"
 "Language-Team: nl_NL <info@ivaldi.nl>\n"
@@ -16,95 +16,114 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../includes/MceTemplatesAdmin.class.php:34
-#: ../includes/MceTemplatesAdmin.class.php:156
-#: ../tinymce_templates.php:103
-msgid "Edit Templates"
-msgstr "Bewerk templates"
-
-#: ../includes/MceTemplatesAdmin.class.php:38
-msgid "Templates permanently deleted."
-msgstr "Templates permanent verwijderd."
-
-#: ../includes/MceTemplatesAdmin.class.php:46
-#: ../includes/MceTemplatesAdmin.class.php:55
-msgid "Name"
-msgstr "Naam"
-
-#: ../includes/MceTemplatesAdmin.class.php:47
-#: ../includes/MceTemplatesAdmin.class.php:56
-msgid "Description"
-msgstr "Omschrijving"
-
-#: ../includes/MceTemplatesAdmin.class.php:48
-#: ../includes/MceTemplatesAdmin.class.php:57
-msgid "Author"
-msgstr "Auteur"
-
-#: ../includes/MceTemplatesAdmin.class.php:49
-#: ../includes/MceTemplatesAdmin.class.php:58
-#: ../includes/MceTemplatesAdmin.class.php:169
-#: ../includes/MceTemplatesAdmin.class.php:172
-#: ../includes/MceTemplatesAdmin.class.php:175
-msgid "Share"
-msgstr "Delen"
-
-#: ../includes/MceTemplatesAdmin.class.php:94
+#: tinymce-templates.php:179 tinymce-templates.php:303
+#: tinymce-templates.php:305
 msgid "Shared"
 msgstr "Gedeeld"
 
-#: ../includes/MceTemplatesAdmin.class.php:96
-#: ../includes/MceTemplatesAdmin.class.php:173
-#: ../includes/MceTemplatesAdmin.class.php:176
-msgid "Private"
-msgstr "Privé"
-
-#: ../includes/MceTemplatesAdmin.class.php:103
-msgid "Delete checked items"
-msgstr "Verwijder geselecteerde items"
-
-#: ../includes/MceTemplatesAdmin.class.php:113
-msgid "Template saved."
-msgstr "Template opgeslagen"
-
-#: ../includes/MceTemplatesAdmin.class.php:124
-msgid "All entry must not be blank."
-msgstr "Alle invoervelden moeten gevuld zijn."
-
-#: ../includes/MceTemplatesAdmin.class.php:158
-#: ../tinymce_templates.php:111
-msgid "Add New Templates"
-msgstr "Nieuwe template toevoegen"
-
-#: ../includes/MceTemplatesAdmin.class.php:163
-msgid "Template Name"
-msgstr "Naam template"
-
-#: ../includes/MceTemplatesAdmin.class.php:165
-msgid "Template Description"
-msgstr "Omschrijving template"
-
-#: ../includes/MceTemplatesAdmin.class.php:167
-msgid "Template Contents"
-msgstr "Inhoud template"
-
-#: ../includes/MceTemplatesAdmin.class.php:180
-msgid "Save Template"
-msgstr "Template opslaan"
-
-#: ../tinymce_templates.php:94
-msgid "tinyMCE Templates"
-msgstr "tinyMCE Templates"
-
-#: ../tinymce_templates.php:95
+#: tinymce-templates.php:212 tinymce-templates.php:214
 msgid "Templates"
 msgstr "Templates"
 
-#: ../tinymce_templates.php:104
-msgid "Edit"
-msgstr "Templates"
+#: tinymce-templates.php:215
+#, fuzzy
+msgid "Add New Template"
+msgstr "Nieuwe template toevoegen"
 
-#: ../tinymce_templates.php:112
+#: tinymce-templates.php:216
+#, fuzzy
+msgid "Edit Template"
+msgstr "Bewerk templates"
+
+#: tinymce-templates.php:217
 msgid "Add New"
 msgstr "Nieuwe template"
 
+#: tinymce-templates.php:218
+#, fuzzy
+msgid "New Template"
+msgstr "Nieuwe template toevoegen"
+
+#: tinymce-templates.php:219
+#, fuzzy
+msgid "View Template"
+msgstr "Template opslaan"
+
+#: tinymce-templates.php:220
+msgid "No templatess found."
+msgstr ""
+
+#: tinymce-templates.php:221
+msgid "No templates found in Trash."
+msgstr ""
+
+#: tinymce-templates.php:225
+#, fuzzy
+msgid "Search Templates"
+msgstr "Template opslaan"
+
+#: tinymce-templates.php:253
+msgid "Share"
+msgstr "Delen"
+
+#: tinymce-templates.php:262
+msgid "Translators"
+msgstr ""
+
+#: tinymce-templates.php:301
+msgid "Private"
+msgstr "Privé"
+
+#. Plugin Name of the plugin/theme
+#, fuzzy
+msgid "TinyMCE Templates"
+msgstr "tinyMCE Templates"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wpist.me/wp/tinymce-templates/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Manage & Add Tiny MCE template."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Takayuki Miyauchi"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://wpist.me/"
+msgstr ""
+
+#~ msgid "Templates permanently deleted."
+#~ msgstr "Templates permanent verwijderd."
+
+#~ msgid "Name"
+#~ msgstr "Naam"
+
+#~ msgid "Description"
+#~ msgstr "Omschrijving"
+
+#~ msgid "Author"
+#~ msgstr "Auteur"
+
+#~ msgid "Delete checked items"
+#~ msgstr "Verwijder geselecteerde items"
+
+#~ msgid "Template saved."
+#~ msgstr "Template opgeslagen"
+
+#~ msgid "All entry must not be blank."
+#~ msgstr "Alle invoervelden moeten gevuld zijn."
+
+#~ msgid "Template Name"
+#~ msgstr "Naam template"
+
+#~ msgid "Template Description"
+#~ msgstr "Omschrijving template"
+
+#~ msgid "Template Contents"
+#~ msgstr "Inhoud template"
+
+#~ msgid "Edit"
+#~ msgstr "Templates"

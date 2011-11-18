@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TinyMCE Templates 1.1.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-21 05:10+0900\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
+"POT-Creation-Date: 2011-11-18 16:44:17+00:00\n"
 "PO-Revision-Date: 2011-05-02 14:57+0100\n"
 "Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
 "Language-Team: \n"
@@ -17,95 +17,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: German\n"
 
-#: ../includes/MceTemplatesAdmin.class.php:34
-#: ../includes/MceTemplatesAdmin.class.php:156
-#: ../tinymce_templates.php:103
-msgid "Edit Templates"
-msgstr "Vorlagen bearbeiten"
-
-#: ../includes/MceTemplatesAdmin.class.php:38
-msgid "Templates permanently deleted."
-msgstr "Vorlagen dauerhaft entfernt."
-
-#: ../includes/MceTemplatesAdmin.class.php:46
-#: ../includes/MceTemplatesAdmin.class.php:55
-msgid "Name"
-msgstr "Name"
-
-#: ../includes/MceTemplatesAdmin.class.php:47
-#: ../includes/MceTemplatesAdmin.class.php:56
-msgid "Description"
-msgstr "Beschreibung"
-
-#: ../includes/MceTemplatesAdmin.class.php:48
-#: ../includes/MceTemplatesAdmin.class.php:57
-msgid "Author"
-msgstr "Autor"
-
-#: ../includes/MceTemplatesAdmin.class.php:49
-#: ../includes/MceTemplatesAdmin.class.php:58
-#: ../includes/MceTemplatesAdmin.class.php:169
-#: ../includes/MceTemplatesAdmin.class.php:172
-#: ../includes/MceTemplatesAdmin.class.php:175
-msgid "Share"
-msgstr "Teilen"
-
-#: ../includes/MceTemplatesAdmin.class.php:94
+#: tinymce-templates.php:179 tinymce-templates.php:303
+#: tinymce-templates.php:305
 msgid "Shared"
 msgstr "Geteilt"
 
-#: ../includes/MceTemplatesAdmin.class.php:96
-#: ../includes/MceTemplatesAdmin.class.php:173
-#: ../includes/MceTemplatesAdmin.class.php:176
-msgid "Private"
-msgstr "Privat"
-
-#: ../includes/MceTemplatesAdmin.class.php:103
-msgid "Delete checked items"
-msgstr "Ausgewählte Elemente entfernen"
-
-#: ../includes/MceTemplatesAdmin.class.php:113
-msgid "Template saved."
-msgstr "Vorlagen gespeichert."
-
-#: ../includes/MceTemplatesAdmin.class.php:124
-msgid "All entry must not be blank."
-msgstr "Bitte füllen Sie alle Felder aus."
-
-#: ../includes/MceTemplatesAdmin.class.php:158
-#: ../tinymce_templates.php:111
-msgid "Add New Templates"
-msgstr "Neue Vorlagen erstellen"
-
-#: ../includes/MceTemplatesAdmin.class.php:163
-msgid "Template Name"
-msgstr "Name der Vorlage"
-
-#: ../includes/MceTemplatesAdmin.class.php:165
-msgid "Template Description"
-msgstr "Beschreibung der Vorlage"
-
-#: ../includes/MceTemplatesAdmin.class.php:167
-msgid "Template Contents"
-msgstr "Inhalt der Vorlage"
-
-#: ../includes/MceTemplatesAdmin.class.php:180
-msgid "Save Template"
-msgstr "Vorlage speichern"
-
-#: ../tinymce_templates.php:94
-msgid "tinyMCE Templates"
-msgstr "TinyMCE-Vorlagen"
-
-#: ../tinymce_templates.php:95
+#: tinymce-templates.php:212 tinymce-templates.php:214
 msgid "Templates"
 msgstr "Vorlagen"
 
-#: ../tinymce_templates.php:104
-msgid "Edit"
-msgstr "Bearbeiten"
+#: tinymce-templates.php:215
+#, fuzzy
+msgid "Add New Template"
+msgstr "Neue Vorlagen erstellen"
 
-#: ../tinymce_templates.php:112
+#: tinymce-templates.php:216
+#, fuzzy
+msgid "Edit Template"
+msgstr "Vorlagen bearbeiten"
+
+#: tinymce-templates.php:217
 msgid "Add New"
 msgstr "Erstellen"
 
+#: tinymce-templates.php:218
+#, fuzzy
+msgid "New Template"
+msgstr "Neue Vorlagen erstellen"
+
+#: tinymce-templates.php:219
+#, fuzzy
+msgid "View Template"
+msgstr "Vorlage speichern"
+
+#: tinymce-templates.php:220
+msgid "No templatess found."
+msgstr ""
+
+#: tinymce-templates.php:221
+msgid "No templates found in Trash."
+msgstr ""
+
+#: tinymce-templates.php:225
+#, fuzzy
+msgid "Search Templates"
+msgstr "Vorlage speichern"
+
+#: tinymce-templates.php:253
+msgid "Share"
+msgstr "Teilen"
+
+#: tinymce-templates.php:262
+msgid "Translators"
+msgstr ""
+
+#: tinymce-templates.php:301
+msgid "Private"
+msgstr "Privat"
+
+#. Plugin Name of the plugin/theme
+#, fuzzy
+msgid "TinyMCE Templates"
+msgstr "TinyMCE-Vorlagen"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wpist.me/wp/tinymce-templates/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Manage & Add Tiny MCE template."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Takayuki Miyauchi"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://wpist.me/"
+msgstr ""
+
+#~ msgid "Templates permanently deleted."
+#~ msgstr "Vorlagen dauerhaft entfernt."
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Description"
+#~ msgstr "Beschreibung"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Delete checked items"
+#~ msgstr "Ausgewählte Elemente entfernen"
+
+#~ msgid "Template saved."
+#~ msgstr "Vorlagen gespeichert."
+
+#~ msgid "All entry must not be blank."
+#~ msgstr "Bitte füllen Sie alle Felder aus."
+
+#~ msgid "Template Name"
+#~ msgstr "Name der Vorlage"
+
+#~ msgid "Template Description"
+#~ msgstr "Beschreibung der Vorlage"
+
+#~ msgid "Template Contents"
+#~ msgstr "Inhalt der Vorlage"
+
+#~ msgid "Edit"
+#~ msgstr "Bearbeiten"

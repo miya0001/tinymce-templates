@@ -2,7 +2,7 @@
 /*
 Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
-Description: Manage & Add Tiny MCE template.
+Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
 Version: 2.4.0
 Author URI: http://wpist.me/
@@ -265,6 +265,25 @@ public function addMetaBox()
         'side',
         'low'
     );
+
+    add_meta_box(
+        'tinymce_templates-donate',
+        __('Donate', 'tinymce_templates'),
+        array(&$this, 'donateMetaBox'),
+        $this->post_type,
+        'side',
+        'low'
+    );
+}
+
+public function donateMetaBox($post, $box)
+{
+    echo '<p>';
+    echo '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CU8N3N2Q9DA8U">';
+    echo '<img src="'.$this->base_url.'/img/paypal.png">';
+    echo '</a>';
+    echo '</p>';
+    echo '<p>'.__('It is hard to continue development and support for WordPress plugins without contributions from users like you.', 'tinymce_templates').'</p>';
 }
 
 public function translatorsMetaBox($post, $box)
@@ -287,11 +306,6 @@ public function translatorsMetaBox($post, $box)
         }
     }
     echo '</ul>';
-    echo '<p>';
-    echo '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CU8N3N2Q9DA8U">';
-    echo '<img src="'.$this->base_url.'/paypal.png">';
-    echo '</a>';
-    echo '</p>';
 }
 
 public function sharedMetaBox($post, $box)

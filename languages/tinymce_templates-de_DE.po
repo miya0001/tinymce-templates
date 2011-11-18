@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TinyMCE Templates 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2011-11-18 16:44:17+00:00\n"
+"POT-Creation-Date: 2011-11-18 17:15:39+00:00\n"
 "PO-Revision-Date: 2011-05-02 14:57+0100\n"
 "Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
 "Language-Team: \n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: German\n"
 
-#: tinymce-templates.php:179 tinymce-templates.php:303
-#: tinymce-templates.php:305
+#: tinymce-templates.php:179 tinymce-templates.php:317
+#: tinymce-templates.php:319
 msgid "Shared"
 msgstr "Geteilt"
 
@@ -71,7 +71,17 @@ msgstr "Teilen"
 msgid "Translators"
 msgstr ""
 
-#: tinymce-templates.php:301
+#: tinymce-templates.php:271
+msgid "Donate"
+msgstr ""
+
+#: tinymce-templates.php:286
+msgid ""
+"It is hard to continue development and support for WordPress plugins without "
+"contributions from users like you."
+msgstr ""
+
+#: tinymce-templates.php:315
 msgid "Private"
 msgstr "Privat"
 
@@ -85,7 +95,9 @@ msgid "http://wpist.me/wp/tinymce-templates/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Manage & Add Tiny MCE template."
+msgid ""
+"TinyMCE Templates plugin will enable to use HTML template on WordPress "
+"Visual Editor."
 msgstr ""
 
 #. Author of the plugin/theme

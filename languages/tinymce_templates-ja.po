@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2011-11-18 16:44:17+00:00\n"
+"POT-Creation-Date: 2011-11-18 17:15:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tinymce-templates.php:179 tinymce-templates.php:303
-#: tinymce-templates.php:305
+#: tinymce-templates.php:179 tinymce-templates.php:317
+#: tinymce-templates.php:319
 msgid "Shared"
 msgstr "共有"
 
@@ -66,30 +66,45 @@ msgstr "共有"
 msgid "Translators"
 msgstr "翻訳者"
 
-#: tinymce-templates.php:301
+#: tinymce-templates.php:271
+msgid "Donate"
+msgstr "寄付"
+
+#: tinymce-templates.php:286
+msgid ""
+"It is hard to continue development and support for WordPress plugins without "
+"contributions from users like you."
+msgstr ""
+"このプラグインの開発やメンテナンスを継続するにはみなさんのサポートが必要で"
+"す。"
+
+#: tinymce-templates.php:315
 msgid "Private"
 msgstr "個人"
 
 #. Plugin Name of the plugin/theme
-#, fuzzy
 msgid "TinyMCE Templates"
-msgstr "テンプレートを編集"
+msgstr "TinyMCE Templates"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wpist.me/wp/tinymce-templates/"
-msgstr ""
+msgstr "http://firegoby.theta.ne.jp/wp/tinymce_templates"
 
 #. Description of the plugin/theme
-msgid "Manage & Add Tiny MCE template."
+msgid ""
+"TinyMCE Templates plugin will enable to use HTML template on WordPress "
+"Visual Editor."
 msgstr ""
+"WordPressのビジュアルエディターでテンプレートを利用できるようにするためのプラ"
+"グインです。"
 
 #. Author of the plugin/theme
 msgid "Takayuki Miyauchi"
-msgstr ""
+msgstr "Takayuki Miyauchi"
 
 #. Author URI of the plugin/theme
 msgid "http://wpist.me/"
-msgstr ""
+msgstr "http://firegoby.theta.ne.jp/"
 
 #~ msgid "Templates permanently deleted."
 #~ msgstr "テンプレートを削除しました。"

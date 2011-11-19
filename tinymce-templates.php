@@ -6,6 +6,8 @@ Description: TinyMCE Templates plugin will enable to use HTML template on WordPr
 Author: Takayuki Miyauchi
 Version: 2.4.0
 Author URI: http://wpist.me/
+Domain Path: /languages
+Text Domain: tinymce_templates
 */
 
 /*

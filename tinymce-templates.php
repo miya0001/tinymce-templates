@@ -173,8 +173,7 @@ public function admin_head(){
 
 public function display_post_states($stat)
 {
-    global $post;
-    $share = get_post_meta($post->ID, $this->meta_param, true);
+    $share = get_post_meta(get_the_ID(), $this->meta_param, true);
     if ($share) {
         $stat[] = __('Shared', 'tinymce_templates');
     }

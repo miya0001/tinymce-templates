@@ -136,7 +136,6 @@ public function mce_css($css)
 
 public function admin_head(){
     $plugin = $this->base_url.'/mce_plugins/plugins/template/editor_plugin.js';
-    $lang   = dirname(__FILE__).'/mce_plugins/plugins/template/langs/langs.php';
 
     $url    = admin_url('admin-ajax.php');
     $url    = add_query_arg('action', 'tinymce_templates', $url);
@@ -148,10 +147,9 @@ public function admin_head(){
     $inits['template_popup_width']       = 600;
     $inits['template_popup_height']      = 500;
 
-    new mcePlugins(
+    new tinymcePlugins(
         'template',
         $plugin,
-        $lang,
         array(&$this, 'addButton'),
         $inits
     );

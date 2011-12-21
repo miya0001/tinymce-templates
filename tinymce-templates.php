@@ -359,14 +359,13 @@ public function wp_ajax(){
     $posts = get_posts($p);
 
     $url    = admin_url('admin-ajax.php');
-    $url = add_query_arg('action', 'tinymce_templates', $url);
-    $url = add_query_arg('action', 'tinymce_templates', $url);
-    $nonce = wp_create_nonce("tinymce_templates");
-    $url = add_query_arg('nonce', $nonce, $url);
+    $url    = add_query_arg('action', 'tinymce_templates', $url);
+    $nonce  = wp_create_nonce("tinymce_templates");
+    $url    = add_query_arg('nonce', $nonce, $url);
 
     $arr = array();
     foreach ($posts as $p) {
-        if ($u->ID !== $p->post_author) {
+        if (intval($u->ID) !== intval($p->post_author)) {
             $share = get_post_meta($p->ID, $this->meta_param, true);
             if (!$share) {
                 continue;

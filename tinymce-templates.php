@@ -330,7 +330,7 @@ public function wp_ajax(){
     if (isset($_GET['template_id']) && intval($_GET['template_id'])) {
         $p = get_post($_GET['template_id']);
         if ($p->post_status === 'publish') {
-            if ($u->ID === $p->post_author) {
+            if (intval($u->ID) && (intval($u->ID) === intval($p->post_author))) {
                 echo apply_filters(
                     "tinymce_templates",
                     wpautop($p->post_content),
@@ -365,7 +365,7 @@ public function wp_ajax(){
 
     $arr = array();
     foreach ($posts as $p) {
-        if (intval($u->ID) !== intval($p->post_author)) {
+        if (intval($u->ID) && (intval($u->ID) !== intval($p->post_author))) {
             $share = get_post_meta($p->ID, $this->meta_param, true);
             if (!$share) {
                 continue;

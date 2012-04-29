@@ -54,7 +54,7 @@ You can send your own language pack to me.
 
 == Changelog ==
 
-* [2.6.0](http://wpist.me/2011/11/14/tinymce-templates-2-6-0/)
+* [2.6.0](http://wpist.me/2012/04/29/tinymce-templates-2-6/)
 * [2.4.0](http://wpist.me/2011/11/14/tinymce-templates-2-4-0/)
 * [2.3.0](http://wpist.me/2011/11/14/tinymce-templates-2-3-0/)
 * [2.2.0](http://wpist.me/2011/11/13/tinymce-templates-2-2-0/)

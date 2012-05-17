@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TinyMCE Templates 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2011-11-18 17:15:39+00:00\n"
+"POT-Creation-Date: 2012-05-17 15:58:00+00:00\n"
 "PO-Revision-Date: 2011-05-02 14:57+0100\n"
 "Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
 "Language-Team: \n"
@@ -17,71 +17,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: German\n"
 
-#: tinymce-templates.php:179 tinymce-templates.php:317
-#: tinymce-templates.php:319
+#: tinymce-templates.php:178 tinymce-templates.php:316
+#: tinymce-templates.php:318
 msgid "Shared"
 msgstr "Geteilt"
 
-#: tinymce-templates.php:212 tinymce-templates.php:214
+#: tinymce-templates.php:211 tinymce-templates.php:213
 msgid "Templates"
 msgstr "Vorlagen"
 
-#: tinymce-templates.php:215
+#: tinymce-templates.php:214
 #, fuzzy
 msgid "Add New Template"
 msgstr "Neue Vorlagen erstellen"
 
-#: tinymce-templates.php:216
+#: tinymce-templates.php:215
 #, fuzzy
 msgid "Edit Template"
 msgstr "Vorlagen bearbeiten"
 
-#: tinymce-templates.php:217
+#: tinymce-templates.php:216
 msgid "Add New"
 msgstr "Erstellen"
 
-#: tinymce-templates.php:218
+#: tinymce-templates.php:217
 #, fuzzy
 msgid "New Template"
 msgstr "Neue Vorlagen erstellen"
 
-#: tinymce-templates.php:219
+#: tinymce-templates.php:218
 #, fuzzy
 msgid "View Template"
 msgstr "Vorlage speichern"
 
-#: tinymce-templates.php:220
+#: tinymce-templates.php:219
 msgid "No templatess found."
 msgstr ""
 
-#: tinymce-templates.php:221
+#: tinymce-templates.php:220
 msgid "No templates found in Trash."
 msgstr ""
 
-#: tinymce-templates.php:225
+#: tinymce-templates.php:224
 #, fuzzy
 msgid "Search Templates"
 msgstr "Vorlage speichern"
 
-#: tinymce-templates.php:253
+#: tinymce-templates.php:252
 msgid "Share"
 msgstr "Teilen"
 
-#: tinymce-templates.php:262
+#: tinymce-templates.php:261
 msgid "Translators"
 msgstr ""
 
-#: tinymce-templates.php:271
+#: tinymce-templates.php:270
 msgid "Donate"
 msgstr ""
 
-#: tinymce-templates.php:286
+#: tinymce-templates.php:285
 msgid ""
 "It is hard to continue development and support for WordPress plugins without "
 "contributions from users like you."
 msgstr ""
 
-#: tinymce-templates.php:315
+#: tinymce-templates.php:314
 msgid "Private"
 msgstr "Privat"
 

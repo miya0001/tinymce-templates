@@ -1,138 +1,137 @@
+# This file is distributed under the same license as the PACKAGE package.
+# Tobias Bergius <bergius.tobias@gmail.com>, 2011.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: tinyMCE-templates\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
 "POT-Creation-Date: 2012-05-17 15:58:00+00:00\n"
-"PO-Revision-Date: \n"
-"Last-Translator: HAROUY Jean-Michel <jean-michel.harouy@laposte.net>\n"
-"Language-Team: HAROUY Jean-Michel <jean-michel.harouy@laposte.net>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-05-17 11:53-0300\n"
+"Last-Translator: Funchal <funchal@nomer.com.br>\n"
+"Language-Team: \n"
+"Language: Swedish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: French\n"
-"X-Poedit-Country: FRANCE\n"
 
 #: tinymce-templates.php:178 tinymce-templates.php:316
 #: tinymce-templates.php:318
 msgid "Shared"
-msgstr "Partagé"
+msgstr "Compartilhar"
 
 #: tinymce-templates.php:211 tinymce-templates.php:213
 msgid "Templates"
-msgstr "Modèles"
+msgstr "Modelos"
 
 #: tinymce-templates.php:214
-#, fuzzy
 msgid "Add New Template"
-msgstr "Ajouter un nouveau modèle"
+msgstr "Adicionar um novo modelo"
 
 #: tinymce-templates.php:215
-#, fuzzy
 msgid "Edit Template"
-msgstr "Éditer les modèles"
+msgstr "Editar modelo"
 
 #: tinymce-templates.php:216
 msgid "Add New"
-msgstr "Ajouter un nouveau"
+msgstr "Adicionar novo"
 
 #: tinymce-templates.php:217
-#, fuzzy
 msgid "New Template"
-msgstr "Ajouter un nouveau modèle"
+msgstr "Novo modelo"
 
 #: tinymce-templates.php:218
-#, fuzzy
 msgid "View Template"
-msgstr "Enregistrer le modèle"
+msgstr "Visualizar modelo"
 
 #: tinymce-templates.php:219
 msgid "No templatess found."
-msgstr ""
+msgstr "Nenhum modelo encontrado."
 
 #: tinymce-templates.php:220
 msgid "No templates found in Trash."
-msgstr ""
+msgstr "Nenhum modelo na lixeira."
 
 #: tinymce-templates.php:224
-#, fuzzy
 msgid "Search Templates"
-msgstr "Enregistrer le modèle"
+msgstr "Pesquisar modelos disponíveis"
 
 #: tinymce-templates.php:252
 msgid "Share"
-msgstr "Partager"
+msgstr "Compartilhar"
 
 #: tinymce-templates.php:261
 msgid "Translators"
-msgstr ""
+msgstr "Tradutores"
 
 #: tinymce-templates.php:270
 msgid "Donate"
-msgstr ""
+msgstr "Faça uma doação"
 
 #: tinymce-templates.php:285
 msgid ""
 "It is hard to continue development and support for WordPress plugins without "
 "contributions from users like you."
 msgstr ""
+"É complicado continuar desenvolvendo e atualizando plugins para o Wordpress "
+"sem a ajuda de usuários como você."
 
 #: tinymce-templates.php:314
 msgid "Private"
-msgstr "Personnel"
+msgstr "Privado"
 
 #. Plugin Name of the plugin/theme
-#, fuzzy
 msgid "TinyMCE Templates"
-msgstr "tinyMCE modèles"
+msgstr "TinyMCE Templates"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wpist.me/wp/tinymce-templates/"
-msgstr ""
+msgstr "http://wpist.me/wp/tinymce-templates/"
 
 #. Description of the plugin/theme
 msgid ""
 "TinyMCE Templates plugin will enable to use HTML template on WordPress "
 "Visual Editor."
 msgstr ""
+"O plugin TinyMCE Templates irá ajudá-lo a usar modelos HTML no seu editor "
+"visual do Wordpress."
 
 #. Author of the plugin/theme
 msgid "Takayuki Miyauchi"
-msgstr ""
+msgstr "Takayuki Miyauchi"
 
 #. Author URI of the plugin/theme
 msgid "http://wpist.me/"
-msgstr ""
+msgstr "http://wpist.me/"
 
 #~ msgid "Templates permanently deleted."
-#~ msgstr "Modèles définitivement supprimés"
+#~ msgstr "Plantillas permanentemente borradas."
 
 #~ msgid "Name"
-#~ msgstr "Nom"
+#~ msgstr "Nombre"
 
 #~ msgid "Description"
-#~ msgstr "Description"
+#~ msgstr "Descripción"
 
 #~ msgid "Author"
-#~ msgstr "Auteur"
+#~ msgstr "Autor"
 
 #~ msgid "Delete checked items"
-#~ msgstr "Supprimer les entrées cochées"
+#~ msgstr "Borrar elementos seleccionados"
 
 #~ msgid "Template saved."
-#~ msgstr "Modèle enregistré"
+#~ msgstr "Plantilla guardada."
 
 #~ msgid "All entry must not be blank."
-#~ msgstr "Aucun champ ne doit être vide"
+#~ msgstr "No puede haber ningún campo en blanco."
 
 #~ msgid "Template Name"
-#~ msgstr "Nom du modèle"
+#~ msgstr "Nombre de la Plantilla"
 
 #~ msgid "Template Description"
-#~ msgstr "Description du modèle"
+#~ msgstr "Descripción de la Plantilla"
 
 #~ msgid "Template Contents"
-#~ msgstr "Contenu du modèle"
+#~ msgstr "Contenidos de la Plantilla"
 
 #~ msgid "Edit"
-#~ msgstr "Éditer"
+#~ msgstr "Editar"

@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 2.6.1
+Version: 2.7.0
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -87,6 +87,7 @@ function __construct()
     add_filter('mce_css', array(&$this, 'mce_css'));
     add_action('admin_head', array(&$this, 'admin_head'));
     add_action('wp_ajax_tinymce_templates', array(&$this, 'wp_ajax'));
+    add_filter('parse_query', array(&$this, 'parse_query'));
 }
 
 public function activation()
@@ -159,6 +160,10 @@ public function admin_head(){
     );
 
     if (get_post_type() === $this->post_type) {
+        global $wp_roles;
+        $me = wp_get_current_user();
+        $role = array_shift($me->roles);
+        $wp_roles->remove_cap($role, "edit_others_posts");
         if (get_option("tinymce_templates_db_version") != $this->db_version) {
             $this->activation();
         }
@@ -173,6 +178,18 @@ public function admin_head(){
             add_filter("display_post_states", array(&$this, "display_post_states"));
         }
     }
+}
+
+public function parse_query($q)
+{
+    if (!is_admin()) {
+        return $q;
+    }
+    if (isset($q->query_vars['post_type']) &&
+            ($q->query_vars['post_type'] === $this->post_type)) {
+        //$q->set('author', get_current_user_id());
+    }
+    return $q;
 }
 
 public function display_post_states($stat)

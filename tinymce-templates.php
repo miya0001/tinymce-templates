@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 2.7.0
+Version: 2.8.0
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -80,14 +80,55 @@ private $translators = array(
 
 function __construct()
 {
-    $this->base_url = WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__));
+    $this->base_url = plugins_url(dirname(plugin_basename(__FILE__)));
     register_activation_hook(__FILE__, array(&$this, 'activation'));
     add_action('plugins_loaded', array(&$this, 'plugins_loaded'));
     add_action('save_post', array(&$this, 'save_post'));
     add_filter('mce_css', array(&$this, 'mce_css'));
     add_action('admin_head', array(&$this, 'admin_head'));
+    add_action('admin_footer-post-new.php', array(&$this, 'admin_footer'));
     add_action('wp_ajax_tinymce_templates', array(&$this, 'wp_ajax'));
-    add_filter('parse_query', array(&$this, 'parse_query'));
+	add_action('post_submitbox_start', array(&$this, 'post_submitbox_start'));
+	add_filter('post_row_actions', array(&$this, 'row_actions'),10,2);
+	add_filter('page_row_actions', array(&$this, 'row_actions'),10,2);
+	add_action(
+        'wp_before_admin_bar_render',
+        array(&$this, 'wp_before_admin_bar_render')
+    );
+}
+
+public function wp_before_admin_bar_render() {
+	global $wp_admin_bar;
+	if (is_single() || is_page()) {
+		$wp_admin_bar->add_menu(array(
+		    'parent' => 'edit',
+            'id' => 'new_template',
+            'title' => __('Copy to a new template', 'tinymce_templates'),
+            'href' => $this->get_copy_template_url(get_the_ID())
+        ));
+	}
+}
+
+public function row_actions($actions, $post)
+{
+    $actions['copy_to_template'] = sprintf(
+        '<a href="%s">%s</a>',
+        $this->get_copy_template_url($post->ID),
+		__('Copy to a new template', 'tinymce_templates')
+    );
+    return $actions;
+}
+
+public function post_submitbox_start()
+{
+    if (isset($_GET['post']) && intval($_GET['post'])) {
+?>
+<div id="duplicate-action">
+	<a class="submitduplicate duplication"
+		href="<?php echo $this->get_copy_template_url($_GET['post']) ?>"><?php _e('Copy to a new template', 'tinymce_templates'); ?></a>
+</div>
+<?php
+    }
 }
 
 public function activation()
@@ -178,18 +219,6 @@ public function admin_head(){
             add_filter("display_post_states", array(&$this, "display_post_states"));
         }
     }
-}
-
-public function parse_query($q)
-{
-    if (!is_admin()) {
-        return $q;
-    }
-    if (isset($q->query_vars['post_type']) &&
-            ($q->query_vars['post_type'] === $this->post_type)) {
-        //$q->set('author', get_current_user_id());
-    }
-    return $q;
 }
 
 public function display_post_states($stat)
@@ -341,7 +370,31 @@ public function sharedMetaBox($post, $box)
     echo '</select>';
 }
 
-public function wp_ajax(){
+public function admin_footer()
+{
+    if (get_post_type() === $this->post_type) {
+        if (isset($_GET['origin']) && intval($_GET['origin'])) {
+            $origin = get_post(intval($_GET['origin']));
+            if ($origin) {
+                $template = array(
+                    'post_title' => $origin->post_title,
+                    'post_content' => wpautop($origin->post_content),
+                );
+                $template = json_encode($template);
+                echo <<<EOL
+<script type="text/javascript">
+var origin = {$template};
+jQuery('#title').val(origin.post_title);
+jQuery('#content').val(origin.post_content);
+</script>
+EOL;
+            }
+        }
+    }
+}
+
+public function wp_ajax()
+{
     nocache_headers();
     if (!wp_verify_nonce($_GET['nonce'], 'tinymce_templates')) {
         return;
@@ -401,6 +454,13 @@ public function wp_ajax(){
     echo 'var tinyMCETemplateList = '.json_encode($arr);
     exit;
 }
+
+
+private function get_copy_template_url($id)
+{
+    return admin_url('post-new.php?post_type=tinymcetemplates&origin='.intval($id));
+}
+
 
 } // end class tinymceTemplates
 

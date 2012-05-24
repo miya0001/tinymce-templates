@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2012-05-17 15:58:00+00:00\n"
+"POT-Creation-Date: 2012-05-24 17:44:29+00:00\n"
 "PO-Revision-Date: 2012-05-17 11:53-0300\n"
 "Last-Translator: Funchal <funchal@nomer.com.br>\n"
 "Language-Team: \n"
@@ -14,60 +14,65 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tinymce-templates.php:178 tinymce-templates.php:316
-#: tinymce-templates.php:318
+#: tinymce-templates.php:106 tinymce-templates.php:117
+#: tinymce-templates.php:128
+msgid "Copy to a new template"
+msgstr ""
+
+#: tinymce-templates.php:228 tinymce-templates.php:366
+#: tinymce-templates.php:368
 msgid "Shared"
 msgstr "Compartilhar"
 
-#: tinymce-templates.php:211 tinymce-templates.php:213
+#: tinymce-templates.php:261 tinymce-templates.php:263
 msgid "Templates"
 msgstr "Modelos"
 
-#: tinymce-templates.php:214
+#: tinymce-templates.php:264
 msgid "Add New Template"
 msgstr "Adicionar um novo modelo"
 
-#: tinymce-templates.php:215
+#: tinymce-templates.php:265
 msgid "Edit Template"
 msgstr "Editar modelo"
 
-#: tinymce-templates.php:216
+#: tinymce-templates.php:266
 msgid "Add New"
 msgstr "Adicionar novo"
 
-#: tinymce-templates.php:217
+#: tinymce-templates.php:267
 msgid "New Template"
 msgstr "Novo modelo"
 
-#: tinymce-templates.php:218
+#: tinymce-templates.php:268
 msgid "View Template"
 msgstr "Visualizar modelo"
 
-#: tinymce-templates.php:219
+#: tinymce-templates.php:269
 msgid "No templatess found."
 msgstr "Nenhum modelo encontrado."
 
-#: tinymce-templates.php:220
+#: tinymce-templates.php:270
 msgid "No templates found in Trash."
 msgstr "Nenhum modelo na lixeira."
 
-#: tinymce-templates.php:224
+#: tinymce-templates.php:274
 msgid "Search Templates"
 msgstr "Pesquisar modelos disponíveis"
 
-#: tinymce-templates.php:252
+#: tinymce-templates.php:302
 msgid "Share"
 msgstr "Compartilhar"
 
-#: tinymce-templates.php:261
+#: tinymce-templates.php:311
 msgid "Translators"
 msgstr "Tradutores"
 
-#: tinymce-templates.php:270
+#: tinymce-templates.php:320
 msgid "Donate"
 msgstr "Faça uma doação"
 
-#: tinymce-templates.php:285
+#: tinymce-templates.php:335
 msgid ""
 "It is hard to continue development and support for WordPress plugins without "
 "contributions from users like you."
@@ -75,7 +80,7 @@ msgstr ""
 "É complicado continuar desenvolvendo e atualizando plugins para o Wordpress "
 "sem a ajuda de usuários como você."
 
-#: tinymce-templates.php:314
+#: tinymce-templates.php:364
 msgid "Private"
 msgstr "Privado"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2012-05-17 15:58:00+00:00\n"
+"POT-Creation-Date: 2012-05-24 17:44:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,60 +17,65 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tinymce-templates.php:178 tinymce-templates.php:316
-#: tinymce-templates.php:318
+#: tinymce-templates.php:106 tinymce-templates.php:117
+#: tinymce-templates.php:128
+msgid "Copy to a new template"
+msgstr "新規テンプレートにコピー"
+
+#: tinymce-templates.php:228 tinymce-templates.php:366
+#: tinymce-templates.php:368
 msgid "Shared"
 msgstr "共有"
 
-#: tinymce-templates.php:211 tinymce-templates.php:213
+#: tinymce-templates.php:261 tinymce-templates.php:263
 msgid "Templates"
 msgstr "テンプレート"
 
-#: tinymce-templates.php:214
+#: tinymce-templates.php:264
 msgid "Add New Template"
 msgstr "テンプレートの新規登録"
 
-#: tinymce-templates.php:215
+#: tinymce-templates.php:265
 msgid "Edit Template"
 msgstr "テンプレートを編集"
 
-#: tinymce-templates.php:216
+#: tinymce-templates.php:266
 msgid "Add New"
 msgstr "新規追加"
 
-#: tinymce-templates.php:217
+#: tinymce-templates.php:267
 msgid "New Template"
 msgstr "新しいテンプレート"
 
-#: tinymce-templates.php:218
+#: tinymce-templates.php:268
 msgid "View Template"
 msgstr "テンプレートを表示"
 
-#: tinymce-templates.php:219
+#: tinymce-templates.php:269
 msgid "No templatess found."
 msgstr "テンプレートが見つかりませんでした。"
 
-#: tinymce-templates.php:220
+#: tinymce-templates.php:270
 msgid "No templates found in Trash."
 msgstr "ゴミ箱内にテンプレートが見つかりませんでした。"
 
-#: tinymce-templates.php:224
+#: tinymce-templates.php:274
 msgid "Search Templates"
 msgstr "テンプレートを検索"
 
-#: tinymce-templates.php:252
+#: tinymce-templates.php:302
 msgid "Share"
 msgstr "共有"
 
-#: tinymce-templates.php:261
+#: tinymce-templates.php:311
 msgid "Translators"
 msgstr "翻訳者"
 
-#: tinymce-templates.php:270
+#: tinymce-templates.php:320
 msgid "Donate"
 msgstr "寄付"
 
-#: tinymce-templates.php:285
+#: tinymce-templates.php:335
 msgid ""
 "It is hard to continue development and support for WordPress plugins without "
 "contributions from users like you."
@@ -78,13 +83,13 @@ msgstr ""
 "このプラグインの開発やメンテナンスを継続するにはみなさんのサポートが必要で"
 "す。"
 
-#: tinymce-templates.php:314
+#: tinymce-templates.php:364
 msgid "Private"
 msgstr "個人"
 
 #. Plugin Name of the plugin/theme
 msgid "TinyMCE Templates"
-msgstr "TinyMCE Templates"
+msgstr "TinyMCE テンプレート"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wpist.me/wp/tinymce-templates/"
@@ -104,7 +109,7 @@ msgstr "Takayuki Miyauchi"
 
 #. Author URI of the plugin/theme
 msgid "http://wpist.me/"
-msgstr "http://firegoby.theta.ne.jp/"
+msgstr "http://firegoby.jp/"
 
 #~ msgid "Templates permanently deleted."
 #~ msgstr "テンプレートを削除しました。"

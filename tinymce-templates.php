@@ -88,25 +88,25 @@ function __construct()
     add_action('admin_head', array(&$this, 'admin_head'));
     add_action('admin_footer-post-new.php', array(&$this, 'admin_footer'));
     add_action('wp_ajax_tinymce_templates', array(&$this, 'wp_ajax'));
-	add_action('post_submitbox_start', array(&$this, 'post_submitbox_start'));
-	add_filter('post_row_actions', array(&$this, 'row_actions'),10,2);
-	add_filter('page_row_actions', array(&$this, 'row_actions'),10,2);
-	add_action(
+    add_action('post_submitbox_start', array(&$this, 'post_submitbox_start'));
+    add_filter('post_row_actions', array(&$this, 'row_actions'),10,2);
+    add_filter('page_row_actions', array(&$this, 'row_actions'),10,2);
+    add_action(
         'wp_before_admin_bar_render',
         array(&$this, 'wp_before_admin_bar_render')
     );
 }
 
 public function wp_before_admin_bar_render() {
-	global $wp_admin_bar;
-	if (is_single() || is_page()) {
-		$wp_admin_bar->add_menu(array(
-		    'parent' => 'edit',
+    global $wp_admin_bar;
+    if (is_single() || is_page()) {
+        $wp_admin_bar->add_menu(array(
+            'parent' => 'edit',
             'id' => 'new_template',
             'title' => __('Copy to a new template', 'tinymce_templates'),
             'href' => $this->get_copy_template_url(get_the_ID())
         ));
-	}
+    }
 }
 
 public function row_actions($actions, $post)
@@ -114,7 +114,7 @@ public function row_actions($actions, $post)
     $actions['copy_to_template'] = sprintf(
         '<a href="%s">%s</a>',
         $this->get_copy_template_url($post->ID),
-		__('Copy to a new template', 'tinymce_templates')
+        __('Copy to a new template', 'tinymce_templates')
     );
     return $actions;
 }
@@ -124,8 +124,8 @@ public function post_submitbox_start()
     if (isset($_GET['post']) && intval($_GET['post'])) {
 ?>
 <div id="duplicate-action">
-	<a class="submitduplicate duplication"
-		href="<?php echo $this->get_copy_template_url($_GET['post']) ?>"><?php _e('Copy to a new template', 'tinymce_templates'); ?></a>
+    <a class="submitduplicate duplication"
+        href="<?php echo $this->get_copy_template_url($_GET['post']) ?>"><?php _e('Copy to a new template', 'tinymce_templates'); ?></a>
 </div>
 <?php
     }

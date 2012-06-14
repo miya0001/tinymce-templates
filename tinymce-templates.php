@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 2.8.0
+Version: 2.9.0
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -38,6 +38,7 @@ new tinymceTemplates();
 
 class tinymceTemplates {
 
+private $version     = '2.9.0';
 private $db_version  = '2';
 private $post_type   = 'tinymcetemplates';
 private $meta_param  = '_tinymcetemplates-share';
@@ -91,6 +92,7 @@ function __construct()
     add_action('post_submitbox_start', array(&$this, 'post_submitbox_start'));
     add_filter('post_row_actions', array(&$this, 'row_actions'),10,2);
     add_filter('page_row_actions', array(&$this, 'row_actions'),10,2);
+    add_filter('parse_query', array(&$this, 'parse_query'));
     add_action(
         'wp_before_admin_bar_render',
         array(&$this, 'wp_before_admin_bar_render')
@@ -172,6 +174,15 @@ public function plugins_loaded()
     $this->addCustomPostType();
 }
 
+private function fixed_role_issue()
+{
+        global $wp_roles;
+        $roles = array('administrator', 'editor');
+        foreach ($roles as $r) {
+            $wp_roles->add_cap($r, "edit_others_posts");
+        }
+}
+
 public function mce_css($css)
 {
     $files   = preg_split("/,/", $css);
@@ -181,6 +192,11 @@ public function mce_css($css)
 }
 
 public function admin_head(){
+    if (version_compare($this->version, get_option('tinymcetemplates-version', 0))) {
+        // bug recovery for 2.8.0
+        $this->fixed_role_issue();
+        update_option("tinymcetemplates-version", $this->version);
+    }
     $plugin = $this->base_url.'/mce_plugins/plugins/template/editor_plugin.js';
 
     $url    = admin_url('admin-ajax.php');
@@ -201,10 +217,6 @@ public function admin_head(){
     );
 
     if (get_post_type() === $this->post_type) {
-        global $wp_roles;
-        $me = wp_get_current_user();
-        $role = array_shift($me->roles);
-        $wp_roles->remove_cap($role, "edit_others_posts");
         if (get_option("tinymce_templates_db_version") != $this->db_version) {
             $this->activation();
         }
@@ -240,6 +252,10 @@ public function save_post($id)
 
     $p = get_post($id);
     if ($p->post_type === $this->post_type) {
+        $me = wp_get_current_user();
+        if ($p->post_author != $me->ID) {
+            wp_die('Permission denied.');
+        }
         if (isset($_POST[$this->meta_param]) && $_POST[$this->meta_param]) {
             update_post_meta($id, $this->meta_param, 1);
         } else {
@@ -291,7 +307,6 @@ private function addCustomPostType()
             'author',
         )
     );
-
     register_post_type($this->post_type, $args);
 }
 
@@ -455,6 +470,12 @@ public function wp_ajax()
     exit;
 }
 
+public function parse_query($q)
+{
+    $me = wp_get_current_user();
+    $q->set('author', $me->ID);
+    return $q;
+}
 
 private function get_copy_template_url($id)
 {

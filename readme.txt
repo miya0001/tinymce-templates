@@ -58,7 +58,7 @@ You can send your own language pack to me.
 
 == Changelog ==
 
-* [2.9.0](http://wpist.me/2012/06/15/tinymce-templates-2-9-0/)
+* [2.9.0](http://wpist.me/2012/06/14/tinymce-templates-2-9-0/)
 * [2.8.0](http://wpist.me/2012/05/24/tinymce-templates-2-8-0/)
 * [2.7.0](http://wpist.me/2012/05/19/tinymce-templates-2-7-0/)
 * [2.6.0](http://wpist.me/2011/11/14/tinymce-templates-2-6-0/)

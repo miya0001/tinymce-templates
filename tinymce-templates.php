@@ -456,7 +456,7 @@ public function wp_ajax()
     foreach ($posts as $p) {
         if (intval($u->ID) && (intval($u->ID) !== intval($p->post_author))) {
             $share = get_post_meta($p->ID, $this->meta_param, true);
-            if (!$share) {
+            if (!$share && !current_user_can('administrator')) {
                 continue;
             }
         }

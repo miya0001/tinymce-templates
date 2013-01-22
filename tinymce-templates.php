@@ -77,6 +77,10 @@ private $translators = array(
         'lang' => 'Brazilian Portuguese',
         'url'  => 'http://www.rafaelfunchal.com.br/',
     ),
+    'Morten Elm' => array(
+        'lang' => 'Filipino',
+        'url'  => 'http://www.storbyfan.dk/',
+    ),
 );
 
 function __construct()

@@ -38,6 +38,7 @@ If you will install this plugin, You will be very easy to edit posts and pages.
 * Dutch(nl_NL) - [Frank Groeneveld](http://ivaldi.nl/)
 * French(fr_FR) - [HAROUY Jean-Michel](http://www.laposte.net/)
 * Brazilian Portuguese(pt_BR) - [Rafael Funchal](http://www.rafaelfunchal.com.br/)
+* Filipino(fil_PH) - [Morten Elm](http://www.storbyfan.dk/)
 
 You can send your own language pack to me.
 

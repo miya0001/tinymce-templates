@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: TinyMCE Templates 1.1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
+"POT-Creation-Date: 2012-05-24 17:44:29+00:00\n"
+"PO-Revision-Date: 2013-01-12 20:51+0800\n"
+"Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: tinymce-templates.php:106 tinymce-templates.php:117
+#: tinymce-templates.php:128
+msgid "Copy to a new template"
+msgstr "Kopyahin sa bagong padron"
+
+#: tinymce-templates.php:228 tinymce-templates.php:366
+#: tinymce-templates.php:368
+msgid "Shared"
+msgstr "Naibahagi na"
+
+#: tinymce-templates.php:261 tinymce-templates.php:263
+msgid "Templates"
+msgstr "Mga Padron "
+
+#: tinymce-templates.php:264
+msgid "Add New Template"
+msgstr "Magdagdag ng Bagong Padron"
+
+#: tinymce-templates.php:265
+msgid "Edit Template"
+msgstr "Baguhin ang Padron"
+
+#: tinymce-templates.php:266
+msgid "Add New"
+msgstr "Magdagdag ng bago"
+
+#: tinymce-templates.php:267
+msgid "New Template"
+msgstr "Bagong Padron"
+
+#: tinymce-templates.php:268
+msgid "View Template"
+msgstr "Tingnan ang Padron"
+
+#: tinymce-templates.php:269
+msgid "No templatess found."
+msgstr "Walang natagpuang padron."
+
+#: tinymce-templates.php:270
+msgid "No templates found in Trash."
+msgstr "Walang natagpuang padron sa Basura."
+
+#: tinymce-templates.php:274
+msgid "Search Templates"
+msgstr "Hanapin ang mga Padron"
+
+#: tinymce-templates.php:302
+msgid "Share"
+msgstr "Magbahagi"
+
+#: tinymce-templates.php:311
+msgid "Translators"
+msgstr "Tagasalin"
+
+#: tinymce-templates.php:320
+msgid "Donate"
+msgstr "Magbigay"
+
+#: tinymce-templates.php:335
+msgid ""
+"It is hard to continue development and support for WordPress plugins without "
+"contributions from users like you."
+msgstr ""
+"Mahirap magpatuloy sa pagbuo at suporta para sa WordPress plugins nang "
+"walang kontribusyon mula sa mga gumagamit tulay mo."
+
+#: tinymce-templates.php:364
+msgid "Private"
+msgstr "Pribado"
+
+#. Plugin Name of the plugin/theme
+msgid "TinyMCE Templates"
+msgstr "TinyMCE-mga Padron"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wpist.me/wp/tinymce-templates/"
+msgstr "http://wpist.me/wp/tinymce-templates/"
+
+#. Description of the plugin/theme
+msgid ""
+"TinyMCE Templates plugin will enable to use HTML template on WordPress "
+"Visual Editor."
+msgstr ""
+"Ang TinyMCE Templates ay papaganahin ang padron na HTML para magamit sa "
+"WordPress Visual Editor."
+
+#. Author of the plugin/theme
+msgid "Takayuki Miyauchi"
+msgstr "Takayuki Miyauchi"
+
+#. Author URI of the plugin/theme
+msgid "http://wpist.me/"
+msgstr "http://wpist.me/"
+
+#~ msgid "Templates permanently deleted."
+#~ msgstr "Vorlagen dauerhaft entfernt."
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Description"
+#~ msgstr "Beschreibung"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Delete checked items"
+#~ msgstr "Ausgewählte Elemente entfernen"
+
+#~ msgid "Template saved."
+#~ msgstr "Vorlagen gespeichert."
+
+#~ msgid "All entry must not be blank."
+#~ msgstr "Bitte füllen Sie alle Felder aus."
+
+#~ msgid "Template Name"
+#~ msgstr "Name der Vorlage"
+
+#~ msgid "Template Description"
+#~ msgstr "Beschreibung der Vorlage"
+
+#~ msgid "Template Contents"
+#~ msgstr "Inhalt der Vorlage"
+
+#~ msgid "Edit"
+#~ msgstr "Bearbeiten"

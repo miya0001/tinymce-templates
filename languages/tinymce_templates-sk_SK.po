@@ -1,0 +1,108 @@
+# Copyright (C) 2010 TinyMCE Templates
+# This file is distributed under the same license as the TinyMCE Templates package.
+msgid ""
+msgstr ""
+"Project-Id-Version: TinyMCE Templates 2.8.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
+"POT-Creation-Date: 2012-05-24 17:44:29+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-01-23 12:50+0300\n"
+"Last-Translator: Serg\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: tinymce-templates.php:106 tinymce-templates.php:117
+#: tinymce-templates.php:128
+msgid "Copy to a new template"
+msgstr "Kopírovanie nové šablóny"
+
+#: tinymce-templates.php:228 tinymce-templates.php:366
+#: tinymce-templates.php:368
+msgid "Shared"
+msgstr "Zdieľané"
+
+#: tinymce-templates.php:261 tinymce-templates.php:263
+msgid "Templates"
+msgstr "Šablóny"
+
+#: tinymce-templates.php:264
+msgid "Add New Template"
+msgstr "Pridať novú šablónu"
+
+#: tinymce-templates.php:265
+msgid "Edit Template"
+msgstr "Upraviť šablónu"
+
+#: tinymce-templates.php:266
+msgid "Add New"
+msgstr "Pridať nové"
+
+#: tinymce-templates.php:267
+msgid "New Template"
+msgstr "Nová šablóna"
+
+#: tinymce-templates.php:268
+msgid "View Template"
+msgstr "Zobrazenie šablóny"
+
+#: tinymce-templates.php:269
+msgid "No templatess found."
+msgstr "Žiadne templatess našiel."
+
+#: tinymce-templates.php:270
+msgid "No templates found in Trash."
+msgstr "Žiadne šablóny, nachádza v koši."
+
+#: tinymce-templates.php:274
+msgid "Search Templates"
+msgstr "Hľadať šablóny"
+
+#: tinymce-templates.php:302
+msgid "Share"
+msgstr "Podiel"
+
+#: tinymce-templates.php:311
+msgid "Translators"
+msgstr "Prekladatelia"
+
+#: tinymce-templates.php:320
+msgid "Donate"
+msgstr "Darovať"
+
+#: tinymce-templates.php:335
+msgid ""
+"It is hard to continue development and support for WordPress plugins without "
+"contributions from users like you."
+msgstr ""
+"Je ťažké pokračovať rozvoj a podporu pre WordPress plugins bez príspevky od "
+"užívateľov, ako ste vy."
+
+#: tinymce-templates.php:364
+msgid "Private"
+msgstr "Súkromné"
+
+#. Plugin Name of the plugin/theme
+msgid "TinyMCE Templates"
+msgstr "TinyMCE šablóny"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wpist.me/wp/tinymce-templates/"
+msgstr "http://wpist.me/WP/TinyMCE-templates/"
+
+#. Description of the plugin/theme
+msgid ""
+"TinyMCE Templates plugin will enable to use HTML template on WordPress "
+"Visual Editor."
+msgstr ""
+"TinyMCE šablóny plugin vám umožní používať HTML šablóny na WordPress Visual "
+"Editor."
+
+#. Author of the plugin/theme
+msgid "Takayuki Miyauchi"
+msgstr "Takayuki Miyauchi"
+
+#. Author URI of the plugin/theme
+msgid "http://wpist.me/"
+msgstr "http://wpist.me/"

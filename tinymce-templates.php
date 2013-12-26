@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 3.2.0
+Version: 3.3.0
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -34,7 +34,8 @@ THE SOFTWARE.
 
 require_once(dirname(__FILE__).'/includes/mceplugins.class.php');
 
-new tinymceTemplates();
+$tinymce_templates = new tinymceTemplates();
+$tinymce_templates->register();
 
 class tinymceTemplates {
 
@@ -91,7 +92,7 @@ private $translators = array(
     ),
 );
 
-function __construct()
+public function register()
 {
     $this->base_url = plugins_url(dirname(plugin_basename(__FILE__)));
     register_activation_hook(__FILE__, array(&$this, 'activation'));
@@ -188,11 +189,11 @@ public function plugins_loaded()
 
 private function fixed_role_issue()
 {
-        global $wp_roles;
-        $roles = array('administrator', 'editor');
-        foreach ($roles as $r) {
-            $wp_roles->add_cap($r, "edit_others_posts");
-        }
+    global $wp_roles;
+    $roles = array('administrator', 'editor');
+    foreach ($roles as $r) {
+        $wp_roles->add_cap($r, "edit_others_posts");
+    }
 }
 
 public function mce_css($css)
@@ -227,6 +228,13 @@ public function admin_head(){
         array(&$this, 'addButton'),
         $inits
     );
+
+    echo '<style type="text/css">';
+    printf(
+        'span.mceIcon.mce_template{background-image: url(%s) !important; background-position: center center !important;background-repeat: no-repeat;}',
+        plugins_url('mce_plugins/plugins/template/img/icon.png', __FILE__)
+    );
+    echo '</style>';
 
     if (get_post_type() === $this->post_type) {
         if (get_option("tinymce_templates_db_version") != $this->db_version) {
@@ -344,22 +352,21 @@ public function addMetaBox()
 
     add_meta_box(
         'tinymce_templates-donate',
-        __('Donate', 'tinymce_templates'),
-        array(&$this, 'donateMetaBox'),
+        'High Performance WordPress Hosting',
+        array(&$this, 'amimoto_metabox'),
         $this->post_type,
         'side',
         'low'
     );
 }
 
-public function donateMetaBox($post, $box)
+public function amimoto_metabox($post, $box)
 {
     echo '<p>';
-    echo '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CU8N3N2Q9DA8U">';
-    echo '<img src="'.$this->base_url.'/img/paypal.png">';
+    echo '<a href="http://megumi-cloud.com/">';
+    echo '<img src="'.$this->base_url.'/img/amimoto.png" style="display: block;margin: 0 auto;max-width: 100%;">';
     echo '</a>';
     echo '</p>';
-    echo '<p>'.__('It is hard to continue development and support for WordPress plugins without contributions from users like you.', 'tinymce_templates').'</p>';
 }
 
 public function translatorsMetaBox($post, $box)

@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 3.3.0
+Version: 3.4.0
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -95,20 +95,26 @@ private $translators = array(
 public function register()
 {
     $this->base_url = plugins_url(dirname(plugin_basename(__FILE__)));
-    register_activation_hook(__FILE__, array(&$this, 'activation'));
-    add_action('plugins_loaded', array(&$this, 'plugins_loaded'));
-    add_action('save_post', array(&$this, 'save_post'));
-    add_filter('mce_css', array(&$this, 'mce_css'));
-    add_action('admin_head', array(&$this, 'admin_head'));
-    add_action('admin_footer-post-new.php', array(&$this, 'admin_footer'));
-    add_action('wp_ajax_tinymce_templates', array(&$this, 'wp_ajax'));
-    add_action('post_submitbox_start', array(&$this, 'post_submitbox_start'));
-    add_filter('post_row_actions', array(&$this, 'row_actions'),10,2);
-    add_filter('page_row_actions', array(&$this, 'row_actions'),10,2);
-    add_filter('parse_query', array(&$this, 'parse_query'));
+    register_activation_hook(__FILE__, array($this, 'activation'));
+    add_action('plugins_loaded', array($this, 'plugins_loaded'));
+    add_action('save_post', array($this, 'save_post'));
+    add_filter('mce_css', array($this, 'mce_css'));
+    add_action('admin_head', array($this, 'admin_head'));
+    add_action('admin_footer-post-new.php', array($this, 'admin_footer'));
+    add_action('wp_ajax_tinymce_templates', array($this, 'wp_ajax'));
+    add_action('post_submitbox_start', array($this, 'post_submitbox_start'));
+    add_filter('post_row_actions', array($this, 'row_actions'),10,2);
+    add_filter('page_row_actions', array($this, 'row_actions'),10,2);
+    add_filter('parse_query', array($this, 'parse_query'));
+
+    global $wp_version;
+    if (!(version_compare($wp_version, "3.8.1") <= 0)) {
+        add_filter('wp_mce_translation', array($this, 'wp_mce_translation'));
+    }
+
     add_action(
         'wp_before_admin_bar_render',
-        array(&$this, 'wp_before_admin_bar_render')
+        array($this, 'wp_before_admin_bar_render')
     );
 }
 
@@ -122,6 +128,14 @@ public function wp_before_admin_bar_render() {
             'href' => $this->get_copy_template_url(get_the_ID())
         ));
     }
+}
+
+public function wp_mce_translation($mce_translation)
+{
+    $mce_translation['Insert template'] = __("Insert template", "tinymce_templates");
+    $mce_translation['Templates'] = __("Templates", "tinymce_templates");
+
+    return $mce_translation;
 }
 
 public function row_actions($actions, $post)
@@ -210,7 +224,13 @@ public function admin_head(){
         $this->fixed_role_issue();
         update_option("tinymcetemplates-version", $this->version);
     }
-    $plugin = $this->base_url.'/mce_plugins/plugins/template/editor_plugin.js';
+
+    global $wp_version;
+    if (version_compare($wp_version, "3.8.1") <= 0) {
+        $plugin = $this->base_url.'/mce_plugins/3.5/plugins/template/editor_plugin.js';
+    } else {
+        $plugin = $this->base_url.'/mce_plugins/4.0/plugins/template/plugin.min.js';
+    }
 
     $url    = admin_url('admin-ajax.php');
     $url    = add_query_arg('action', 'tinymce_templates', $url);
@@ -218,21 +238,23 @@ public function admin_head(){
     $nonce  = wp_create_nonce("tinymce_templates");
     $url    = add_query_arg('nonce', $nonce, $url);
 
-    $inits['template_external_list_url'] = $url;
-    $inits['template_popup_width']       = 600;
-    $inits['template_popup_height']      = 500;
+    if (version_compare($wp_version, "3.8.1") <= 0) {
+        $inits['template_external_list_url'] = $url;
+    } else {
+        $inits['templates'] = $url;
+    }
 
     new tinymcePlugins(
         'template',
         $plugin,
-        array(&$this, 'addButton'),
+        array($this, 'addButton'),
         $inits
     );
 
     echo '<style type="text/css">';
     printf(
         'span.mceIcon.mce_template{background-image: url(%s) !important; background-position: center center !important;background-repeat: no-repeat;}',
-        plugins_url('mce_plugins/plugins/template/img/icon.png', __FILE__)
+        plugins_url('mce_plugins/3.5/plugins/template/img/icon.png', __FILE__)
     );
     echo '</style>';
 
@@ -248,7 +270,7 @@ public function admin_head(){
             }
             echo '<style>#visibility{display:none;}</style>';
         } elseif ($hook_suffix === 'edit.php') {
-            add_filter("display_post_states", array(&$this, "display_post_states"));
+            add_filter("display_post_states", array($this, "display_post_states"));
         }
     }
 }
@@ -257,7 +279,7 @@ public function display_post_states($stat)
 {
     $share = get_post_meta(get_the_ID(), $this->meta_param, true);
     if ($share) {
-        $stat[] = __('Shared', 'tinymce_templates');
+        $stat[] = __('Shared', 'tinymce_templates', 'tinymce_templates');
     }
     return $stat;
 }
@@ -318,7 +340,7 @@ private function addCustomPostType()
         'menu_position' => 100,
         'rewrite' => false,
         'show_in_nav_menus' => false,
-        'register_meta_box_cb' => array(&$this, 'addMetaBox'),
+        'register_meta_box_cb' => array($this, 'addMetaBox'),
         'supports' => array(
             'title',
             'editor',
@@ -335,7 +357,7 @@ public function addMetaBox()
     add_meta_box(
         'tinymce_templates-share',
         __('Share', 'tinymce_templates'),
-        array(&$this, 'sharedMetaBox'),
+        array($this, 'sharedMetaBox'),
         $this->post_type,
         'side',
         'low'
@@ -344,7 +366,7 @@ public function addMetaBox()
     add_meta_box(
         'tinymce_templates-translators',
         __('Translators', 'tinymce_templates'),
-        array(&$this, 'translatorsMetaBox'),
+        array($this, 'translatorsMetaBox'),
         $this->post_type,
         'side',
         'low'
@@ -353,7 +375,7 @@ public function addMetaBox()
     add_meta_box(
         'tinymce_templates-donate',
         'High Performance WordPress Hosting',
-        array(&$this, 'amimoto_metabox'),
+        array($this, 'amimoto_metabox'),
         $this->post_type,
         'side',
         'low'
@@ -429,12 +451,14 @@ EOL;
 
 public function wp_ajax()
 {
+    global $wp_version;
+
     nocache_headers();
     if (!wp_verify_nonce($_GET['nonce'], 'tinymce_templates')) {
         return;
     }
     $u = wp_get_current_user();
-    header( 'Content-Type: application/x-javascript; charset=UTF-8' );
+    header( 'Content-Type: application/javascript; charset=UTF-8' );
     if (isset($_GET['template_id']) && intval($_GET['template_id'])) {
         $p = get_post($_GET['template_id']);
         if ($p->post_status === 'publish') {
@@ -483,9 +507,19 @@ public function wp_ajax()
         $name = esc_html(apply_filters('tinymce_template_title', $p->post_title));
         $desc = esc_html(apply_filters('tinymce_template_excerpt', $p->post_excerpt));
         $url  = add_query_arg('template_id', $ID, $url);
-        $arr[] = array($name, $url, $desc);
+        if (version_compare($wp_version, "3.8.1") <= 0) {
+            $arr[] = array($name, $url, $desc);
+        } else {
+            $arr[] = array('title' => $name, 'url' => $url, 'description' => $desc);
+        }
     }
-    echo 'var tinyMCETemplateList = '.json_encode($arr);
+
+    if (version_compare($wp_version, "3.8.1") <= 0) {
+        echo 'var tinyMCETemplateList = '.json_encode($arr);
+    } else {
+        echo json_encode($arr);
+    }
+
     exit;
 }
 

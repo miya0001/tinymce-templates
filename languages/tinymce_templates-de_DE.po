@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TinyMCE Templates 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2013-01-22 15:26:43+00:00\n"
+"POT-Creation-Date: 2014-03-20 17:13:53+00:00\n"
 "PO-Revision-Date: 2011-05-02 14:57+0100\n"
 "Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
 "Language-Team: \n"
@@ -17,76 +17,72 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: German\n"
 
-#: tinymce-templates.php:112 tinymce-templates.php:123
-#: tinymce-templates.php:134
+#: tinymce-templates.php:127 tinymce-templates.php:146
+#: tinymce-templates.php:157
 msgid "Copy to a new template"
 msgstr ""
 
-#: tinymce-templates.php:244 tinymce-templates.php:385
-#: tinymce-templates.php:387
-msgid "Shared"
-msgstr "Geteilt"
+#: tinymce-templates.php:135
+#, fuzzy
+msgid "Insert template"
+msgstr "Neue Vorlagen erstellen"
 
-#: tinymce-templates.php:281 tinymce-templates.php:283
+#: tinymce-templates.php:136 tinymce-templates.php:319
+#: tinymce-templates.php:321
 msgid "Templates"
 msgstr "Vorlagen"
 
-#: tinymce-templates.php:284
+#: tinymce-templates.php:282 tinymce-templates.php:422
+#: tinymce-templates.php:424
+msgid "Shared"
+msgstr "Geteilt"
+
+#: tinymce-templates.php:322
 #, fuzzy
 msgid "Add New Template"
 msgstr "Neue Vorlagen erstellen"
 
-#: tinymce-templates.php:285
+#: tinymce-templates.php:323
 #, fuzzy
 msgid "Edit Template"
 msgstr "Vorlagen bearbeiten"
 
-#: tinymce-templates.php:286
+#: tinymce-templates.php:324
 msgid "Add New"
 msgstr "Erstellen"
 
-#: tinymce-templates.php:287
+#: tinymce-templates.php:325
 #, fuzzy
 msgid "New Template"
 msgstr "Neue Vorlagen erstellen"
 
-#: tinymce-templates.php:288
+#: tinymce-templates.php:326
 #, fuzzy
 msgid "View Template"
 msgstr "Vorlage speichern"
 
-#: tinymce-templates.php:289
+#: tinymce-templates.php:327
 msgid "No templatess found."
 msgstr ""
 
-#: tinymce-templates.php:290
+#: tinymce-templates.php:328
 msgid "No templates found in Trash."
 msgstr ""
 
-#: tinymce-templates.php:294
+#: tinymce-templates.php:332
 #, fuzzy
 msgid "Search Templates"
 msgstr "Vorlage speichern"
 
-#: tinymce-templates.php:321
+#: tinymce-templates.php:359
 msgid "Share"
 msgstr "Teilen"
 
-#: tinymce-templates.php:330
+#: tinymce-templates.php:368
 msgid "Translators"
 msgstr ""
 
-#: tinymce-templates.php:339
-msgid "Donate"
-msgstr ""
-
-#: tinymce-templates.php:354
-msgid ""
-"It is hard to continue development and support for WordPress plugins without "
-"contributions from users like you."
-msgstr ""
-
-#: tinymce-templates.php:383
+#: tinymce-templates.php:420
 msgid "Private"
 msgstr "Privat"
 

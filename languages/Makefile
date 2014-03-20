@@ -7,8 +7,8 @@ MAKEPOT = $(HOME)/wordpress-i18n/makepot.php
 
 
 PHP = /usr/bin/php
-MSGMERGE = /usr/bin/msgmerge
-MSGFMT = /usr/bin/msgfmt
+MSGMERGE = msgmerge
+MSGFMT = msgfmt
 
 srcdir = ..
 langdir = .

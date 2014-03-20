@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TinyMCE Templates 1.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2014-03-20 17:13:53+00:00\n"
+"POT-Creation-Date: 2014-03-20 17:29:51+00:00\n"
 "PO-Revision-Date: 2013-01-12 20:51+0800\n"
 "Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
 "Language-Team: \n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: tinymce-templates.php:127 tinymce-templates.php:146
-#: tinymce-templates.php:157
+#: tinymce-templates.php:127 tinymce-templates.php:147
+#: tinymce-templates.php:158
 msgid "Copy to a new template"
 msgstr "Kopyahin sa bagong padron"
 
@@ -27,57 +27,62 @@ msgstr "Kopyahin sa bagong padron"
 msgid "Insert template"
 msgstr "Bagong Padron"
 
-#: tinymce-templates.php:136 tinymce-templates.php:319
-#: tinymce-templates.php:321
+#: tinymce-templates.php:136 tinymce-templates.php:320
+#: tinymce-templates.php:322
 msgid "Templates"
 msgstr "Mga Padron "
 
-#: tinymce-templates.php:282 tinymce-templates.php:422
-#: tinymce-templates.php:424
+#: tinymce-templates.php:137
+#, fuzzy
+msgid "No templates defined"
+msgstr "Walang natagpuang padron."
+
+#: tinymce-templates.php:283 tinymce-templates.php:423
+#: tinymce-templates.php:425
 msgid "Shared"
 msgstr "Naibahagi na"
 
-#: tinymce-templates.php:322
+#: tinymce-templates.php:323
 msgid "Add New Template"
 msgstr "Magdagdag ng Bagong Padron"
 
-#: tinymce-templates.php:323
+#: tinymce-templates.php:324
 msgid "Edit Template"
 msgstr "Baguhin ang Padron"
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:325
 msgid "Add New"
 msgstr "Magdagdag ng bago"
 
-#: tinymce-templates.php:325
+#: tinymce-templates.php:326
 msgid "New Template"
 msgstr "Bagong Padron"
 
-#: tinymce-templates.php:326
+#: tinymce-templates.php:327
 msgid "View Template"
 msgstr "Tingnan ang Padron"
 
-#: tinymce-templates.php:327
+#: tinymce-templates.php:328
 msgid "No templatess found."
 msgstr "Walang natagpuang padron."
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:329
 msgid "No templates found in Trash."
 msgstr "Walang natagpuang padron sa Basura."
 
-#: tinymce-templates.php:332
+#: tinymce-templates.php:333
 msgid "Search Templates"
 msgstr "Hanapin ang mga Padron"
 
-#: tinymce-templates.php:359
+#: tinymce-templates.php:360
 msgid "Share"
 msgstr "Magbahagi"
 
-#: tinymce-templates.php:368
+#: tinymce-templates.php:369
 msgid "Translators"
 msgstr "Tagasalin"
 
-#: tinymce-templates.php:420
+#: tinymce-templates.php:421
 msgid "Private"
 msgstr "Pribado"
 

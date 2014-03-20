@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2014-03-20 17:13:53+00:00\n"
+"POT-Creation-Date: 2014-03-20 17:29:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tinymce-templates.php:127 tinymce-templates.php:146
-#: tinymce-templates.php:157
+#: tinymce-templates.php:127 tinymce-templates.php:147
+#: tinymce-templates.php:158
 msgid "Copy to a new template"
 msgstr "新規テンプレートにコピー"
 
@@ -26,57 +26,61 @@ msgstr "新規テンプレートにコピー"
 msgid "Insert template"
 msgstr "テンプレートを挿入"
 
-#: tinymce-templates.php:136 tinymce-templates.php:319
-#: tinymce-templates.php:321
+#: tinymce-templates.php:136 tinymce-templates.php:320
+#: tinymce-templates.php:322
 msgid "Templates"
 msgstr "テンプレート"
 
-#: tinymce-templates.php:282 tinymce-templates.php:422
-#: tinymce-templates.php:424
+#: tinymce-templates.php:137
+msgid "No templates defined"
+msgstr "テンプレートが見つかりませんでした。"
+
+#: tinymce-templates.php:283 tinymce-templates.php:423
+#: tinymce-templates.php:425
 msgid "Shared"
 msgstr "共有"
 
-#: tinymce-templates.php:322
+#: tinymce-templates.php:323
 msgid "Add New Template"
 msgstr "テンプレートの新規登録"
 
-#: tinymce-templates.php:323
+#: tinymce-templates.php:324
 msgid "Edit Template"
 msgstr "テンプレートを編集"
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:325
 msgid "Add New"
 msgstr "新規追加"
 
-#: tinymce-templates.php:325
+#: tinymce-templates.php:326
 msgid "New Template"
 msgstr "新しいテンプレート"
 
-#: tinymce-templates.php:326
+#: tinymce-templates.php:327
 msgid "View Template"
 msgstr "テンプレートを表示"
 
-#: tinymce-templates.php:327
+#: tinymce-templates.php:328
 msgid "No templatess found."
 msgstr "テンプレートが見つかりませんでした。"
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:329
 msgid "No templates found in Trash."
 msgstr "ゴミ箱内にテンプレートが見つかりませんでした。"
 
-#: tinymce-templates.php:332
+#: tinymce-templates.php:333
 msgid "Search Templates"
 msgstr "テンプレートを検索"
 
-#: tinymce-templates.php:359
+#: tinymce-templates.php:360
 msgid "Share"
 msgstr "共有"
 
-#: tinymce-templates.php:368
+#: tinymce-templates.php:369
 msgid "Translators"
 msgstr "翻訳者"
 
-#: tinymce-templates.php:420
+#: tinymce-templates.php:421
 msgid "Private"
 msgstr "個人"
 

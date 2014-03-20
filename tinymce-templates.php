@@ -134,6 +134,7 @@ public function wp_mce_translation($mce_translation)
 {
     $mce_translation['Insert template'] = __("Insert template", "tinymce_templates");
     $mce_translation['Templates'] = __("Templates", "tinymce_templates");
+    $mce_translation['No templates defined'] = __("No templates defined", "tinymce_templates");
 
     return $mce_translation;
 }

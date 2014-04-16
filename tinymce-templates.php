@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 3.4.2
+Version: 3.4.3
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -108,7 +108,7 @@ public function register()
     add_filter('parse_query', array($this, 'parse_query'));
 
     global $wp_version;
-    if (!(version_compare($wp_version, "3.9.0") < 0)) {
+    if (!(version_compare($wp_version, "3.9") < 0)) {
         add_filter('wp_mce_translation', array($this, 'wp_mce_translation'));
     }
 
@@ -227,7 +227,7 @@ public function admin_head(){
     }
 
     global $wp_version;
-    if (version_compare($wp_version, "3.9.0") < 0) {
+    if (version_compare($wp_version, "3.9", '<')) {
         $plugin = $this->base_url.'/mce_plugins/3.5/plugins/template/editor_plugin.js';
     } else {
         $plugin = $this->base_url.'/mce_plugins/4.0/plugins/template/plugin.min.js';
@@ -239,7 +239,7 @@ public function admin_head(){
     $nonce  = wp_create_nonce("tinymce_templates");
     $url    = add_query_arg('nonce', $nonce, $url);
 
-    if (version_compare($wp_version, "3.9.0") < 0) {
+    if (version_compare($wp_version, "3.9", '<')) {
         $inits['template_external_list_url'] = $url;
     } else {
         $inits['templates'] = $url;
@@ -508,14 +508,14 @@ public function wp_ajax()
         $name = esc_html(apply_filters('tinymce_template_title', $p->post_title));
         $desc = esc_html(apply_filters('tinymce_template_excerpt', $p->post_excerpt));
         $url  = add_query_arg('template_id', $ID, $url);
-        if (version_compare($wp_version, "3.9.0") < 0) {
+        if (version_compare($wp_version, "3.9", '<')) {
             $arr[] = array($name, $url, $desc);
         } else {
             $arr[] = array('title' => $name, 'url' => $url, 'description' => $desc);
         }
     }
 
-    if (version_compare($wp_version, "3.9.0") < 0) {
+    if (version_compare($wp_version, "3.9", '<')) {
         echo 'var tinyMCETemplateList = '.json_encode($arr);
     } else {
         echo json_encode($arr);

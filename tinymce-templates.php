@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://wpist.me/wp/tinymce-templates/
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 3.4.3
+Version: 3.4.4
 Author URI: http://wpist.me/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -89,6 +89,10 @@ private $translators = array(
     'Branco' => array(
         'lang' => 'Slovak',
         'url'  => 'http://webhostinggeeks.com/user-reviews/',
+    ),
+    'Michael Yunat' => array(
+        'lang' => 'Ukrainian',
+        'url'  => 'http://getvoip.com/',
     ),
 );
 

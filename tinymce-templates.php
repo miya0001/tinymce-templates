@@ -37,9 +37,7 @@ $tinymce_templates->register();
 
 class tinymceTemplates {
 
-	private $version     = '2.9.0';
 	private $post_type   = 'tinymcetemplates';
-	private $table       = 'mce_template';
 	private $base_url;
 	private $translators = array(
 		'Takayuki Miyauchi' => array(

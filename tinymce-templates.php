@@ -136,7 +136,7 @@ class tinymceTemplates {
 	 * @param  array $p Shortcode parameters.
 	 * @return none  Shortcode output.
 	 */
-	public function template_shortcode( $p )
+	public function template_shortcode( $p, $content )
 	{
 		if ( isset( $p['id'] ) && intval( $p['id'] ) ) {
 			$args = array(
@@ -148,9 +148,32 @@ class tinymceTemplates {
 			$post = get_post( $p['id'] );
 
 			if ( $post && get_post_meta( $p['id'], 'insert_as_shortcode', true ) ) {
-				return apply_filters( 'the_content', $post->post_content );
+				add_filter( 'tinymce_templates_content', array( $this, 'tinymce_templates_content' ), 10, 3 );
+				$post_content = apply_filters( 'tinymce_templates_content', $post->post_content, $p, $content );
+				return apply_filters( 'the_content', $post_content );
 			}
 		}
+	}
+
+	/**
+	 * Filters thet template content for the shortcode.
+	 *
+	 * @param string $template The content of the template.
+	 * @param array  $attr     The shortcode atts.
+	 * @param string $content  The shortcode content.
+	 *
+	 */
+	public function tinymce_templates_content( $template, $attr, $content )
+	{
+		foreach ( $attr as $key => $value ) {
+			$template = str_replace( '%'.$key.'%', $value, $template );
+		}
+
+		if ( $content ) {
+			$template = str_replace( '%content%', $content, $template );
+		}
+
+		return $template;
 	}
 
 	/**

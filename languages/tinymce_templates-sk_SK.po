@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TinyMCE Templates 2.8.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2014-03-20 17:29:51+00:00\n"
+"POT-Creation-Date: 2015-01-02 19:15:19+00:00\n"
 "PO-Revision-Date: 2013-01-23 12:50+0300\n"
 "Last-Translator: Serg\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,81 +14,85 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: tinymce-templates.php:127 tinymce-templates.php:147
-#: tinymce-templates.php:158
+#: tinymce-templates.php:136 tinymce-templates.php:157
+#: tinymce-templates.php:168
 msgid "Copy to a new template"
 msgstr "Kopírovanie nové šablóny"
 
-#: tinymce-templates.php:135
+#: tinymce-templates.php:144
 #, fuzzy
 msgid "Insert template"
 msgstr "Nová šablóna"
 
-#: tinymce-templates.php:136 tinymce-templates.php:320
-#: tinymce-templates.php:322
+#: tinymce-templates.php:145 tinymce-templates.php:232
+#: tinymce-templates.php:234
 msgid "Templates"
 msgstr "Šablóny"
 
-#: tinymce-templates.php:137
+#: tinymce-templates.php:146
 #, fuzzy
 msgid "No templates defined"
 msgstr "Žiadne templatess našiel."
 
-#: tinymce-templates.php:283 tinymce-templates.php:423
-#: tinymce-templates.php:425
-msgid "Shared"
-msgstr "Zdieľané"
+#: tinymce-templates.php:147
+msgid "Note: The template will be inserted as shortcode."
+msgstr ""
 
-#: tinymce-templates.php:323
+#: tinymce-templates.php:235
 msgid "Add New Template"
 msgstr "Pridať novú šablónu"
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:236
 msgid "Edit Template"
 msgstr "Upraviť šablónu"
 
-#: tinymce-templates.php:325
+#: tinymce-templates.php:237
 msgid "Add New"
 msgstr "Pridať nové"
 
-#: tinymce-templates.php:326
+#: tinymce-templates.php:238
 msgid "New Template"
 msgstr "Nová šablóna"
 
-#: tinymce-templates.php:327
+#: tinymce-templates.php:239
 msgid "View Template"
 msgstr "Zobrazenie šablóny"
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:240
 msgid "No templatess found."
 msgstr "Žiadne templatess našiel."
 
-#: tinymce-templates.php:329
+#: tinymce-templates.php:241
 msgid "No templates found in Trash."
 msgstr "Žiadne šablóny, nachádza v koši."
 
-#: tinymce-templates.php:333
+#: tinymce-templates.php:245
 msgid "Search Templates"
 msgstr "Hľadať šablóny"
 
-#: tinymce-templates.php:360
-msgid "Share"
-msgstr "Podiel"
+#: tinymce-templates.php:272
+msgid "Insert as Shortcode"
+msgstr ""
 
-#: tinymce-templates.php:369
+#: tinymce-templates.php:281
 msgid "Translators"
 msgstr "Prekladatelia"
 
-#: tinymce-templates.php:421
-msgid "Private"
-msgstr "Súkromné"
+#: tinymce-templates.php:293 tinymce-templates.php:296
+msgid "Yes"
+msgstr ""
+
+#: tinymce-templates.php:294 tinymce-templates.php:297
+msgid "No"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "TinyMCE Templates"
 msgstr "TinyMCE šablóny"
 
 #. Plugin URI of the plugin/theme
-msgid "http://wpist.me/wp/tinymce-templates/"
+#, fuzzy
+msgid "https://github.com/miya0001/tinymce-templates"
 msgstr "http://wpist.me/WP/TinyMCE-templates/"
 
 #. Description of the plugin/theme
@@ -104,8 +108,20 @@ msgid "Takayuki Miyauchi"
 msgstr "Takayuki Miyauchi"
 
 #. Author URI of the plugin/theme
-msgid "http://wpist.me/"
-msgstr "http://wpist.me/"
+msgid "https://github.com/miya0001/"
+msgstr ""
+
+#~ msgid "Shared"
+#~ msgstr "Zdieľané"
+
+#~ msgid "Share"
+#~ msgstr "Podiel"
+
+#~ msgid "Private"
+#~ msgstr "Súkromné"
+
+#~ msgid "http://wpist.me/"
+#~ msgstr "http://wpist.me/"
 
 #~ msgid "Donate"
 #~ msgstr "Darovať"

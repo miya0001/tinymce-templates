@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tinyMCE-templates\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2014-03-20 17:29:51+00:00\n"
+"POT-Creation-Date: 2015-01-02 19:15:19+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: HAROUY Jean-Michel <jean-michel.harouy@laposte.net>\n"
 "Language-Team: HAROUY Jean-Michel <jean-michel.harouy@laposte.net>\n"
@@ -13,78 +13,81 @@ msgstr ""
 "X-Poedit-Language: French\n"
 "X-Poedit-Country: FRANCE\n"
 
-#: tinymce-templates.php:127 tinymce-templates.php:147
-#: tinymce-templates.php:158
+#: tinymce-templates.php:136 tinymce-templates.php:157
+#: tinymce-templates.php:168
 msgid "Copy to a new template"
 msgstr ""
 
-#: tinymce-templates.php:135
+#: tinymce-templates.php:144
 #, fuzzy
 msgid "Insert template"
 msgstr "Ajouter un nouveau modèle"
 
-#: tinymce-templates.php:136 tinymce-templates.php:320
-#: tinymce-templates.php:322
+#: tinymce-templates.php:145 tinymce-templates.php:232
+#: tinymce-templates.php:234
 msgid "Templates"
 msgstr "Modèles"
 
-#: tinymce-templates.php:137
+#: tinymce-templates.php:146
 msgid "No templates defined"
 msgstr ""
 
-#: tinymce-templates.php:283 tinymce-templates.php:423
-#: tinymce-templates.php:425
-msgid "Shared"
-msgstr "Partagé"
+#: tinymce-templates.php:147
+msgid "Note: The template will be inserted as shortcode."
+msgstr ""
 
-#: tinymce-templates.php:323
+#: tinymce-templates.php:235
 #, fuzzy
 msgid "Add New Template"
 msgstr "Ajouter un nouveau modèle"
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:236
 #, fuzzy
 msgid "Edit Template"
 msgstr "Éditer les modèles"
 
-#: tinymce-templates.php:325
+#: tinymce-templates.php:237
 msgid "Add New"
 msgstr "Ajouter un nouveau"
 
-#: tinymce-templates.php:326
+#: tinymce-templates.php:238
 #, fuzzy
 msgid "New Template"
 msgstr "Ajouter un nouveau modèle"
 
-#: tinymce-templates.php:327
+#: tinymce-templates.php:239
 #, fuzzy
 msgid "View Template"
 msgstr "Enregistrer le modèle"
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:240
 msgid "No templatess found."
 msgstr ""
 
-#: tinymce-templates.php:329
+#: tinymce-templates.php:241
 msgid "No templates found in Trash."
 msgstr ""
 
-#: tinymce-templates.php:333
+#: tinymce-templates.php:245
 #, fuzzy
 msgid "Search Templates"
 msgstr "Enregistrer le modèle"
 
-#: tinymce-templates.php:360
-msgid "Share"
-msgstr "Partager"
+#: tinymce-templates.php:272
+msgid "Insert as Shortcode"
+msgstr ""
 
-#: tinymce-templates.php:369
+#: tinymce-templates.php:281
 msgid "Translators"
 msgstr ""
 
-#: tinymce-templates.php:421
-msgid "Private"
-msgstr "Personnel"
+#: tinymce-templates.php:293 tinymce-templates.php:296
+msgid "Yes"
+msgstr ""
+
+#: tinymce-templates.php:294 tinymce-templates.php:297
+msgid "No"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 #, fuzzy
@@ -92,7 +95,7 @@ msgid "TinyMCE Templates"
 msgstr "tinyMCE modèles"
 
 #. Plugin URI of the plugin/theme
-msgid "http://wpist.me/wp/tinymce-templates/"
+msgid "https://github.com/miya0001/tinymce-templates"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -106,8 +109,17 @@ msgid "Takayuki Miyauchi"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://wpist.me/"
+msgid "https://github.com/miya0001/"
 msgstr ""
+
+#~ msgid "Shared"
+#~ msgstr "Partagé"
+
+#~ msgid "Share"
+#~ msgstr "Partager"
+
+#~ msgid "Private"
+#~ msgstr "Personnel"
 
 #~ msgid "Templates permanently deleted."
 #~ msgstr "Modèles définitivement supprimés"

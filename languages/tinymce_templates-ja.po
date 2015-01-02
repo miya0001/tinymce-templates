@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2014-03-20 17:29:51+00:00\n"
+"POT-Creation-Date: 2015-01-02 19:15:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,80 +17,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tinymce-templates.php:127 tinymce-templates.php:147
-#: tinymce-templates.php:158
+#: tinymce-templates.php:136 tinymce-templates.php:157
+#: tinymce-templates.php:168
 msgid "Copy to a new template"
 msgstr "新規テンプレートにコピー"
 
-#: tinymce-templates.php:135
+#: tinymce-templates.php:144
 msgid "Insert template"
 msgstr "テンプレートを挿入"
 
-#: tinymce-templates.php:136 tinymce-templates.php:320
-#: tinymce-templates.php:322
+#: tinymce-templates.php:145 tinymce-templates.php:232
+#: tinymce-templates.php:234
 msgid "Templates"
 msgstr "テンプレート"
 
-#: tinymce-templates.php:137
+#: tinymce-templates.php:146
 msgid "No templates defined"
 msgstr "テンプレートが見つかりませんでした。"
 
-#: tinymce-templates.php:283 tinymce-templates.php:423
-#: tinymce-templates.php:425
-msgid "Shared"
-msgstr "共有"
+#: tinymce-templates.php:147
+msgid "Note: The template will be inserted as shortcode."
+msgstr "備考: このテンプレートはショートコードとして挿入されます。"
 
-#: tinymce-templates.php:323
+#: tinymce-templates.php:235
 msgid "Add New Template"
 msgstr "テンプレートの新規登録"
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:236
 msgid "Edit Template"
 msgstr "テンプレートを編集"
 
-#: tinymce-templates.php:325
+#: tinymce-templates.php:237
 msgid "Add New"
 msgstr "新規追加"
 
-#: tinymce-templates.php:326
+#: tinymce-templates.php:238
 msgid "New Template"
 msgstr "新しいテンプレート"
 
-#: tinymce-templates.php:327
+#: tinymce-templates.php:239
 msgid "View Template"
 msgstr "テンプレートを表示"
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:240
 msgid "No templatess found."
 msgstr "テンプレートが見つかりませんでした。"
 
-#: tinymce-templates.php:329
+#: tinymce-templates.php:241
 msgid "No templates found in Trash."
 msgstr "ゴミ箱内にテンプレートが見つかりませんでした。"
 
-#: tinymce-templates.php:333
+#: tinymce-templates.php:245
 msgid "Search Templates"
 msgstr "テンプレートを検索"
 
-#: tinymce-templates.php:360
-msgid "Share"
-msgstr "共有"
+#: tinymce-templates.php:272
+msgid "Insert as Shortcode"
+msgstr "ショートコードとして挿入"
 
-#: tinymce-templates.php:369
+#: tinymce-templates.php:281
 msgid "Translators"
 msgstr "翻訳者"
 
-#: tinymce-templates.php:421
-msgid "Private"
-msgstr "個人"
+#: tinymce-templates.php:293 tinymce-templates.php:296
+msgid "Yes"
+msgstr ""
+
+#: tinymce-templates.php:294 tinymce-templates.php:297
+msgid "No"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "TinyMCE Templates"
 msgstr "TinyMCE テンプレート"
 
 #. Plugin URI of the plugin/theme
-msgid "http://wpist.me/wp/tinymce-templates/"
-msgstr "http://firegoby.theta.ne.jp/wp/tinymce_templates"
+msgid "https://github.com/miya0001/tinymce-templates"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
@@ -105,8 +108,20 @@ msgid "Takayuki Miyauchi"
 msgstr "Takayuki Miyauchi"
 
 #. Author URI of the plugin/theme
-msgid "http://wpist.me/"
-msgstr "http://firegoby.jp/"
+msgid "https://github.com/miya0001/"
+msgstr ""
+
+#~ msgid "Shared"
+#~ msgstr "共有"
+
+#~ msgid "Share"
+#~ msgstr "共有"
+
+#~ msgid "Private"
+#~ msgstr "個人"
+
+#~ msgid "http://wpist.me/"
+#~ msgstr "http://firegoby.jp/"
 
 #~ msgid "Donate"
 #~ msgstr "寄付"

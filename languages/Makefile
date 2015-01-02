@@ -6,7 +6,7 @@ PROJECT = plugin
 MAKEPOT = $(HOME)/wordpress-i18n/makepot.php
 
 
-PHP = /usr/bin/php
+PHP = php
 MSGMERGE = msgmerge
 MSGFMT = msgfmt
 

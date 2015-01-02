@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: https://github.com/miya0001/tinymce-templates
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 4.0.0
+Version: 4.0.1
 Author URI: https://github.com/miya0001/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -138,9 +138,18 @@ class tinymceTemplates {
 	 */
 	public function template_shortcode( $p )
 	{
-		if ( isset( $p['id'] ) && $p['id'] ) {
+		if ( isset( $p['id'] ) && intval( $p['id'] ) ) {
+			$args = array(
+				'ID' => $p['id'],
+				'post_status' => 'publish',
+				'post_type' => 'tinymcetemplates'
+			);
+
 			$post = get_post( $p['id'] );
-			return apply_filters( 'the_content', $post->post_content );
+
+			if ( $post && get_post_meta( $p['id'], 'insert_as_shortcode', true ) ) {
+				return apply_filters( 'the_content', $post->post_content );
+			}
 		}
 	}
 
@@ -429,7 +438,7 @@ class tinymceTemplates {
 		 */
 		if ($p->post_type === $this->post_type) {
 			if ( isset( $_POST['is_shortcode'] ) && $_POST['is_shortcode'] ) {
-				update_post_meta( $id, 'insert_as_shortcode', 1 );
+				update_post_meta( $id, 'insert_as_shortcode', true );
 			} else {
 				delete_post_meta( $id, 'insert_as_shortcode' );
 			}

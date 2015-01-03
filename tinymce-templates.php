@@ -117,6 +117,7 @@ class TinyMCE_Templates {
 		add_filter( 'post_row_actions', array( $this, 'row_actions' ), 10, 2 );
 		add_filter( 'page_row_actions', array( $this, 'row_actions' ), 10, 2 );
 		add_filter( 'wp_mce_translation', array( $this, 'wp_mce_translation' ) );
+		add_filter( 'tinymce_templates_content', array( $this, 'tinymce_templates_content' ) );
 
 		add_action( 'admin_head', array( $this, 'admin_head' ) );
 		add_action( 'admin_footer-post-new.php', array( $this, 'admin_footer' ) );
@@ -146,32 +147,20 @@ class TinyMCE_Templates {
 			$post = get_post( $p['id'] );
 
 			if ( $post && get_post_meta( $p['id'], 'insert_as_shortcode', true ) ) {
-				add_filter( 'tinymce_templates_content', array( $this, 'tinymce_templates_content' ), 10, 3 );
-				$post_content = apply_filters( 'tinymce_templates_content', $post->post_content, $p, $content );
-				return apply_filters( 'the_content', $post_content );
+				return apply_filters( 'tinymce_templates_content', $post->post_content, $p, $content );
 			}
 		}
 	}
 
 	/**
-	 * Filters thet template content for the shortcode.
+	 * Filters tinymce_templates_content.
 	 *
-	 * @param string $template The content of the template.
-	 * @param array  $attr     The shortcode atts.
-	 * @param string $content  The shortcode content.
-	 *
+	 * @param  string $template Template contents.
+	 * @return string Template contents.
 	 */
-	public function tinymce_templates_content( $template, $attr, $content )
+	public function tinymce_templates_content( $template )
 	{
-		foreach ( $attr as $key => $value ) {
-			$template = str_replace( '%'.$key.'%', $value, $template );
-		}
-
-		if ( $content ) {
-			$template = str_replace( '%content%', $content, $template );
-		}
-
-		return $template;
+		return wpautop( $template );
 	}
 
 	/**
@@ -302,7 +291,9 @@ class TinyMCE_Templates {
 		/**
 		 * Add editor style to the editor.
 		 */
-		add_editor_style( plugins_url( 'editor.css', __FILE__ ) );
+		$ver = filemtime( dirname( __FILE__ ) . '/editor-style.css' );
+		$editor_style = plugins_url( 'editor-style.css?ver=' . $ver, __FILE__ );
+		add_editor_style( plugins_url( $editor_style, __FILE__ ) );
 	}
 
 	/**
@@ -355,7 +346,6 @@ class TinyMCE_Templates {
 			'supports' => array(
 				'title',
 				'editor',
-				'excerpt',
 				'revisions',
 				'author',
 			)
@@ -551,7 +541,6 @@ EOL;
 				'id'           => $ID,
 				'title'        => $name,
 				'url'          => $url,
-				'description'  => $desc,
 				'is_shortcode' => get_post_meta( $ID, 'insert_as_shortcode', true ),
 			);
 		}

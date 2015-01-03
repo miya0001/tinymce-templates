@@ -45,7 +45,6 @@ tinymce.PluginManager.add('template', function(editor) {
 					id: template.id,
 					url: template.url,
 					content: template.content,
-					description: template.description,
 					is_shortcode: template.is_shortcode
 				}
 			});
@@ -102,7 +101,6 @@ tinymce.PluginManager.add('template', function(editor) {
 				label = '\u00a0';
 			}
 
-			win.find('#description')[0].text(e.control.value().description);
 			win.find('#is_shortcode')[0].text(label);
 		}
 
@@ -120,7 +118,7 @@ tinymce.PluginManager.add('template', function(editor) {
 						type: 'listbox', label: 'Templates', name: 'template', values: values, onselect: onSelectTemplate
 					}}
 				]},
-				{type: 'label', name: 'description', label: 'Description', text: '\u00a0'},
+
 				{type: 'iframe', flex: 1, border: 1},
 				{type: 'label', name: 'is_shortcode', label: '', text: '\u00a0'},
 			],

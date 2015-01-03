@@ -8,4 +8,5 @@
 .mceContentBody td
 {
     border: 1px dashed #cccccc;
+    height: 1em;
 }

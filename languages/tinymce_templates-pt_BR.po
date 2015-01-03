@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2015-01-02 19:15:19+00:00\n"
+"POT-Creation-Date: 2015-01-03 17:39:12+00:00\n"
 "PO-Revision-Date: 2012-05-17 11:53-0300\n"
 "Last-Translator: Funchal <funchal@nomer.com.br>\n"
 "Language-Team: \n"
@@ -14,75 +14,75 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tinymce-templates.php:136 tinymce-templates.php:157
-#: tinymce-templates.php:168
+#: tinymce-templates.php:181 tinymce-templates.php:215
+#: tinymce-templates.php:232
 msgid "Copy to a new template"
 msgstr ""
 
-#: tinymce-templates.php:144
+#: tinymce-templates.php:195
 #, fuzzy
 msgid "Insert template"
 msgstr "Novo modelo"
 
-#: tinymce-templates.php:145 tinymce-templates.php:232
-#: tinymce-templates.php:234
+#: tinymce-templates.php:196 tinymce-templates.php:321
+#: tinymce-templates.php:323
 msgid "Templates"
 msgstr "Modelos"
 
-#: tinymce-templates.php:146
+#: tinymce-templates.php:197
 #, fuzzy
 msgid "No templates defined"
 msgstr "Nenhum modelo encontrado."
 
-#: tinymce-templates.php:147
+#: tinymce-templates.php:198
 msgid "Note: The template will be inserted as shortcode."
 msgstr ""
 
-#: tinymce-templates.php:235
+#: tinymce-templates.php:324
 msgid "Add New Template"
 msgstr "Adicionar um novo modelo"
 
-#: tinymce-templates.php:236
+#: tinymce-templates.php:325
 msgid "Edit Template"
 msgstr "Editar modelo"
 
-#: tinymce-templates.php:237
+#: tinymce-templates.php:326
 msgid "Add New"
 msgstr "Adicionar novo"
 
-#: tinymce-templates.php:238
+#: tinymce-templates.php:327
 msgid "New Template"
 msgstr "Novo modelo"
 
-#: tinymce-templates.php:239
+#: tinymce-templates.php:328
 msgid "View Template"
 msgstr "Visualizar modelo"
 
-#: tinymce-templates.php:240
+#: tinymce-templates.php:329
 msgid "No templatess found."
 msgstr "Nenhum modelo encontrado."
 
-#: tinymce-templates.php:241
+#: tinymce-templates.php:330
 msgid "No templates found in Trash."
 msgstr "Nenhum modelo na lixeira."
 
-#: tinymce-templates.php:245
+#: tinymce-templates.php:334
 msgid "Search Templates"
 msgstr "Pesquisar modelos disponíveis"
 
-#: tinymce-templates.php:272
+#: tinymce-templates.php:366
 msgid "Insert as Shortcode"
 msgstr ""
 
-#: tinymce-templates.php:281
+#: tinymce-templates.php:375
 msgid "Translators"
 msgstr "Tradutores"
 
-#: tinymce-templates.php:293 tinymce-templates.php:296
+#: tinymce-templates.php:393 tinymce-templates.php:396
 msgid "Yes"
 msgstr ""
 
-#: tinymce-templates.php:294 tinymce-templates.php:297
+#: tinymce-templates.php:394 tinymce-templates.php:397
 msgid "No"
 msgstr ""
 

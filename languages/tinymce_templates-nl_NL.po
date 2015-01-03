@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2015-01-02 19:15:19+00:00\n"
+"POT-Creation-Date: 2015-01-03 17:39:12+00:00\n"
 "PO-Revision-Date: 2011-04-15 08:54+0100\n"
 "Last-Translator: Frank Groeneveld <frank@ivaldi.nl>\n"
 "Language-Team: nl_NL <info@ivaldi.nl>\n"
@@ -16,79 +16,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tinymce-templates.php:136 tinymce-templates.php:157
-#: tinymce-templates.php:168
+#: tinymce-templates.php:181 tinymce-templates.php:215
+#: tinymce-templates.php:232
 msgid "Copy to a new template"
 msgstr ""
 
-#: tinymce-templates.php:144
+#: tinymce-templates.php:195
 #, fuzzy
 msgid "Insert template"
 msgstr "Nieuwe template toevoegen"
 
-#: tinymce-templates.php:145 tinymce-templates.php:232
-#: tinymce-templates.php:234
+#: tinymce-templates.php:196 tinymce-templates.php:321
+#: tinymce-templates.php:323
 msgid "Templates"
 msgstr "Templates"
 
-#: tinymce-templates.php:146
+#: tinymce-templates.php:197
 msgid "No templates defined"
 msgstr ""
 
-#: tinymce-templates.php:147
+#: tinymce-templates.php:198
 msgid "Note: The template will be inserted as shortcode."
 msgstr ""
 
-#: tinymce-templates.php:235
+#: tinymce-templates.php:324
 #, fuzzy
 msgid "Add New Template"
 msgstr "Nieuwe template toevoegen"
 
-#: tinymce-templates.php:236
+#: tinymce-templates.php:325
 #, fuzzy
 msgid "Edit Template"
 msgstr "Bewerk templates"
 
-#: tinymce-templates.php:237
+#: tinymce-templates.php:326
 msgid "Add New"
 msgstr "Nieuwe template"
 
-#: tinymce-templates.php:238
+#: tinymce-templates.php:327
 #, fuzzy
 msgid "New Template"
 msgstr "Nieuwe template toevoegen"
 
-#: tinymce-templates.php:239
+#: tinymce-templates.php:328
 #, fuzzy
 msgid "View Template"
 msgstr "Template opslaan"
 
-#: tinymce-templates.php:240
+#: tinymce-templates.php:329
 msgid "No templatess found."
 msgstr ""
 
-#: tinymce-templates.php:241
+#: tinymce-templates.php:330
 msgid "No templates found in Trash."
 msgstr ""
 
-#: tinymce-templates.php:245
+#: tinymce-templates.php:334
 #, fuzzy
 msgid "Search Templates"
 msgstr "Template opslaan"
 
-#: tinymce-templates.php:272
+#: tinymce-templates.php:366
 msgid "Insert as Shortcode"
 msgstr ""
 
-#: tinymce-templates.php:281
+#: tinymce-templates.php:375
 msgid "Translators"
 msgstr ""
 
-#: tinymce-templates.php:293 tinymce-templates.php:296
+#: tinymce-templates.php:393 tinymce-templates.php:396
 msgid "Yes"
 msgstr ""
 
-#: tinymce-templates.php:294 tinymce-templates.php:297
+#: tinymce-templates.php:394 tinymce-templates.php:397
 msgid "No"
 msgstr ""
 

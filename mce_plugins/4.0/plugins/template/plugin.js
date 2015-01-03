@@ -59,7 +59,6 @@ tinymce.PluginManager.add('template', function(editor) {
 
 					tinymce.each(editor.contentCSS, function(url) {
 						contentCssLinks += '<link type="text/css" rel="stylesheet" href="' + editor.documentBaseURI.toAbsolute(url) + '">';
-						console.log(contentCssLinks);
 					});
 
 					html = (

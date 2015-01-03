@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: https://github.com/miya0001/tinymce-templates
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 4.1.1
+Version: 4.2.0
 Author URI: https://github.com/miya0001/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -129,8 +129,19 @@ class TinyMCE_Templates {
 		add_action( 'post_submitbox_start', array( $this, 'post_submitbox_start' ) );
 		add_action( 'wp_before_admin_bar_render', array( $this, 'wp_before_admin_bar_render' ) );
 		add_action( 'save_post', array( $this, 'save_post' ) );
+		add_action( 'media_buttons', array( $this, 'media_buttons' ), 11 );
 
 		add_shortcode( 'template', array( $this, 'template_shortcode' ) );
+	}
+
+	public function media_buttons( $editor_id = 'content' )
+	{
+		printf(
+			'<a class="button dashicons-before dashicons-admin-page" href="#" data-editor="%s" title="%s" onclick="tinymce.execCommand(\'createTemplateList\'); return false;">%s</a>',
+			esc_attr( $editor_id ),
+			esc_attr( __( 'Insert Template', 'tinymce_templates' ) ),
+			esc_html( __( 'Insert Template', 'tinymce_templates' ) )
+		);
 	}
 
 	/**
@@ -267,7 +278,7 @@ class TinyMCE_Templates {
 		new tinymcePlugins(
 			'template',
 			$this->base_url.'/mce_plugins/4.0/plugins/template/plugin.js',
-			array( $this, 'tinymce_add_button' ),
+			false,
 			$inits
 		);
 
@@ -298,19 +309,6 @@ class TinyMCE_Templates {
 		$ver = filemtime( dirname( __FILE__ ) . '/editor-style.css' );
 		$editor_style = plugins_url( 'editor-style.css?ver=' . $ver, __FILE__ );
 		add_editor_style( $editor_style );
-	}
-
-	/**
-	 * Add `Template` button to the editor.
-	 *
-	 * @param  none
-	 * @return none
-	 */
-	public function tinymce_add_button( $buttons = array() )
-	{
-		array_unshift( $buttons, '|' );
-		array_unshift( $buttons, 'template' );
-		return $buttons;
 	}
 
 	/**

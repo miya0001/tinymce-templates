@@ -150,6 +150,7 @@ tinymce.PluginManager.add('template', function(editor) {
 	}
 
 	editor.addCommand('mceInsertTemplate', insertTemplate);
+	editor.addCommand('createTemplateList', createTemplateList(showDialog));
 
 	editor.addButton('template', {
 		title: 'Insert template',

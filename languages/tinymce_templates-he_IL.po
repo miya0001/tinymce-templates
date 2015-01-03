@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TinyMCE Templates\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2015-01-03 17:39:12+00:00\n"
+"POT-Creation-Date: 2015-01-03 23:30:59+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Ahrale <contact@atar4u.com>\n"
 "Language-Team: Ahrale, Atar4U.com <contact@atar4u.com>\n"
@@ -14,90 +14,98 @@ msgstr ""
 "X-Generator: Poedit 1.7.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: tinymce-templates.php:181 tinymce-templates.php:215
-#: tinymce-templates.php:232
+#: tinymce-templates.php:142 tinymce-templates.php:143
+msgid "Insert Template"
+msgstr "הוספת תבנית"
+
+#: tinymce-templates.php:196 tinymce-templates.php:230
+#: tinymce-templates.php:247
 msgid "Copy to a new template"
 msgstr "העתקה לתבנית חדשה"
 
-#: tinymce-templates.php:195
+#: tinymce-templates.php:210
 msgid "Insert template"
 msgstr "הוספת תבנית"
 
-#: tinymce-templates.php:196 tinymce-templates.php:321
-#: tinymce-templates.php:323
+#: tinymce-templates.php:211 tinymce-templates.php:315
+#: tinymce-templates.php:317
 msgid "Templates"
 msgstr "תבניות"
 
-#: tinymce-templates.php:197
+#: tinymce-templates.php:212
 msgid "No templates defined"
 msgstr "לא הוגדרו תבניות"
 
-#: tinymce-templates.php:198
+#: tinymce-templates.php:213
 msgid "Note: The template will be inserted as shortcode."
 msgstr "הערה: התבנית תתווסף כקיצור קוד."
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:318
 msgid "Add New Template"
 msgstr "הוספת תבנית חדשה"
 
-#: tinymce-templates.php:325
+#: tinymce-templates.php:319
 msgid "Edit Template"
 msgstr "עריכת תבנית"
 
-#: tinymce-templates.php:326
+#: tinymce-templates.php:320
 msgid "Add New"
 msgstr "הוסף חדש"
 
-#: tinymce-templates.php:327
+#: tinymce-templates.php:321
 msgid "New Template"
 msgstr "תבנית חדשה"
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:322
 msgid "View Template"
 msgstr "הצג תבנית"
 
-#: tinymce-templates.php:329
+#: tinymce-templates.php:323
 msgid "No templatess found."
 msgstr "לא נמצאו תבניות."
 
-#: tinymce-templates.php:330
+#: tinymce-templates.php:324
 msgid "No templates found in Trash."
 msgstr "לא נמצאו תבניות בסל האשפה."
 
-#: tinymce-templates.php:334
+#: tinymce-templates.php:328
 msgid "Search Templates"
 msgstr "חיפוש תבנית"
 
-#: tinymce-templates.php:366
+#: tinymce-templates.php:361
 msgid "Insert as Shortcode"
 msgstr "הוסף כקיצור קוד"
 
-#: tinymce-templates.php:375
+#: tinymce-templates.php:370
 msgid "Translators"
 msgstr "מתרגמים"
 
-#: tinymce-templates.php:393 tinymce-templates.php:396
+#: tinymce-templates.php:388 tinymce-templates.php:391
 msgid "Yes"
 msgstr ""
 
-#: tinymce-templates.php:394 tinymce-templates.php:397
+#: tinymce-templates.php:389 tinymce-templates.php:392
 msgid "No"
 msgstr ""
 
+#. Plugin Name of the plugin/theme
 msgid "TinyMCE Templates"
 msgstr ""
 
+#. Plugin URI of the plugin/theme
 msgid "https://github.com/miya0001/tinymce-templates"
 msgstr ""
 
+#. Description of the plugin/theme
 msgid ""
 "TinyMCE Templates plugin will enable to use HTML template on WordPress "
 "Visual Editor."
 msgstr ""
 
+#. Author of the plugin/theme
 msgid "Takayuki Miyauchi"
 msgstr ""
 
+#. Author URI of the plugin/theme
 msgid "https://github.com/miya0001/"
 msgstr ""
-

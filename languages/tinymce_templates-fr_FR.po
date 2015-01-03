@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tinyMCE-templates\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2015-01-03 17:39:12+00:00\n"
+"POT-Creation-Date: 2015-01-03 23:30:59+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: HAROUY Jean-Michel <jean-michel.harouy@laposte.net>\n"
 "Language-Team: HAROUY Jean-Michel <jean-michel.harouy@laposte.net>\n"
@@ -13,79 +13,84 @@ msgstr ""
 "X-Poedit-Language: French\n"
 "X-Poedit-Country: FRANCE\n"
 
-#: tinymce-templates.php:181 tinymce-templates.php:215
-#: tinymce-templates.php:232
+#: tinymce-templates.php:142 tinymce-templates.php:143
+#, fuzzy
+msgid "Insert Template"
+msgstr "Ajouter un nouveau modèle"
+
+#: tinymce-templates.php:196 tinymce-templates.php:230
+#: tinymce-templates.php:247
 msgid "Copy to a new template"
 msgstr ""
 
-#: tinymce-templates.php:195
+#: tinymce-templates.php:210
 #, fuzzy
 msgid "Insert template"
 msgstr "Ajouter un nouveau modèle"
 
-#: tinymce-templates.php:196 tinymce-templates.php:321
-#: tinymce-templates.php:323
+#: tinymce-templates.php:211 tinymce-templates.php:315
+#: tinymce-templates.php:317
 msgid "Templates"
 msgstr "Modèles"
 
-#: tinymce-templates.php:197
+#: tinymce-templates.php:212
 msgid "No templates defined"
 msgstr ""
 
-#: tinymce-templates.php:198
+#: tinymce-templates.php:213
 msgid "Note: The template will be inserted as shortcode."
 msgstr ""
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:318
 #, fuzzy
 msgid "Add New Template"
 msgstr "Ajouter un nouveau modèle"
 
-#: tinymce-templates.php:325
+#: tinymce-templates.php:319
 #, fuzzy
 msgid "Edit Template"
 msgstr "Éditer les modèles"
 
-#: tinymce-templates.php:326
+#: tinymce-templates.php:320
 msgid "Add New"
 msgstr "Ajouter un nouveau"
 
-#: tinymce-templates.php:327
+#: tinymce-templates.php:321
 #, fuzzy
 msgid "New Template"
 msgstr "Ajouter un nouveau modèle"
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:322
 #, fuzzy
 msgid "View Template"
 msgstr "Enregistrer le modèle"
 
-#: tinymce-templates.php:329
+#: tinymce-templates.php:323
 msgid "No templatess found."
 msgstr ""
 
-#: tinymce-templates.php:330
+#: tinymce-templates.php:324
 msgid "No templates found in Trash."
 msgstr ""
 
-#: tinymce-templates.php:334
+#: tinymce-templates.php:328
 #, fuzzy
 msgid "Search Templates"
 msgstr "Enregistrer le modèle"
 
-#: tinymce-templates.php:366
+#: tinymce-templates.php:361
 msgid "Insert as Shortcode"
 msgstr ""
 
-#: tinymce-templates.php:375
+#: tinymce-templates.php:370
 msgid "Translators"
 msgstr ""
 
-#: tinymce-templates.php:393 tinymce-templates.php:396
+#: tinymce-templates.php:388 tinymce-templates.php:391
 msgid "Yes"
 msgstr ""
 
-#: tinymce-templates.php:394 tinymce-templates.php:397
+#: tinymce-templates.php:389 tinymce-templates.php:392
 msgid "No"
 msgstr ""
 

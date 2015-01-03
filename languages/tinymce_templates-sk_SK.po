@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TinyMCE Templates 2.8.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2015-01-03 17:39:12+00:00\n"
+"POT-Creation-Date: 2015-01-03 23:30:59+00:00\n"
 "PO-Revision-Date: 2013-01-23 12:50+0300\n"
 "Last-Translator: Serg\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,75 +14,80 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: tinymce-templates.php:181 tinymce-templates.php:215
-#: tinymce-templates.php:232
+#: tinymce-templates.php:142 tinymce-templates.php:143
+#, fuzzy
+msgid "Insert Template"
+msgstr "Nová šablóna"
+
+#: tinymce-templates.php:196 tinymce-templates.php:230
+#: tinymce-templates.php:247
 msgid "Copy to a new template"
 msgstr "Kopírovanie nové šablóny"
 
-#: tinymce-templates.php:195
+#: tinymce-templates.php:210
 #, fuzzy
 msgid "Insert template"
 msgstr "Nová šablóna"
 
-#: tinymce-templates.php:196 tinymce-templates.php:321
-#: tinymce-templates.php:323
+#: tinymce-templates.php:211 tinymce-templates.php:315
+#: tinymce-templates.php:317
 msgid "Templates"
 msgstr "Šablóny"
 
-#: tinymce-templates.php:197
+#: tinymce-templates.php:212
 #, fuzzy
 msgid "No templates defined"
 msgstr "Žiadne templatess našiel."
 
-#: tinymce-templates.php:198
+#: tinymce-templates.php:213
 msgid "Note: The template will be inserted as shortcode."
 msgstr ""
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:318
 msgid "Add New Template"
 msgstr "Pridať novú šablónu"
 
-#: tinymce-templates.php:325
+#: tinymce-templates.php:319
 msgid "Edit Template"
 msgstr "Upraviť šablónu"
 
-#: tinymce-templates.php:326
+#: tinymce-templates.php:320
 msgid "Add New"
 msgstr "Pridať nové"
 
-#: tinymce-templates.php:327
+#: tinymce-templates.php:321
 msgid "New Template"
 msgstr "Nová šablóna"
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:322
 msgid "View Template"
 msgstr "Zobrazenie šablóny"
 
-#: tinymce-templates.php:329
+#: tinymce-templates.php:323
 msgid "No templatess found."
 msgstr "Žiadne templatess našiel."
 
-#: tinymce-templates.php:330
+#: tinymce-templates.php:324
 msgid "No templates found in Trash."
 msgstr "Žiadne šablóny, nachádza v koši."
 
-#: tinymce-templates.php:334
+#: tinymce-templates.php:328
 msgid "Search Templates"
 msgstr "Hľadať šablóny"
 
-#: tinymce-templates.php:366
+#: tinymce-templates.php:361
 msgid "Insert as Shortcode"
 msgstr ""
 
-#: tinymce-templates.php:375
+#: tinymce-templates.php:370
 msgid "Translators"
 msgstr "Prekladatelia"
 
-#: tinymce-templates.php:393 tinymce-templates.php:396
+#: tinymce-templates.php:388 tinymce-templates.php:391
 msgid "Yes"
 msgstr ""
 
-#: tinymce-templates.php:394 tinymce-templates.php:397
+#: tinymce-templates.php:389 tinymce-templates.php:392
 msgid "No"
 msgstr ""
 

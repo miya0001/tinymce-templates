@@ -137,7 +137,7 @@ class TinyMCE_Templates {
 	public function media_buttons( $editor_id = 'content' )
 	{
 		printf(
-			'<a class="button dashicons-before dashicons-admin-page" href="#" data-editor="%s" title="%s" onclick="tinymce.execCommand(\'createTemplateList\'); return false;">%s</a>',
+			'<a id="button-tinymce-templates" class="button" href="#" data-editor="%s" title="%s" onclick="tinymce.execCommand(\'createTemplateList\'); return false;">%s</a>',
 			esc_attr( $editor_id ),
 			esc_attr( __( 'Insert Template', 'tinymce_templates' ) ),
 			esc_html( __( 'Insert Template', 'tinymce_templates' ) )
@@ -283,23 +283,15 @@ class TinyMCE_Templates {
 		);
 
 		/**
-		 * Setup admin menu icon
-		 */
-		echo '<style type="text/css">';
-		printf(
-			'span.mceIcon.mce_template{background-image: url(%s) !important; background-position: center center !important;background-repeat: no-repeat;}',
-			plugins_url( 'mce_plugins/3.5/plugins/template/img/icon.png', __FILE__ )
-		);
-		echo '</style>';
-
-		/**
 		 * Hide some stuff in the templates editor panel.
 		 */
-		if ( get_post_type() === $this->post_type ) {
-			global $hook_suffix;
-			if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
+		global $hook_suffix;
+		if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
+			if ( get_post_type() === $this->post_type ) {
 				remove_meta_box( 'slugdiv', $this->post_type, 'normal' );
 				echo '<style>#visibility{display:none;} #message a{display: none;}</style>';
+			} else {
+				echo '<style>#button-tinymce-templates:before{content: "\f464"; font: 400 18px/1 dashicons; top:3px; margin-right: 3px; position: relative;}</style>';
 			}
 		}
 
@@ -336,6 +328,7 @@ class TinyMCE_Templates {
 				'search_items' => __( 'Search Templates', 'tinymce_templates' ),
 			),
 			'public' => false,
+			'menu_icon' => 'dashicons-edit',
 			'publicly_queryable' => false,
 			'exclude_from_search' => true,
 			'show_ui' => true,

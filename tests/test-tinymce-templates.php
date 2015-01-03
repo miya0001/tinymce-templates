@@ -45,18 +45,23 @@ class TinyMCE_Templates_Test extends WP_UnitTestCase {
 		$this->assertTrue( is_integer( $post_id ) );
 		update_post_meta( $post_id, 'insert_as_shortcode', true );
 
-		add_filter( 'tinymce_templates_content', function( $template, $attr, $content ){
-			foreach ( $attr as $key => $value ) {
-				$template = str_replace( '%'.$key.'%', $value, $template );
-			}
-
-			if ( $content ) {
-				$template = str_replace( '%content%', $content, $template );
-			}
-
-			return $template;
-		}, 10, 3 );
+		add_filter( 'tinymce_templates_content', array( $this, 'tinymce_templates_content' ), 10, 3 );
 
 		$this->assertSame( '<p>Hello World!</p>', trim( do_shortcode( '[template id="'.$post_id.'" name="World"]' ) ) );
+	}
+
+	/*
+	 * Filters tinymce_templates_content
+	 */
+	public function tinymce_templates_content( $template, $attr, $content ){
+		foreach ( $attr as $key => $value ) {
+			$template = str_replace( '%'.$key.'%', $value, $template );
+		}
+
+		if ( $content ) {
+			$template = str_replace( '%content%', $content, $template );
+		}
+
+		return $template;
 	}
 }

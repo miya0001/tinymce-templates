@@ -32,10 +32,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-$tinymce_templates = new tinymceTemplates();
+$tinymce_templates = new TinyMCE_Templates();
 $tinymce_templates->register();
 
-class tinymceTemplates {
+class TinyMCE_Templates {
 
 	private $post_type   = 'tinymcetemplates';
 	private $base_url;
@@ -109,7 +109,7 @@ class tinymceTemplates {
 		load_plugin_textdomain(
 			'tinymce_templates',
 			false,
-			dirname(plugin_basename(__FILE__)).'/languages'
+			dirname( plugin_basename( __FILE__ ) ).'/languages'
 		);
 
 		$this->register_post_type();
@@ -140,7 +140,7 @@ class tinymceTemplates {
 			$args = array(
 				'ID' => $p['id'],
 				'post_status' => 'publish',
-				'post_type' => 'tinymcetemplates'
+				'post_type' => 'tinymcetemplates',
 			);
 
 			$post = get_post( $p['id'] );
@@ -188,9 +188,9 @@ class tinymceTemplates {
 			 */
 			$wp_admin_bar->add_menu( array(
 				'parent' => 'edit',
-				'id' => 'new_template',
-				'title' => __( 'Copy to a new template', 'tinymce_templates' ),
-				'href' => $this->get_copy_template_url( get_the_ID() )
+				'id'     => 'new_template',
+				'title'  => __( 'Copy to a new template', 'tinymce_templates' ),
+				'href'   => $this->get_copy_template_url( get_the_ID() )
 			) );
 		}
 	}
@@ -203,10 +203,10 @@ class tinymceTemplates {
 	 */
 	public function wp_mce_translation( $mce_translation )
 	{
-		$mce_translation['Insert template'] = __( "Insert template", "tinymce_templates" );
-		$mce_translation['Templates'] = __( "Templates", "tinymce_templates" );
-		$mce_translation['No templates defined'] = __( "No templates defined", "tinymce_templates" );
-		$mce_translation['Note: The template will be inserted as shortcode.'] = __( "Note: The template will be inserted as shortcode.", "tinymce_templates" );
+		$mce_translation['Insert template'] = __( 'Insert template', 'tinymce_templates' );
+		$mce_translation['Templates'] = __( 'Templates', 'tinymce_templates' );
+		$mce_translation['No templates defined'] = __( 'No templates defined', 'tinymce_templates' );
+		$mce_translation['Note: The template will be inserted as shortcode.'] = __( 'Note: The template will be inserted as shortcode.', 'tinymce_templates' );
 
 		return $mce_translation;
 	}
@@ -240,7 +240,7 @@ class tinymceTemplates {
 		?>
 			<div id="duplicate-action">
 				<a class="submitduplicate duplication"
-					href="<?php echo $this->get_copy_template_url($_GET['post']) ?>"><?php _e('Copy to a new template', 'tinymce_templates'); ?></a>
+					href="<?php echo esc_url( $this->get_copy_template_url( $_GET['post'] ) ) ?>"><?php _e( 'Copy to a new template', 'tinymce_templates' ); ?></a>
 			</div>
 		<?php
 		}
@@ -258,18 +258,18 @@ class tinymceTemplates {
 		 * Load and setup tinymce plugin.
 		 */
 		$url	= admin_url( 'admin-ajax.php' );
-		$nonce  = wp_create_nonce( "tinymce_templates" );
+		$nonce  = wp_create_nonce( 'tinymce_templates' );
 
 		$args = array(
 			'action' => 'tinymce_templates',
 			'nonce'  => $nonce,
 		);
 
-		$url = add_query_arg( $args, $url);
+		$url = add_query_arg( $args, $url );
 
 		$inits['templates'] = $url;
 
-		require_once( dirname(__FILE__) . '/includes/mceplugins.class.php' );
+		require_once( dirname( __FILE__ ) . '/includes/mceplugins.class.php' );
 
 		new tinymcePlugins(
 			'template',
@@ -284,7 +284,7 @@ class tinymceTemplates {
 		echo '<style type="text/css">';
 		printf(
 			'span.mceIcon.mce_template{background-image: url(%s) !important; background-position: center center !important;background-repeat: no-repeat;}',
-			plugins_url('mce_plugins/3.5/plugins/template/img/icon.png', __FILE__)
+			plugins_url( 'mce_plugins/3.5/plugins/template/img/icon.png', __FILE__ )
 		);
 		echo '</style>';
 
@@ -293,7 +293,7 @@ class tinymceTemplates {
 		 */
 		if ( get_post_type() === $this->post_type ) {
 			global $hook_suffix;
-			if ( $hook_suffix === 'post.php' || $hook_suffix === 'post-new.php' ) {
+			if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
 				remove_meta_box( 'slugdiv', $this->post_type, 'normal' );
 				echo '<style>#visibility{display:none;} #message a{display: none;}</style>';
 			}
@@ -340,7 +340,7 @@ class tinymceTemplates {
 					'No templates found in Trash.',
 					'tinymce_templates'
 				),
-				'search_items' => __('Search Templates', 'tinymce_templates'),
+				'search_items' => __( 'Search Templates', 'tinymce_templates' ),
 			),
 			'public' => false,
 			'publicly_queryable' => false,
@@ -373,8 +373,8 @@ class tinymceTemplates {
 	{
 		add_meta_box(
 			'tinymce_templates-is-shortcode',
-			__('Insert as Shortcode', 'tinymce_templates'),
-			array($this, 'insert_as_shortcode_meta_box'),
+			__( 'Insert as Shortcode', 'tinymce_templates' ),
+			array( $this, 'insert_as_shortcode_meta_box' ),
 			$this->post_type,
 			'side',
 			'low'
@@ -398,7 +398,7 @@ class tinymceTemplates {
 	 */
 	public function insert_as_shortcode_meta_box( $post, $box )
 	{
-		$res = get_post_meta($post->ID, 'insert_as_shortcode', true);
+		$res = get_post_meta( $post->ID, 'insert_as_shortcode', true );
 		if ( $res ) {
 			echo '<label><input type="radio" name="is_shortcode" value="1" checked> '.__( 'Yes' ).'</label><br />';
 			echo '<label><input type="radio" name="is_shortcode" value="0"> '.__( 'No' ).'</label>';
@@ -444,20 +444,20 @@ class tinymceTemplates {
 	 */
 	public function save_post( $id )
 	{
-		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return $id;
 		}
 
-		if (isset($_POST['action']) && $_POST['action'] == 'inline-save') {
+		if ( isset( $_POST['action'] ) && $_POST['action'] == 'inline-save' ) {
 			return $id;
 		}
 
-		$p = get_post($id);
+		$p = get_post( $id );
 
 		/**
 		 * Save post_meta
 		 */
-		if ($p->post_type === $this->post_type) {
+		if ( $p->post_type === $this->post_type ) {
 			if ( isset( $_POST['is_shortcode'] ) && $_POST['is_shortcode'] ) {
 				update_post_meta( $id, 'insert_as_shortcode', true );
 			} else {
@@ -475,8 +475,8 @@ class tinymceTemplates {
 	public function admin_footer()
 	{
 		if ( get_post_type() === $this->post_type ) {
-			if ( isset($_GET['origin']) && intval($_GET['origin']) ) {
-				$origin = get_post( intval($_GET['origin']) );
+			if ( isset( $_GET['origin'] ) && intval( $_GET['origin'] ) ) {
+				$origin = get_post( intval( $_GET['origin'] ) );
 				if ( $origin ) {
 					$template = array(
 						'post_title' => $origin->post_title,
@@ -505,17 +505,17 @@ EOL;
 	{
 		nocache_headers();
 
-		if ( ! wp_verify_nonce($_GET['nonce'], 'tinymce_templates') ) {
+		if ( ! wp_verify_nonce( $_GET['nonce'], 'tinymce_templates' ) ) {
 			return;
 		}
 
 		header( 'Content-Type: application/javascript; charset=UTF-8' );
 
-		if ( isset($_GET['template_id']) && intval($_GET['template_id']) ) {
+		if ( isset( $_GET['template_id'] ) && intval( $_GET['template_id'] ) ) {
 			$p = get_post( $_GET['template_id'] );
 			if ( $p->post_status === 'publish' ) {
 				echo apply_filters(
-					"tinymce_templates",
+					'tinymce_templates',
 					wpautop( $p->post_content ),
 					stripslashes( $p->post_content )
 				);
@@ -526,21 +526,21 @@ EOL;
 		$p = array(
 			'post_status' => 'publish',
 			'post_type'   => $this->post_type,
-			'orderby'	 => 'date',
-			'order'	   => 'DESC',
+			'orderby'     => 'date',
+			'order'       => 'DESC',
 			'numberposts' => -1,
 		);
 
 		$posts = get_posts( $p );
-		$url	= admin_url( 'admin-ajax.php' );
-		$nonce  = wp_create_nonce( "tinymce_templates" );
+		$url   = admin_url( 'admin-ajax.php' );
+		$nonce = wp_create_nonce( 'tinymce_templates' );
 
 		$arr = array();
 
 		foreach ( $posts as $p ) {
 			$ID = intval( $p->ID );
-			$name = esc_html( apply_filters('tinymce_template_title', $p->post_title) );
-			$desc = esc_html( apply_filters('tinymce_template_excerpt', $p->post_excerpt) );
+			$name = esc_html( apply_filters( 'tinymce_template_title', $p->post_title ) );
+			$desc = esc_html( apply_filters( 'tinymce_template_excerpt', $p->post_excerpt ) );
 			$args = array(
 				'action'      => 'tinymce_templates',
 				'template_id' => $ID,
@@ -548,10 +548,10 @@ EOL;
 			);
 			$url  = add_query_arg( $args, $url );
 			$arr[] = array(
-				'id' => $ID,
-				'title' => $name,
-				'url' => $url,
-				'description' => $desc,
+				'id'           => $ID,
+				'title'        => $name,
+				'url'          => $url,
+				'description'  => $desc,
 				'is_shortcode' => get_post_meta( $ID, 'insert_as_shortcode', true ),
 			);
 		}
@@ -569,7 +569,7 @@ EOL;
 	 */
 	private function get_copy_template_url( $id )
 	{
-		return admin_url( 'post-new.php?post_type=tinymcetemplates&origin='.intval($id) );
+		return admin_url( 'post-new.php?post_type=tinymcetemplates&origin='.intval( $id ) );
 	}
 
 

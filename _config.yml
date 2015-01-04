@@ -34,3 +34,4 @@ address:
 # Build settings
 markdown: kramdown
 permalink: pretty
+baseurl: http://miya0001.github.io/tinymce-templates

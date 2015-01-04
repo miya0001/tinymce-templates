@@ -33,7 +33,8 @@ TinyMCE Template plugin will enable to use HTML template on WordPress Visual Edi
 * Brazilian Portuguese(pt_BR) - [Rafael Funchal](http://www.rafaelfunchal.com.br/)
 * Filipino(fil_PH) - [Morten Elm](http://www.storbyfan.dk/)
 * Russian(ru_RU) - ihtimir
-* Branco(sk_SK) - [Branco](http://webhostinggeeks.com/user-reviews/)
+* Slovak(sk_SK) - [Branco](http://webhostinggeeks.com/user-reviews/)
+* Hebrew(he_IL) - [Ahrale](http://atar4u.com/)
 
 You can send your own language pack to me.
 

@@ -543,7 +543,6 @@ EOL;
 		}
 
 		echo json_encode( array_values( $arr ) );
-
 		exit;
 	}
 

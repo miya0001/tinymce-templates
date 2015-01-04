@@ -136,16 +136,37 @@ tinymce.PluginManager.add('template', function(editor) {
 
 	function insertTemplate(ui, html, id, is_shortcode) {
 		if (is_shortcode) {
-			editor.execCommand('mceInsertContent', false, '<p>[template id="'+id+'"]</p>');
+			var tags = html.match(/{\$([a-zA-Z0-9_]+?)}/g);
+
+			var args = [];
+			var is_content = '';
+
+			if (tags) {
+				for (var i=0; i<tags.length; i++) {
+					var tag = tags[i].match(/[a-zA-Z0-9_]+/);
+					if ('content' === tag[0]) {
+						is_content = 'Hello World![/template]';
+						continue;
+					}
+					args.push(tag[0] + '=""');
+				}
+			}
+
+			if (0 < args.length) {
+				html = '<p>[template id="' + id + '" ' + args.join(' ')+']' + is_content + '</p>';
+			} else {
+				html = '<p>[template id="' + id + '"]' + is_content + '</p>';
+			}
+
+			editor.execCommand('mceInsertContent', false, html);
 			editor.addVisual();
-			return;
+		} else {
+			var el, n, dom = editor.dom, sel = editor.selection.getContent();
+			el = dom.create('div', null, html);
+
+			editor.execCommand('mceInsertContent', false, el.innerHTML);
+			editor.addVisual();
 		}
-
-		var el, n, dom = editor.dom, sel = editor.selection.getContent();
-		el = dom.create('div', null, html);
-
-		editor.execCommand('mceInsertContent', false, el.innerHTML);
-		editor.addVisual();
 	}
 
 	editor.addCommand('mceInsertTemplate', insertTemplate);

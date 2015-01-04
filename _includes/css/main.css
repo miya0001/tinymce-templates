@@ -79,6 +79,10 @@ hr.star-primary:after {
     background-color: #edeff1;
 }
 
+.danger hr.star-light:after {
+    background-color: #E74C3C;
+}
+
 .img-centered {
     margin: 0 auto;
 }

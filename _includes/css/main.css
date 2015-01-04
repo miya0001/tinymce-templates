@@ -74,6 +74,11 @@ hr.star-primary:after {
     background-color: #fff;
 }
 
+.light-grey hr.star-primary:after {
+    color: #{{ site.color.secondary }};
+    background-color: #edeff1;
+}
+
 .img-centered {
     margin: 0 auto;
 }
@@ -184,6 +189,11 @@ section.success {
 section.danger {
     color: #fff;
     background: #E74C3C;
+}
+
+section.light-grey
+{
+    background: #edeff1;
 }
 
 @media(max-width:767px) {
@@ -444,4 +454,10 @@ footer .footer-below {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
+}
+
+section img
+{
+    display: block;
+    margin: 0 auto;
 }

@@ -1,0 +1,36 @@
+# Site settings
+title: TinyMCE Templates for WordPress
+email: your-email@domain.com
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: 18bc9c #80B3FF
+  secondary: 2c3e50 #FD6E8A
+  secondary-dark: 233140 #A2122F
+
+# Footer settings
+footer:
+  copyright: Takayuki Miyauchi
+  location: Feedback
+  social: Around the Web
+  # credits: Credits
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: github
+    url: https://github.com/miya0001/tinymce-templates
+  - title: wordpress
+    url: https://wordpress.org/plugins/tinymce-templates/
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: <a href="https://github.com/miya0001/tinymce-templates/issues">GitHub Issue</a>
+  - line: <a href="https://wordpress.org/support/plugin/tinymce-templates">WordPress Forum</a>
+
+# Credits content
+# credits: 'Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
+
+# Build settings
+markdown: kramdown
+permalink: pretty

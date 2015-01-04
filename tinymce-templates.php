@@ -496,18 +496,6 @@ EOL;
 
 		header( 'Content-Type: application/javascript; charset=UTF-8' );
 
-		if ( isset( $_GET['template_id'] ) && intval( $_GET['template_id'] ) ) {
-			$p = get_post( $_GET['template_id'] );
-			if ( $p->post_status === 'publish' ) {
-				echo apply_filters(
-					'tinymce_templates',
-					wpautop( $p->post_content ),
-					stripslashes( $p->post_content )
-				);
-			}
-			exit;
-		}
-
 		$p = array(
 			'post_status' => 'publish',
 			'post_type'   => $this->post_type,
@@ -517,6 +505,7 @@ EOL;
 		);
 
 		$posts = get_posts( $p );
+
 		$url   = admin_url( 'admin-ajax.php' );
 		$nonce = wp_create_nonce( 'tinymce_templates' );
 
@@ -532,15 +521,28 @@ EOL;
 				'nonce'       => $nonce,
 			);
 			$url  = add_query_arg( $args, $url );
-			$arr[] = array(
+			$arr[ $ID ] = array(
 				'id'           => $ID,
 				'title'        => $name,
 				'url'          => $url,
 				'is_shortcode' => get_post_meta( $ID, 'insert_as_shortcode', true ),
+				'content'      => $p->post_content,
 			);
 		}
 
-		echo json_encode( $arr );
+		$arr = apply_filters( 'tinymce_templates_post_objects', $arr );
+
+		if ( isset( $_GET['template_id'] ) && intval( $_GET['template_id'] ) ) {
+			$p = $arr[ $_GET['template_id'] ];
+			echo apply_filters(
+				'tinymce_templates',
+				$p['content'],
+				$p['content']
+			);
+			exit;
+		}
+
+		echo json_encode( array_values( $arr ) );
 
 		exit;
 	}

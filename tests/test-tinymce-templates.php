@@ -37,7 +37,7 @@ class TinyMCE_Templates_Test extends WP_UnitTestCase {
 	{
 		$post_id = wp_insert_post( array(
 			'post_title'   => 'template_test',
-			'post_content' => 'Hello %name%!',
+			'post_content' => '{$name} {$content}!',
 			'post_type'    => 'tinymcetemplates',
 			'post_status'  => 'publish',
 		) );
@@ -47,7 +47,8 @@ class TinyMCE_Templates_Test extends WP_UnitTestCase {
 
 		add_filter( 'tinymce_templates_content', array( $this, 'tinymce_templates_content' ), 10, 3 );
 
-		$this->assertSame( '<p>Hello World!</p>', trim( do_shortcode( '[template id="'.$post_id.'" name="World"]' ) ) );
+		$this->assertSame( '<p>Hello World!</p>', trim( do_shortcode( '[template id="'.$post_id.'" name="Hello"]World[/template]' ) ) );
+		$this->assertSame( '<p>Hello !</p>', trim( do_shortcode( '[template id="'.$post_id.'" name="Hello"]' ) ) );
 	}
 
 	/*
@@ -55,13 +56,10 @@ class TinyMCE_Templates_Test extends WP_UnitTestCase {
 	 */
 	public function tinymce_templates_content( $template, $attr, $content ){
 		foreach ( $attr as $key => $value ) {
-			$template = str_replace( '%'.$key.'%', $value, $template );
+			$template = str_replace( '{$'.$key.'}', $value, $template );
 		}
 
-		if ( $content ) {
-			$template = str_replace( '%content%', $content, $template );
-		}
-
+		$template = str_replace( '{$content}', $content, $template );
 		return $template;
 	}
 }

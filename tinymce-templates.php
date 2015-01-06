@@ -523,7 +523,7 @@ EOL;
 				'id'           => $ID,
 				'title'        => $name,
 				'is_shortcode' => get_post_meta( $ID, 'insert_as_shortcode', true ),
-				'content'      => $p->post_content,
+				'content'      => wpautop( $p->post_content ),
 			);
 		}
 

@@ -476,7 +476,7 @@ class TinyMCE_Templates {
 						);
 						?>
 						<script type="text/javascript">
-						var origin = <?php echo json_encode( $template ); ?>>;
+						var origin = <?php echo json_encode( $template ); ?>;
 						jQuery( '#title').val(origin.post_title );
 						jQuery( '#content').val(origin.post_content );
 						</script>

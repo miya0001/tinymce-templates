@@ -126,23 +126,46 @@ class TinyMCE_Templates {
 		add_action( 'admin_head', array( $this, 'admin_head' ) );
 		add_action( 'admin_footer-post-new.php', array( $this, 'admin_footer' ) );
 		add_action( 'admin_footer-post.php', array( $this, 'admin_footer' ) );
-		add_action( 'wp_ajax_tinymce_templates', array( $this, 'wp_ajax' ) );
+		add_action( 'wp_ajax_tinymce_templates', array( $this, 'wp_ajax_tinymce_templates' ) );
 		add_action( 'post_submitbox_start', array( $this, 'post_submitbox_start' ) );
 		add_action( 'wp_before_admin_bar_render', array( $this, 'wp_before_admin_bar_render' ) );
 		add_action( 'save_post', array( $this, 'save_post' ) );
 		add_action( 'media_buttons', array( $this, 'media_buttons' ), 11 );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 
 		add_shortcode( 'template', array( $this, 'template_shortcode' ) );
 	}
 
+	public function admin_enqueue_scripts( $hook_suffix )
+	{
+		if ( 'post-new.php' === $hook_suffix || 'post.php' === $hook_suffix ) {
+			wp_enqueue_script(
+				'tinymce-templates',
+				plugins_url( 'js/tinymce-templates.js', __FILE__ ),
+				array( 'jquery' ),
+				filemtime( dirname( __FILE__ ) . '/js/tinymce-templates.js' ),
+				true
+			);
+
+			wp_enqueue_style(
+				'tinymce-templates',
+				plugins_url( 'css/tinymce-templates.css', __FILE__ ),
+				array(),
+				filemtime( dirname( __FILE__ ) . '/css/tinymce-templates.css' )
+			);
+		}
+	}
+
 	public function media_buttons( $editor_id = 'content' )
 	{
-		printf(
-			'<a id="button-tinymce-templates" class="button" href="#" data-editor="%s" title="%s" onclick="tinymce.execCommand(\'createTemplateList\'); return false;">%s</a>',
-			esc_attr( $editor_id ),
-			esc_attr( __( 'Insert Template', 'tinymce_templates' ) ),
-			esc_html( __( 'Insert Template', 'tinymce_templates' ) )
-		);
+		if ( 'content' === $editor_id ) {
+			printf(
+				'<a id="button-tinymce-templates" class="button" href="#" data-editor="%s" title="%s">%s</a>',
+				esc_attr( $editor_id ),
+				esc_attr( __( 'Insert Template', 'tinymce_templates' ) ),
+				esc_html( __( 'Insert Template', 'tinymce_templates' ) )
+			);
+		}
 	}
 
 	/**
@@ -263,29 +286,29 @@ class TinyMCE_Templates {
 	 */
 	public function admin_head()
 	{
-		/**
-		 * Load and setup tinymce plugin.
-		 */
-		$url	= admin_url( 'admin-ajax.php' );
-		$nonce  = wp_create_nonce( 'tinymce_templates' );
-
-		$args = array(
-			'action' => 'tinymce_templates',
-			'nonce'  => $nonce,
-		);
-
-		$url = add_query_arg( $args, $url );
-
-		$inits['templates'] = $url;
-
-		require_once( dirname( __FILE__ ) . '/includes/mceplugins.class.php' );
-
-		new tinymcePlugins(
-			'template',
-			$this->base_url.'/mce_plugins/4.0/plugins/template/plugin.js',
-			false,
-			$inits
-		);
+		// /**
+		//  * Load and setup tinymce plugin.
+		//  */
+		// $url	= admin_url( 'admin-ajax.php' );
+		// $nonce  = wp_create_nonce( 'tinymce_templates' );
+		//
+		// $args = array(
+		// 	'action' => 'tinymce_templates',
+		// 	'nonce'  => $nonce,
+		// );
+		//
+		// $url = add_query_arg( $args, $url );
+		//
+		// $inits['templates'] = $url;
+		//
+		// require_once( dirname( __FILE__ ) . '/includes/mceplugins.class.php' );
+		//
+		// new tinymcePlugins(
+		// 	'template',
+		// 	$this->base_url.'/mce_plugins/4.0/plugins/template/plugin.js',
+		// 	false,
+		// 	$inits
+		// );
 
 		/**
 		 * Hide some stuff in the templates editor panel.
@@ -485,6 +508,26 @@ class TinyMCE_Templates {
 				}
 			}
 		}
+
+?>
+<div id="tinymce-templates-backdrop" style="desplay: none;"></div>
+<div id="tinymce-templates-wrap" class="wp-core-ui search-panel-visible" style="desplay: none;">
+	<div class="modal">
+		<div class="header">
+			<h1><span class="dashicons dashicons-edit"></span> <?php _e( 'Insert Template', 'tinymce_templates' ); ?></h1>
+			<a href="#" class="close"><span class="dashicons dashicons-no-alt"></span></a>
+		</div>
+		<div class="container">
+			<select id="tinymce-templates-list"></select>
+			<iframe id="tinymce-templates-preview"></iframe>
+			<p class="message"><?php _e( 'Note: The template will be inserted as shortcode.', 'tinymce_templates' ); ?></p>
+		</div>
+		<div class="footer">
+			<a href="#" id="tinymce-templates-insert" class="button button-primary button-large template-button-insert"><?php _e( 'Insert Template', 'tinymce_templates' ); ?></a>
+		</div>
+	</div>
+</div>
+<?php
 	}
 
 	/**
@@ -493,7 +536,7 @@ class TinyMCE_Templates {
 	 * @param  none
 	 * @return none
 	 */
-	public function wp_ajax()
+	public function wp_ajax_tinymce_templates()
 	{
 		nocache_headers();
 
@@ -523,7 +566,6 @@ class TinyMCE_Templates {
 			$name = esc_html( apply_filters( 'tinymce_template_title', $p->post_title ) );
 			$desc = esc_html( apply_filters( 'tinymce_template_excerpt', $p->post_excerpt ) );
 			$arr[ $ID ] = array(
-				'id'           => $ID,
 				'title'        => $name,
 				'is_shortcode' => get_post_meta( $ID, 'insert_as_shortcode', true ),
 				'content'      => wpautop( $p->post_content ),

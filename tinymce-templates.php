@@ -488,7 +488,7 @@ class TinyMCE_Templates {
 	public function admin_footer()
 	{
 		global $hook_suffix;
-		if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
+		if ( 'post-new.php' === $hook_suffix ) {
 			if ( get_post_type() === $this->post_type ) {
 				if ( isset( $_GET['origin'] ) && intval( $_GET['origin'] ) ) {
 					$origin = get_post( intval( $_GET['origin'] ) );
@@ -509,25 +509,39 @@ class TinyMCE_Templates {
 			}
 		}
 
-?>
-<div id="tinymce-templates-backdrop" style="desplay: none;"></div>
-<div id="tinymce-templates-wrap" class="wp-core-ui search-panel-visible" style="desplay: none;">
-	<div class="modal">
-		<div class="header">
-			<h1><span class="dashicons dashicons-edit"></span> <?php _e( 'Insert Template', 'tinymce_templates' ); ?></h1>
-			<a href="#" class="close"><span class="dashicons dashicons-no-alt"></span></a>
+		?>
+		<div id="tinymce-templates-backdrop" style="desplay: none;"></div>
+		<div id="tinymce-templates-wrap" class="wp-core-ui search-panel-visible" style="desplay: none;">
+			<div class="modal">
+				<div class="header">
+					<h1><span class="dashicons dashicons-edit"></span> <?php _e( 'Insert Template', 'tinymce_templates' ); ?></h1>
+					<a href="#" class="close"><span class="dashicons dashicons-no-alt"></span></a>
+				</div>
+				<div class="container">
+					<select id="tinymce-templates-list"></select>
+					<iframe id="tinymce-templates-preview"></iframe>
+				</div>
+				<div class="footer">
+					<div id="tinymce-templates-message"><?php _e( 'Note: The template will be inserted as shortcode.', 'tinymce_templates' ); ?></div>
+					<a href="#" id="tinymce-templates-insert" class="button button-primary button-large template-button-insert"><?php _e( 'Insert Template', 'tinymce_templates' ); ?></a>
+				</div>
+			</div>
 		</div>
-		<div class="container">
-			<select id="tinymce-templates-list"></select>
-			<iframe id="tinymce-templates-preview"></iframe>
-			<p class="message"><?php _e( 'Note: The template will be inserted as shortcode.', 'tinymce_templates' ); ?></p>
-		</div>
-		<div class="footer">
-			<a href="#" id="tinymce-templates-insert" class="button button-primary button-large template-button-insert"><?php _e( 'Insert Template', 'tinymce_templates' ); ?></a>
-		</div>
-	</div>
-</div>
-<?php
+		<?php
+
+		$url   = admin_url( 'admin-ajax.php' );
+		$nonce = wp_create_nonce( 'tinymce_templates' );
+
+		$args = array(
+			'action' => 'tinymce_templates',
+			'nonce'  => $nonce,
+		);
+		?>
+		<script type="text/javascript">
+			var tinymce_templates_list_uri = '<?php echo $url; ?>';
+			var tinymce_templates_list_args = <?php echo json_encode($args); ?>;
+		</script>
+		<?php
 	}
 
 	/**
@@ -556,9 +570,6 @@ class TinyMCE_Templates {
 
 		$posts = get_posts( $p );
 
-		$url   = admin_url( 'admin-ajax.php' );
-		$nonce = wp_create_nonce( 'tinymce_templates' );
-
 		$arr = array();
 
 		foreach ( $posts as $p ) {
@@ -574,28 +585,23 @@ class TinyMCE_Templates {
 
 		$arr = apply_filters( 'tinymce_templates_post_objects', $arr );
 
-		foreach ( $arr as $id => $post ) {
-			$args = array(
-				'action'      => 'tinymce_templates',
-				'template_id' => $arr[ $id ]['id'],
-				'nonce'       => $nonce,
-			);
-			$arr[ $id ]['url'] = add_query_arg( $args, $url );
-		}
-
 		if ( isset( $_GET['template_id'] ) && $_GET['template_id'] ) {
 			if ( isset( $arr[ $_GET['template_id'] ] ) && $arr[ $_GET['template_id'] ] ) {
 				$p = $arr[ $_GET['template_id'] ];
-				echo apply_filters(
+				$content = apply_filters(
 					'tinymce_templates',
 					$p['content'],
 					$p['content']
 				);
+				echo json_encode( array(
+					'content' => $content,
+					'is_shortcode' => $p['is_shortcode']
+				) );
 			}
 			exit;
 		}
 
-		echo json_encode( array_values( $arr ) );
+		echo json_encode( $arr );
 		exit;
 	}
 

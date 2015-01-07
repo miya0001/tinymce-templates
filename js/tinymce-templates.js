@@ -10,6 +10,7 @@ var tinymceTemplates;
 		{
 			$('#button-tinymce-templates').bind('click', function(e){
 				e.preventDefault();
+				tinymceTemplates.get_template_list();
 				tinymceTemplates.open();
 			});
 
@@ -32,15 +33,123 @@ var tinymceTemplates;
 				tinymceTemplates.insert();
 				tinymceTemplates.close();
 			});
+
+			$('#tinymce-templates-list').bind('change', function(){
+				tinymceTemplates.set_content();
+			});
 		},
 
-		insert: function($content)
+		insert: function()
 		{
-			wp.media.editor.insert($content);
+			if (tinymceTemplates.is_shortcode) {
+				var tags = tinymceTemplates.content.match(/{\$([a-zA-Z0-9_]+?)}/g);
+
+				var args = [];
+				var is_content = '';
+
+				if (tags) {
+					var tags = tags.filter(function (x, i, self) {
+						return self.indexOf(x) === i;
+					});
+
+					for (var i=0; i<tags.length; i++) {
+						var tag = tags[i].match(/[a-zA-Z0-9_]+/);
+						if ('content' === tag[0]) {
+							is_content = 'Hello World![/template]';
+							continue;
+						}
+						args.push(tag[0] + '=""');
+					}
+				}
+
+				if (0 < args.length) {
+					html = '<p>[template id="' + tinymceTemplates.template_id + '" ' + args.join(' ')+']' + is_content + '</p>';
+				} else {
+					html = '<p>[template id="' + tinymceTemplates.template_id + '"]' + is_content + '</p>';
+				}
+
+				wp.media.editor.insert(html);
+			} else {
+				wp.media.editor.insert(tinymceTemplates.content);
+			}
+		},
+
+		get_template_list: function()
+		{
+			var args = $.extend({}, tinymce_templates_list_args);
+
+			$.ajax({
+				url: tinymce_templates_list_uri,
+				async: true,
+				type: 'GET',
+				dataType: 'json',
+				data: args
+			}).done(function(data){
+				$.each(data, function(key, tpl){
+					var option = $('<option />');
+					$(option).attr('value', key);
+					$(option).text(tpl.title);
+					$('#tinymce-templates-list').append(option);
+				});
+
+				tinymceTemplates.set_content();
+			});
+		},
+
+		set_content: function()
+		{
+			tinymceTemplates.template_id = $('#tinymce-templates-list').val();
+
+			// I don't like reference here!!
+			var args = $.extend({}, tinymce_templates_list_args);
+			args['template_id'] = tinymceTemplates.template_id;
+
+			$.ajax({
+				url: tinymce_templates_list_uri,
+				async: true,
+				type: 'GET',
+				dataType: 'json',
+				data: args
+			}).done(function(data){
+				var content_css = tinyMCEPreInit.mceInit.content.content_css;
+				var styles = content_css.replace(/(\s+)/g, "").split(',');
+
+				var html = '<!DOCTYPE html><html><head>';
+				for (var i=0; i<styles.length; i++) {
+					var link = $('<link rel="stylesheet" type="text/css" media="all" />');
+					link.attr('href', styles[i]);
+					html += $('<div />').html(link).html(); // getting innerHTML
+				}
+				html += '</head><body class="mceContentBody">';
+				html += data.content;
+				html += '</body></html>';
+
+				var iframe = document.getElementById('tinymce-templates-preview');
+				var doc = iframe.contentWindow.document;
+				doc.open();
+				doc.write(html);
+				doc.close();
+
+				if (data.is_shortcode) {
+					$('#tinymce-templates-message').show();
+				} else {
+					$('#tinymce-templates-message').hide();
+				}
+
+				tinymceTemplates.is_shortcode = data.is_shortcode;
+				tinymceTemplates.content = data.content;
+			});
 		},
 
 		open: function( editorId )
 		{
+			$('#tinymce-templates-list').html('');
+			var iframe = document.getElementById('tinymce-templates-preview');
+			var doc = iframe.contentWindow.document;
+			doc.open();
+			doc.write('');
+			doc.close();
+
 			tinymceTemplates.positionTop();
 
 			$( document.body ).addClass( 'modal-open' );
@@ -50,9 +159,9 @@ var tinymceTemplates;
 
 		close: function()
 		{
-			$( document.body ).removeClass( 'modal-open' );
+			$(document.body ).removeClass('modal-open');
 			$('#tinymce-templates-wrap').hide();
-			$( '#tinymce-templates-backdrop' ).hide();
+			$('#tinymce-templates-backdrop').hide();
 		},
 
 		positionTop: function()

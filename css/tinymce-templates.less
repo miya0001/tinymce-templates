@@ -1,80 +1,87 @@
 #tinymce-templates-backdrop
 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    min-height: 360px;
-    background: #000;
-    opacity: .7;
-    z-index: 159900;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	min-height: 360px;
+	background: #000;
+	opacity: .7;
+	z-index: 159900;
 }
 
 #tinymce-templates-wrap
 {
-    display: none;
-    position: absolute;
-    width: 100%;
-    z-index: 999999;
+	display: none;
+	position: absolute;
+	width: 100%;
+	z-index: 999999;
 
-    .modal
-    {
-        width: 90%;
-        max-width: 800px;
-        background-color: #ffffff;
-        margin: 0 auto;
-        box-sizing: border-box;
+	.modal
+	{
+		width: 90%;
+		max-width: 800px;
+		background-color: #ffffff;
+		margin: 0 auto;
+		box-sizing: border-box;
 
-        .header
-        {
-            background-color: #f5f5f5;
-            border-bottom: 1px solid #dedede;
-            padding: 10px 20px;
-            position: relative;
+		.header
+		{
+			background-color: #f5f5f5;
+			border-bottom: 1px solid #dedede;
+			padding: 10px 20px;
+			position: relative;
 
-            h1
-            {
-                font-size: 16px;
-                margin: 0;
-            }
+			h1
+			{
+				font-size: 16px;
+				margin: 0;
+			}
 
-            .close
-            {
-                position: absolute;
-                top: 10px;
-                right: 20px;
-                text-decoration: none;
-                color: #555555;
-            }
-        }
+			.close
+			{
+				position: absolute;
+				top: 10px;
+				right: 20px;
+				text-decoration: none;
+				color: #555555;
+			}
+		}
 
-        .container
-        {
-            padding: 10px 20px;
+		.container
+		{
+			padding: 10px 20px;
+		}
 
-            #tinymce-templates-preview
-            {
-                border: none;
-                margin: 10px 0;
-                padding: 0;
-                border: 1px solid #dedede;
-                width: 100%;
-            }
+		.footer
+		{
+			padding: 20px;
+			background-color: #f5f5f5;
+			border-top: 1px solid #dedede;
+			overflow: auto;
+		}
+	}
 
-            .message
-            {
-                margin: 0;
-            }
-        }
+	#tinymce-templates-preview
+	{
+		border: none;
+		margin: 10px 0;
+		padding: 0;
+		border: 1px solid #dedede;
+		width: 100%;
+	}
 
-        .footer
-        {
-            padding: 20px;
-            background-color: #f5f5f5;
-            border-top: 1px solid #dedede;
-            text-align: right;
-        }
-    }
+	#tinymce-templates-message
+	{
+		display: none;
+		float: left;
+	}
+
+	#tinymce-templates-insert
+	{
+		display: block;
+		float: right;
+	}
 }

@@ -34,9 +34,9 @@ var tinymceTemplates;
 			});
 		},
 
-		insert: function()
+		insert: function($content)
 		{
-			wp.media.editor.insert('[myshortcode id="aa"]');
+			wp.media.editor.insert($content);
 		},
 
 		open: function( editorId )
@@ -72,31 +72,8 @@ var tinymceTemplates;
 
 			$('#tinymce-templates-wrap').css('top', top);
 		},
-
-		//
-		// isMCE: function() {
-		// 	return editor && ! editor.isHidden();
-		// },
-		//
-		// close: function() {
-		// 	$( document.body ).removeClass( 'modal-open' );
-		//
-		// 	if ( ! wpLink.isMCE() ) {
-		// 		wpLink.textarea.focus();
-		//
-		// 		if ( wpLink.range ) {
-		// 			wpLink.range.moveToBookmark( wpLink.range.getBookmark() );
-		// 			wpLink.range.select();
-		// 		}
-		// 	} else {
-		// 		editor.focus();
-		// 	}
-		//
-		// 	inputs.backdrop.hide();
-		// 	inputs.wrap.hide();
-		// 	$( document ).trigger( 'wplink-close', inputs.wrap );
-		// },
 	};
 
 	$( document ).ready( tinymceTemplates.init );
+
 })( jQuery );

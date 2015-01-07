@@ -125,6 +125,7 @@ class TinyMCE_Templates {
 
 		add_action( 'admin_head', array( $this, 'admin_head' ) );
 		add_action( 'admin_footer-post-new.php', array( $this, 'admin_footer' ) );
+		add_action( 'admin_footer-post.php', array( $this, 'admin_footer' ) );
 		add_action( 'wp_ajax_tinymce_templates', array( $this, 'wp_ajax' ) );
 		add_action( 'post_submitbox_start', array( $this, 'post_submitbox_start' ) );
 		add_action( 'wp_before_admin_bar_render', array( $this, 'wp_before_admin_bar_render' ) );
@@ -463,22 +464,24 @@ class TinyMCE_Templates {
 	 */
 	public function admin_footer()
 	{
-		if ( get_post_type() === $this->post_type ) {
-			if ( isset( $_GET['origin'] ) && intval( $_GET['origin'] ) ) {
-				$origin = get_post( intval( $_GET['origin'] ) );
-				if ( $origin ) {
-					$template = array(
-						'post_title' => $origin->post_title,
-						'post_content' => wpautop( $origin->post_content ),
-					);
-					$template = json_encode( $template );
-					echo <<<EOL
-<script type="text/javascript">
-	var origin = {$template};
-	jQuery( '#title').val(origin.post_title );
-	jQuery( '#content').val(origin.post_content );
-</script>
-EOL;
+		global $hook_suffix;
+		if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
+			if ( get_post_type() === $this->post_type ) {
+				if ( isset( $_GET['origin'] ) && intval( $_GET['origin'] ) ) {
+					$origin = get_post( intval( $_GET['origin'] ) );
+					if ( $origin ) {
+						$template = array(
+							'post_title' => $origin->post_title,
+							'post_content' => wpautop( $origin->post_content ),
+						);
+						?>
+						<script type="text/javascript">
+						var origin = <?php echo json_encode( $template ); ?>>;
+						jQuery( '#title').val(origin.post_title );
+						jQuery( '#content').val(origin.post_content );
+						</script>
+						<?php
+					}
 				}
 			}
 		}

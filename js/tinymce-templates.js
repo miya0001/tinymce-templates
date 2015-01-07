@@ -30,6 +30,9 @@ var tinymceTemplates;
 
 			$('#tinymce-templates-insert').click(function(e){
 				e.preventDefault();
+				if ($(this).attr('disabled')) {
+					return false;
+				}
 				tinymceTemplates.insert();
 				tinymceTemplates.close();
 			});
@@ -98,6 +101,8 @@ var tinymceTemplates;
 
 		set_content: function()
 		{
+			$('#tinymce-templates-insert').attr('disabled', true);
+
 			tinymceTemplates.template_id = $('#tinymce-templates-list').val();
 
 			// I don't like reference here!!
@@ -138,6 +143,8 @@ var tinymceTemplates;
 
 				tinymceTemplates.is_shortcode = data.is_shortcode;
 				tinymceTemplates.content = data.content;
+
+				$('#tinymce-templates-insert').attr('disabled', false);
 			});
 		},
 
@@ -162,6 +169,7 @@ var tinymceTemplates;
 			$(document.body ).removeClass('modal-open');
 			$('#tinymce-templates-wrap').hide();
 			$('#tinymce-templates-backdrop').hide();
+			$('#tinymce-templates-insert').attr('disabled', true);
 		},
 
 		positionTop: function()

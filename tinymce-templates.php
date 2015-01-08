@@ -124,8 +124,10 @@ class TinyMCE_Templates {
 
 		add_action( 'admin_head-post-new.php', array( $this, 'admin_head' ) );
 		add_action( 'admin_head-post.php', array( $this, 'admin_head' ) );
+
 		add_action( 'admin_footer-post-new.php', array( $this, 'admin_footer' ) );
 		add_action( 'admin_footer-post.php', array( $this, 'admin_footer' ) );
+
 		add_action( 'wp_ajax_tinymce_templates', array( $this, 'wp_ajax_tinymce_templates' ) );
 		add_action( 'post_submitbox_start', array( $this, 'post_submitbox_start' ) );
 		add_action( 'wp_before_admin_bar_render', array( $this, 'wp_before_admin_bar_render' ) );
@@ -171,10 +173,17 @@ class TinyMCE_Templates {
 	public function media_buttons( $editor_id = 'content' )
 	{
 		if ( 'content' === $editor_id ) {
+			$button_html = '<a id="%s" class="%s" href="#" data-editor="%s" title="%s">';
+			$button_html .= '<span class="%s" style="%s"></span> %s';
+			$button_html .= '</a>';
 			printf(
-				'<a id="button-tinymce-templates" class="button" href="#" data-editor="%s" title="%s"><span class="dashicons dashicons-edit" style="margin-top: 3px;"></span> %s</a>',
+				$button_html,
+				'button-tinymce-templates',
+				'button',
 				esc_attr( $editor_id ),
 				esc_attr( __( 'Insert Template', 'tinymce_templates' ) ),
+				'dashicons dashicons-edit',
+				'margin-top: 3px;',
 				esc_html( __( 'Insert Template', 'tinymce_templates' ) )
 			);
 		}

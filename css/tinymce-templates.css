@@ -14,7 +14,7 @@
   display: none;
   position: absolute;
   width: 100%;
-  z-index: 999999;
+  z-index: 999998;
 }
 #tinymce-templates-wrap .modal {
   width: 90%;

@@ -28,11 +28,6 @@ var tinymceTemplates;
 				tinymceTemplates.close();
 			});
 
-			$('#tinymce-templates-wrap').click(function(e){
-				e.preventDefault();
-				tinymceTemplates.close();
-			});
-
 			$('#tinymce-templates-insert').click(function(e){
 				e.preventDefault();
 				if ($(this).attr('disabled')) {
@@ -44,6 +39,13 @@ var tinymceTemplates;
 
 			$('#tinymce-templates-list').bind('change', function(){
 				tinymceTemplates.set_content();
+			});
+
+			$(window).keyup(function(e){
+				if(e.keyCode == 27){
+					e.preventDefault();
+					tinymceTemplates.close();
+				}
 			});
 		},
 

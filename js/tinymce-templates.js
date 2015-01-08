@@ -103,6 +103,10 @@ var tinymceTemplates;
 		{
 			$('#tinymce-templates-insert').attr('disabled', true);
 
+			if (!$('#tinymce-templates-list').val()) {
+				return;
+			}
+
 			tinymceTemplates.template_id = $('#tinymce-templates-list').val();
 
 			// I don't like reference here!!

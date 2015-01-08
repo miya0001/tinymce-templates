@@ -120,10 +120,10 @@ class TinyMCE_Templates {
 
 		add_filter( 'post_row_actions', array( $this, 'row_actions' ), 10, 2 );
 		add_filter( 'page_row_actions', array( $this, 'row_actions' ), 10, 2 );
-		add_filter( 'wp_mce_translation', array( $this, 'wp_mce_translation' ) );
 		add_filter( 'tinymce_templates_content', array( $this, 'tinymce_templates_content' ) );
 
-		add_action( 'admin_head', array( $this, 'admin_head' ) );
+		add_action( 'admin_head-post-new.php', array( $this, 'admin_head' ) );
+		add_action( 'admin_head-post.php', array( $this, 'admin_head' ) );
 		add_action( 'admin_footer-post-new.php', array( $this, 'admin_footer' ) );
 		add_action( 'admin_footer-post.php', array( $this, 'admin_footer' ) );
 		add_action( 'wp_ajax_tinymce_templates', array( $this, 'wp_ajax_tinymce_templates' ) );
@@ -136,6 +136,12 @@ class TinyMCE_Templates {
 		add_shortcode( 'template', array( $this, 'template_shortcode' ) );
 	}
 
+	/**
+	 * Fires on admin_enqueue_scripts hook
+	 *
+	 * @param  none
+	 * @return none
+	 */
 	public function admin_enqueue_scripts( $hook_suffix )
 	{
 		if ( 'post-new.php' === $hook_suffix || 'post.php' === $hook_suffix ) {
@@ -156,11 +162,17 @@ class TinyMCE_Templates {
 		}
 	}
 
+	/**
+	 * Fires on media_buttons hook
+	 *
+	 * @param  none
+	 * @return none
+	 */
 	public function media_buttons( $editor_id = 'content' )
 	{
 		if ( 'content' === $editor_id ) {
 			printf(
-				'<a id="button-tinymce-templates" class="button" href="#" data-editor="%s" title="%s">%s</a>',
+				'<a id="button-tinymce-templates" class="button" href="#" data-editor="%s" title="%s"><span class="dashicons dashicons-edit" style="margin-top: 3px;"></span> %s</a>',
 				esc_attr( $editor_id ),
 				esc_attr( __( 'Insert Template', 'tinymce_templates' ) ),
 				esc_html( __( 'Insert Template', 'tinymce_templates' ) )
@@ -187,8 +199,10 @@ class TinyMCE_Templates {
 
 			$post = get_post( $p['id'] );
 
-			if ( $post && get_post_meta( $p['id'], 'insert_as_shortcode', true ) ) {
-				$post_content = $post->post_content;
+			if ( is_a( $post, 'WP_Post' ) ) {
+				if ( get_post_meta( $p['id'], 'insert_as_shortcode', true ) ) {
+					$post_content = $post->post_content;
+				}
 			}
 		}
 
@@ -228,22 +242,6 @@ class TinyMCE_Templates {
 	}
 
 	/**
-	 * Translates tinymce plugin.
-	 *
-	 * @param  array $mce_translation Translates of the tinymce.
-	 * @return array Translates of the tinymce templates plugin.
-	 */
-	public function wp_mce_translation( $mce_translation )
-	{
-		$mce_translation['Insert template'] = __( 'Insert template', 'tinymce_templates' );
-		$mce_translation['Templates'] = __( 'Templates', 'tinymce_templates' );
-		$mce_translation['No templates defined'] = __( 'No templates defined', 'tinymce_templates' );
-		$mce_translation['Note: The template will be inserted as shortcode.'] = __( 'Note: The template will be inserted as shortcode.', 'tinymce_templates' );
-
-		return $mce_translation;
-	}
-
-	/**
 	 * Filters the pages/posts list menu in admin.
 	 *
 	 * @param  array  $actions Menu items of the pages/posts list.
@@ -279,56 +277,27 @@ class TinyMCE_Templates {
 	}
 
 	/**
-	 * Fires on admin_head hook.
+	 * Fires on admin_head-post.php or admin_head-post-new.php hook.
 	 *
 	 * @param  none
 	 * @return none
 	 */
 	public function admin_head()
 	{
-		// /**
-		//  * Load and setup tinymce plugin.
-		//  */
-		// $url	= admin_url( 'admin-ajax.php' );
-		// $nonce  = wp_create_nonce( 'tinymce_templates' );
-		//
-		// $args = array(
-		// 	'action' => 'tinymce_templates',
-		// 	'nonce'  => $nonce,
-		// );
-		//
-		// $url = add_query_arg( $args, $url );
-		//
-		// $inits['templates'] = $url;
-		//
-		// require_once( dirname( __FILE__ ) . '/includes/mceplugins.class.php' );
-		//
-		// new tinymcePlugins(
-		// 	'template',
-		// 	$this->base_url.'/mce_plugins/4.0/plugins/template/plugin.js',
-		// 	false,
-		// 	$inits
-		// );
-
 		/**
 		 * Hide some stuff in the templates editor panel.
 		 */
-		global $hook_suffix;
-		if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
-			if ( get_post_type() === $this->post_type ) {
-				remove_meta_box( 'slugdiv', $this->post_type, 'normal' );
-				echo '<style>#visibility{display:none;} #message a{display: none;}</style>';
-			} else {
-				echo '<style>#button-tinymce-templates:before{content: "\f464"; font: 400 18px/1 dashicons; top:3px; margin-right: 3px; position: relative;}</style>';
-			}
-		}
+		if ( get_post_type() === $this->post_type ) {
+			remove_meta_box( 'slugdiv', $this->post_type, 'normal' );
+			echo '<style>#visibility{display:none;} #message a{display: none;}</style>';
 
-		/**
-		 * Add editor style to the editor.
-		 */
-		$ver = filemtime( dirname( __FILE__ ) . '/editor-style.css' );
-		$editor_style = plugins_url( 'editor-style.css?ver=' . $ver, __FILE__ );
-		add_editor_style( $editor_style );
+			/**
+			* Add editor style to the editor.
+			*/
+			$ver = filemtime( dirname( __FILE__ ) . '/editor-style.css' );
+			$editor_style = plugins_url( 'editor-style.css?ver=' . $ver, __FILE__ );
+			add_editor_style( $editor_style );
+		}
 	}
 
 	/**

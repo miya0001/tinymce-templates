@@ -51,6 +51,59 @@ class TinyMCE_Templates_Test extends WP_UnitTestCase {
 		$this->assertSame( '<p>Hello !</p>', trim( do_shortcode( '[template id="'.$post_id.'" name="Hello"]' ) ) );
 	}
 
+	/**
+	 * @test
+	 */
+	function admin_enqueue_scripts()
+	{
+		$tinymce_templates = new TinyMCE_Templates();
+
+		// css and script shoud be not loading.
+		$tinymce_templates->admin_enqueue_scripts( '' );
+		$this->assertFalse( wp_style_is( 'tinymce-templates' ) );
+		$this->assertFalse( wp_script_is( 'tinymce-templates' ) );
+
+		// css and script shoud be loading.
+		$tinymce_templates->admin_enqueue_scripts( 'post.php' );
+		$this->assertTrue( wp_style_is( 'tinymce-templates' ) );
+		$this->assertTrue( wp_script_is( 'tinymce-templates' ) );
+
+		// css and script shoud be loading.
+		$tinymce_templates->admin_enqueue_scripts( 'post-new.php' );
+		$this->assertTrue( wp_style_is( 'tinymce-templates' ) );
+		$this->assertTrue( wp_script_is( 'tinymce-templates' ) );
+	}
+
+	/**
+	 * @test
+	 */
+	function media_buttons_01()
+	{
+		$tinymce_templates = new TinyMCE_Templates();
+		$this->expectOutputRegex( '/id="button-tinymce-templates"/' );
+		$tinymce_templates->media_buttons();
+	}
+
+	/**
+	 * @test
+	 */
+	function media_buttons_02()
+	{
+		$tinymce_templates = new TinyMCE_Templates();
+		$this->expectOutputRegex( '/id="button-tinymce-templates"/' );
+		$tinymce_templates->media_buttons( 'content' );
+	}
+
+	/**
+	 * @test
+	 */
+	function media_buttons_03()
+	{
+		$tinymce_templates = new TinyMCE_Templates();
+		$this->expectOutputString( '' );
+		$tinymce_templates->media_buttons( 'editor_id_is_not_content' );
+	}
+
 	/*
 	 * Filters tinymce_templates_content
 	 */

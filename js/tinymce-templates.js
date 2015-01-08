@@ -58,7 +58,7 @@ var tinymceTemplates;
 					for (var i=0; i<tags.length; i++) {
 						var tag = tags[i].match(/[a-zA-Z0-9_]+/);
 						if ('content' === tag[0]) {
-							is_content = 'Hello World![/template]';
+							is_content = '</p><p>[/template]';
 							continue;
 						}
 						args.push(tag[0] + '=""');

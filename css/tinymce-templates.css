@@ -13,15 +13,17 @@
 #tinymce-templates-wrap {
   display: none;
   position: absolute;
-  width: 100%;
-  z-index: 999998;
-}
-#tinymce-templates-wrap .modal {
   width: 90%;
   max-width: 800px;
+  z-index: 999998;
   background-color: #ffffff;
-  margin: 0 auto;
+  margin: auto;
   box-sizing: border-box;
+  left: 0px;
+  right: 0px;
+}
+#tinymce-templates-wrap .modal {
+  width: 100%;
 }
 #tinymce-templates-wrap .modal .header {
   background-color: #f5f5f5;

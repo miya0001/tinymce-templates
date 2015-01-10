@@ -1,6 +1,30 @@
 <?php
 
-class TinyMCE_Templates_Test extends WP_UnitTestCase {
+class TinyMCE_Templates_Test extends WP_UnitTestCase
+{
+	/**
+	 * @test
+	 */
+	public function get_template()
+	{
+		$tinymce_templates = new TinyMCE_Templates();
+		$templates = $tinymce_templates->get_templates();
+
+		$this->assertSame( array(), $templates ); // should be empty array
+
+		$post_id = $this->factory->post->create( array(
+			'post_type' => 'tinymcetemplates',
+			'post_content' => 'Hello',
+		) );
+		$templates = $tinymce_templates->get_templates();
+
+		$this->assertTrue( isset( $templates[ $post_id ] ) );
+
+		$_GET['template_id'] = $post_id;
+		$templates = $tinymce_templates->get_templates();
+
+		$this->assertSame( "<p>Hello</p>\n", $templates['content'] );
+	}
 
 	/**
 	 * @test

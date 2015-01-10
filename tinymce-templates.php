@@ -538,6 +538,14 @@ class TinyMCE_Templates {
 
 		header( 'Content-Type: application/javascript; charset=UTF-8' );
 
+		$templates = $this->get_templates();
+
+		echo json_encode( $templates );
+		exit;
+	}
+
+	public function get_templates()
+	{
 		$p = array(
 			'post_status' => 'publish',
 			'post_type'   => $this->post_type,
@@ -548,39 +556,37 @@ class TinyMCE_Templates {
 
 		$posts = get_posts( $p );
 
-		$arr = array();
+		$templates = array();
 
 		foreach ( $posts as $p ) {
 			$ID = intval( $p->ID );
 			$name = esc_html( apply_filters( 'tinymce_template_title', $p->post_title ) );
 			$desc = esc_html( apply_filters( 'tinymce_template_excerpt', $p->post_excerpt ) );
-			$arr[ $ID ] = array(
+			$templates[ $ID ] = array(
 				'title'        => $name,
 				'is_shortcode' => get_post_meta( $ID, 'insert_as_shortcode', true ),
 				'content'      => wpautop( $p->post_content ),
 			);
 		}
 
-		$arr = apply_filters( 'tinymce_templates_post_objects', $arr );
+		$templates = apply_filters( 'tinymce_templates_post_objects', $templates );
 
 		if ( isset( $_GET['template_id'] ) && $_GET['template_id'] ) {
-			if ( isset( $arr[ $_GET['template_id'] ] ) && $arr[ $_GET['template_id'] ] ) {
-				$p = $arr[ $_GET['template_id'] ];
+			if ( isset( $templates[ $_GET['template_id'] ] ) && $templates[ $_GET['template_id'] ] ) {
+				$p = $templates[ $_GET['template_id'] ];
 				$content = apply_filters(
 					'tinymce_templates',
 					$p['content'],
 					$p['content']
 				);
-				echo json_encode( array(
+				return array(
 					'content' => $content,
 					'is_shortcode' => $p['is_shortcode']
-				) );
+				);
 			}
-			exit;
 		}
 
-		echo json_encode( $arr );
-		exit;
+		return $templates;
 	}
 
 	/**

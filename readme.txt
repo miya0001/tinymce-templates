@@ -11,7 +11,7 @@ TinyMCE Template plugin will enable to use HTML template on WordPress Visual Edi
 
 TinyMCE Template plugin will enable to use HTML template on WordPress Visual Editor.
 
-* [Support Site](http://miya0001.github.io/tinymce-templates/)
+* [Website](http://miya0001.github.io/tinymce-templates/)
 * [GitHub](https://github.com/miya0001/tinymce-templates)
 
 = Some features: =

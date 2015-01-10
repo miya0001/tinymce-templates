@@ -304,7 +304,7 @@ class TinyMCE_Templates {
 			* Add editor style to the editor.
 			*/
 			$ver = filemtime( dirname( __FILE__ ) . '/editor-style.css' );
-			$editor_style = plugins_url( 'editor-style.css?ver=' . $ver, __FILE__ );
+			$editor_style = plugins_url( 'css/editor-style.css?ver=' . $ver, __FILE__ );
 			add_editor_style( $editor_style );
 		}
 	}

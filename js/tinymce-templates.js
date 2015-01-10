@@ -131,6 +131,7 @@ var tinymceTemplates;
 				var styles = content_css.replace(/(\s+)/g, "").split(',');
 
 				var html = '<!DOCTYPE html><html><head>';
+				html += '<style>body{ padding: 0 !important; margin: 20px !important; }</style>';
 				for (var i=0; i<styles.length; i++) {
 					var link = $('<link rel="stylesheet" type="text/css" media="all" />');
 					link.attr('href', styles[i]);

@@ -307,6 +307,20 @@ class TinyMCE_Templates {
 			$editor_style = plugins_url( 'css/editor-style.css?ver=' . $ver, __FILE__ );
 			add_editor_style( $editor_style );
 		}
+
+		global $content_width;
+
+		if ( isset( $content_width ) && intval( $content_width ) ) {
+			/**
+			 * I want to set same width to preview with $content_width
+			 */
+			echo '<style type="text/css">';
+			$preview_width = $content_width + 40; // should be same with padding * 2
+			echo '#tinymce-templates-preview{ max-width: '.$preview_width.'px; }';
+			$wrap_width = $content_width + 80; // should be same with padding * 4
+			echo '#tinymce-templates-wrap{ max-width: '.$wrap_width.'px; }';
+			echo '</style>';
+		}
 	}
 
 	/**

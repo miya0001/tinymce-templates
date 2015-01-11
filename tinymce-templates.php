@@ -35,9 +35,9 @@ THE SOFTWARE.
 $tinymce_templates = new TinyMCE_Templates();
 $tinymce_templates->register();
 
-class TinyMCE_Templates {
-
-	private $post_type   = 'tinymcetemplates';
+class TinyMCE_Templates
+{
+	private $post_type = 'tinymcetemplates';
 	private $base_url;
 	private $translators = array(
 		'Takayuki Miyauchi' => array(
@@ -120,7 +120,6 @@ class TinyMCE_Templates {
 
 		add_filter( 'post_row_actions', array( $this, 'row_actions' ), 10, 2 );
 		add_filter( 'page_row_actions', array( $this, 'row_actions' ), 10, 2 );
-		//add_filter( 'tinymce_templates_content', array( $this, 'tinymce_templates_content' ) );
 
 		add_action( 'admin_head-post-new.php', array( $this, 'admin_head' ) );
 		add_action( 'admin_head-post.php', array( $this, 'admin_head' ) );
@@ -142,13 +141,18 @@ class TinyMCE_Templates {
 		add_filter( 'tinymce_templates_content', 'shortcode_unautop' );
 		add_filter( 'tinymce_templates_content', 'prepend_attachment' );
 		add_filter( 'tinymce_templates_content', 'do_shortcode', 11 );
+		add_filter( 'tinymce_templates_content', array( $GLOBALS['wp_embed'], 'run_shortcode' ), 8 );
+		add_filter( 'tinymce_templates_content', array( $GLOBALS['wp_embed'], 'autoembed' ), 8 );
 
 		add_filter( 'tinymce_templates_preview', 'wptexturize' );
 		add_filter( 'tinymce_templates_preview', 'convert_smilies' );
 		add_filter( 'tinymce_templates_preview', 'convert_chars' );
+		add_filter( 'tinymce_templates_preview', 'wpautop' );
 		add_filter( 'tinymce_templates_preview', 'shortcode_unautop' );
 		add_filter( 'tinymce_templates_preview', 'prepend_attachment' );
 		add_filter( 'tinymce_templates_preview', 'do_shortcode', 11 );
+		// add_filter( 'tinymce_templates_preview', array( $GLOBALS['wp_embed'], 'run_shortcode' ), 8 );
+		// add_filter( 'tinymce_templates_preview', array( $GLOBALS['wp_embed'], 'autoembed' ), 8 );
 
 		add_shortcode( 'template', array( $this, 'template_shortcode' ) );
 	}
@@ -231,31 +235,6 @@ class TinyMCE_Templates {
 		}
 
 		return apply_filters( 'tinymce_templates_content', $post_content, $p, $content );
-	}
-
-	/**
-	 * Filters tinymce_templates_content.
-	 *
-	 * @param  string $template Template contents.
-	 * @return string Template contents.
-	 */
-	public function tinymce_templates_content( $template )
-	{
-		$default_filters = array(
-			'wptexturize',
-			'convert_smilies',
-			'convert_chars',
-			'wpautop',
-			'shortcode_unautop',
-			'prepend_attachment',
-			'do_shortcode', // should be last
-		);
-
-		foreach ( $default_filters as $filter ) {
-			$template = call_user_func( $filter, $template );
-		}
-
-		return $template;
 	}
 
 	/**
@@ -433,6 +412,7 @@ class TinyMCE_Templates {
 	public function insert_as_shortcode_meta_box( $post, $box )
 	{
 		$res = get_post_meta( $post->ID, 'insert_as_shortcode', true );
+
 		if ( $res ) {
 			echo '<label><input type="radio" name="is_shortcode" value="1" checked> '.__( 'Yes' ).'</label><br />';
 			echo '<label><input type="radio" name="is_shortcode" value="0"> '.__( 'No' ).'</label>';
@@ -575,7 +555,7 @@ class TinyMCE_Templates {
 	{
 		nocache_headers();
 
-		if ( ! wp_verify_nonce( $_GET['nonce'], 'tinymce_templates' ) ) {
+		if ( ! isset( $_GET['nonce'] ) || ! wp_verify_nonce( $_GET['nonce'], 'tinymce_templates' ) ) {
 			return;
 		}
 
@@ -608,7 +588,7 @@ class TinyMCE_Templates {
 			$templates[ $ID ] = array(
 				'title'        => $name,
 				'is_shortcode' => get_post_meta( $ID, 'insert_as_shortcode', true ),
-				'content'      => wpautop( $p->post_content )
+				'content'      => $p->post_content,
 			);
 		}
 
@@ -627,7 +607,7 @@ class TinyMCE_Templates {
 					$p['content']
 				);
 				return array(
-					'content'      => $content,
+					'content'      => wpautop( $content ),
 					'preview'      => $preview,
 					'is_shortcode' => $p['is_shortcode'],
 				);

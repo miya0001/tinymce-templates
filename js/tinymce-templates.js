@@ -129,7 +129,7 @@ var tinymceTemplates;
 			}).done(function(data){
 				var content_css = tinyMCEPreInit.mceInit.content.content_css;
 				var styles = content_css.replace(/(\s+)/g, "").split(',');
-console.log(data.preview);
+
 				var html = '<!DOCTYPE html><html><head>';
 				html += '<style>body{ padding: 0 !important; margin: 20px !important; }</style>';
 				for (var i=0; i<styles.length; i++) {
@@ -191,10 +191,10 @@ console.log(data.preview);
 			$('#tinymce-templates-preview').css('height', windowHeight * 0.5);
 
 			var height = $('#tinymce-templates-wrap').height();
-
 			var top = (windowHeight / 2) - (height / 2) - ($('#wpadminbar').height() / 2);
-			if (top < (0 - $('#wpadminbar').height() + 8)) {
-				top = (0 - $('#wpadminbar').height() + 8);
+
+			if (top < 16) {
+				top = 16;
 			} else if (top > 100) {
 				top = 100;
 			}

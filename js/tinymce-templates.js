@@ -129,7 +129,7 @@ var tinymceTemplates;
 			}).done(function(data){
 				var content_css = tinyMCEPreInit.mceInit.content.content_css;
 				var styles = content_css.replace(/(\s+)/g, "").split(',');
-
+console.log(data.preview);
 				var html = '<!DOCTYPE html><html><head>';
 				html += '<style>body{ padding: 0 !important; margin: 20px !important; }</style>';
 				for (var i=0; i<styles.length; i++) {
@@ -138,7 +138,7 @@ var tinymceTemplates;
 					html += $('<div />').html(link).html(); // getting innerHTML
 				}
 				html += '</head><body class="mceContentBody">';
-				html += data.content;
+				html += data.preview;
 				html += '</body></html>';
 
 				var iframe = document.getElementById('tinymce-templates-preview');

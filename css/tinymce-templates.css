@@ -12,7 +12,7 @@
 }
 #tinymce-templates-wrap {
   display: none;
-  position: absolute;
+  position: fixed;
   width: 90%;
   z-index: 999999;
   background-color: #ffffff;

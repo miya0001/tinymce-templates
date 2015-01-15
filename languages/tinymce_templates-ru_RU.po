@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2015-01-03 23:30:59+00:00\n"
+"POT-Creation-Date: 2015-01-15 02:05:20+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ihtimir <ihtimir@gmail.com>\n"
 "Language-Team: \n"
@@ -14,90 +14,83 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: tinymce-templates.php:142 tinymce-templates.php:143
+#: tinymce-templates.php:203 tinymce-templates.php:206
+#: tinymce-templates.php:518 tinymce-templates.php:527
 #, fuzzy
 msgid "Insert Template"
 msgstr "Новый шаблон"
 
-#: tinymce-templates.php:196 tinymce-templates.php:230
-#: tinymce-templates.php:247
+#: tinymce-templates.php:255 tinymce-templates.php:273
+#: tinymce-templates.php:290
 msgid "Copy to a new template"
 msgstr "Скопировать в новый шаблон"
 
-#: tinymce-templates.php:210
-#, fuzzy
-msgid "Insert template"
-msgstr "Новый шаблон"
-
-#: tinymce-templates.php:211 tinymce-templates.php:315
-#: tinymce-templates.php:317
+#: tinymce-templates.php:343 tinymce-templates.php:345
 msgid "Templates"
 msgstr "Шаблоны"
 
-#: tinymce-templates.php:212
-#, fuzzy
-msgid "No templates defined"
-msgstr "Шаблоны не найдены."
-
-#: tinymce-templates.php:213
-msgid "Note: The template will be inserted as shortcode."
-msgstr ""
-
-#: tinymce-templates.php:318
+#: tinymce-templates.php:346
 msgid "Add New Template"
 msgstr "Добавить новый шаблон"
 
-#: tinymce-templates.php:319
+#: tinymce-templates.php:347
 msgid "Edit Template"
 msgstr "Редактировать шаблон"
 
-#: tinymce-templates.php:320
+#: tinymce-templates.php:348
 msgid "Add New"
 msgstr "Добавить новый"
 
-#: tinymce-templates.php:321
+#: tinymce-templates.php:349
 msgid "New Template"
 msgstr "Новый шаблон"
 
-#: tinymce-templates.php:322
+#: tinymce-templates.php:350
 msgid "View Template"
 msgstr "Просмотреть шаблон"
 
-#: tinymce-templates.php:323
+#: tinymce-templates.php:351
 msgid "No templatess found."
 msgstr "Шаблоны не найдены."
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:352
 msgid "No templates found in Trash."
 msgstr "В корзине не найдено шаблонов."
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:356
 msgid "Search Templates"
 msgstr "Поиск шаблонов"
 
-#: tinymce-templates.php:361
+#: tinymce-templates.php:389
 msgid "Insert as Shortcode"
 msgstr ""
 
-#: tinymce-templates.php:370
+#: tinymce-templates.php:398
 msgid "Translators"
 msgstr "Переводчики"
 
-#: tinymce-templates.php:388 tinymce-templates.php:391
+#: tinymce-templates.php:417 tinymce-templates.php:420
 msgid "Yes"
 msgstr ""
 
-#: tinymce-templates.php:389 tinymce-templates.php:392
+#: tinymce-templates.php:418 tinymce-templates.php:421
 msgid "No"
+msgstr ""
+
+#: tinymce-templates.php:526
+msgid "Note: The template will be inserted as shortcode."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "TinyMCE Templates"
 msgstr "Шаблоны TinyMCE"
 
+#. #-#-#-#-#  tinymce_templates.pot (TinyMCE Templates 4.3.2)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
+#. #-#-#-#-#  tinymce_templates.pot (TinyMCE Templates 4.3.2)  #-#-#-#-#
+#. Author URI of the plugin/theme
 #, fuzzy
-msgid "https://github.com/miya0001/tinymce-templates"
+msgid "http://miya0001.github.io/tinymce-templates/"
 msgstr "http://wpist.me/wp/tinymce-templates/"
 
 #. Description of the plugin/theme
@@ -110,9 +103,13 @@ msgstr "Плагин шаблонов TinyMCE будет включен для �
 msgid "Takayuki Miyauchi"
 msgstr "Takayuki Miyauchi"
 
-#. Author URI of the plugin/theme
-msgid "https://github.com/miya0001/"
-msgstr ""
+#, fuzzy
+#~ msgid "Insert template"
+#~ msgstr "Новый шаблон"
+
+#, fuzzy
+#~ msgid "No templates defined"
+#~ msgstr "Шаблоны не найдены."
 
 #~ msgid "Shared"
 #~ msgstr "Общедоступный"

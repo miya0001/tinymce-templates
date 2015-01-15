@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
-"POT-Creation-Date: 2015-01-03 23:30:59+00:00\n"
+"POT-Creation-Date: 2015-01-15 02:05:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,86 +17,81 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: tinymce-templates.php:142 tinymce-templates.php:143
+#: tinymce-templates.php:203 tinymce-templates.php:206
+#: tinymce-templates.php:518 tinymce-templates.php:527
 msgid "Insert Template"
 msgstr "テンプレートを挿入"
 
-#: tinymce-templates.php:196 tinymce-templates.php:230
-#: tinymce-templates.php:247
+#: tinymce-templates.php:255 tinymce-templates.php:273
+#: tinymce-templates.php:290
 msgid "Copy to a new template"
 msgstr "新規テンプレートにコピー"
 
-#: tinymce-templates.php:210
-msgid "Insert template"
-msgstr "テンプレートを挿入"
-
-#: tinymce-templates.php:211 tinymce-templates.php:315
-#: tinymce-templates.php:317
+#: tinymce-templates.php:343 tinymce-templates.php:345
 msgid "Templates"
 msgstr "テンプレート"
 
-#: tinymce-templates.php:212
-msgid "No templates defined"
-msgstr "テンプレートが見つかりませんでした。"
-
-#: tinymce-templates.php:213
-msgid "Note: The template will be inserted as shortcode."
-msgstr "備考: このテンプレートはショートコードとして挿入されます。"
-
-#: tinymce-templates.php:318
+#: tinymce-templates.php:346
 msgid "Add New Template"
 msgstr "テンプレートの新規登録"
 
-#: tinymce-templates.php:319
+#: tinymce-templates.php:347
 msgid "Edit Template"
 msgstr "テンプレートを編集"
 
-#: tinymce-templates.php:320
+#: tinymce-templates.php:348
 msgid "Add New"
 msgstr "新規追加"
 
-#: tinymce-templates.php:321
+#: tinymce-templates.php:349
 msgid "New Template"
 msgstr "新しいテンプレート"
 
-#: tinymce-templates.php:322
+#: tinymce-templates.php:350
 msgid "View Template"
 msgstr "テンプレートを表示"
 
-#: tinymce-templates.php:323
+#: tinymce-templates.php:351
 msgid "No templatess found."
 msgstr "テンプレートが見つかりませんでした。"
 
-#: tinymce-templates.php:324
+#: tinymce-templates.php:352
 msgid "No templates found in Trash."
 msgstr "ゴミ箱内にテンプレートが見つかりませんでした。"
 
-#: tinymce-templates.php:328
+#: tinymce-templates.php:356
 msgid "Search Templates"
 msgstr "テンプレートを検索"
 
-#: tinymce-templates.php:361
+#: tinymce-templates.php:389
 msgid "Insert as Shortcode"
 msgstr "ショートコードとして挿入"
 
-#: tinymce-templates.php:370
+#: tinymce-templates.php:398
 msgid "Translators"
 msgstr "翻訳者"
 
-#: tinymce-templates.php:388 tinymce-templates.php:391
+#: tinymce-templates.php:417 tinymce-templates.php:420
 msgid "Yes"
 msgstr ""
 
-#: tinymce-templates.php:389 tinymce-templates.php:392
+#: tinymce-templates.php:418 tinymce-templates.php:421
 msgid "No"
 msgstr ""
+
+#: tinymce-templates.php:526
+msgid "Note: The template will be inserted as shortcode."
+msgstr "備考: このテンプレートはショートコードとして挿入されます。"
 
 #. Plugin Name of the plugin/theme
 msgid "TinyMCE Templates"
 msgstr "TinyMCE テンプレート"
 
+#. #-#-#-#-#  tinymce_templates.pot (TinyMCE Templates 4.3.2)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-msgid "https://github.com/miya0001/tinymce-templates"
+#. #-#-#-#-#  tinymce_templates.pot (TinyMCE Templates 4.3.2)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://miya0001.github.io/tinymce-templates/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -111,9 +106,11 @@ msgstr ""
 msgid "Takayuki Miyauchi"
 msgstr "Takayuki Miyauchi"
 
-#. Author URI of the plugin/theme
-msgid "https://github.com/miya0001/"
-msgstr ""
+#~ msgid "Insert template"
+#~ msgstr "テンプレートを挿入"
+
+#~ msgid "No templates defined"
+#~ msgstr "テンプレートが見つかりませんでした。"
 
 #~ msgid "Shared"
 #~ msgstr "共有"

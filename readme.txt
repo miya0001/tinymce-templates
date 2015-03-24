@@ -3,7 +3,7 @@ Contributors: miyauchi
 Tags: tinymce, Visual Editor, template
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 4.3.3
+Stable tag: 4.3.4
 
 TinyMCE Template plugin will enable to use HTML template on WordPress Visual Editor.
 
@@ -35,6 +35,7 @@ TinyMCE Template plugin will enable to use HTML template on WordPress Visual Edi
 * Russian(ru_RU) - ihtimir
 * Slovak(sk_SK) - [Branco](http://webhostinggeeks.com/user-reviews/)
 * Hebrew(he_IL) - [Ahrale](http://atar4u.com/)
+* Chinese(zh_CN) - [Riant](http://www.notidea.com/)
 
 You can send your own language pack to me.
 

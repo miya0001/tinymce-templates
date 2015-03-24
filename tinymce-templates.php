@@ -32,9 +32,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-$tinymce_templates = new TinyMCE_Templates();
-$tinymce_templates->register();
-
 class TinyMCE_Templates
 {
 	private $post_type = 'tinymcetemplates';
@@ -100,7 +97,7 @@ class TinyMCE_Templates
 	 * @param  none
 	 * @return none
 	 */
-	public function register()
+	public function __construct()
 	{
 		$this->base_url = plugins_url( dirname( plugin_basename( __FILE__ ) ) );
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ) );
@@ -120,7 +117,7 @@ class TinyMCE_Templates
 			dirname( plugin_basename( __FILE__ ) ).'/languages'
 		);
 
-		$this->register_post_type();
+		add_filter( 'init', array( $this, 'register_post_type' ), 20 );
 
 		add_filter( 'post_row_actions', array( $this, 'row_actions' ), 10, 2 );
 		add_filter( 'page_row_actions', array( $this, 'row_actions' ), 10, 2 );
@@ -195,21 +192,18 @@ class TinyMCE_Templates
 	 */
 	public function media_buttons( $editor_id = 'content' )
 	{
-		if ( 'content' === $editor_id ) {
-			$button_html = '<a id="%s" class="%s" href="#" data-editor="%s" title="%s">';
-			$button_html .= '<span class="%s" style="%s"></span> %s';
-			$button_html .= '</a>';
-			printf(
-				$button_html,
-				'button-tinymce-templates',
-				'button',
-				esc_attr( $editor_id ),
-				esc_attr( __( 'Insert Template', 'tinymce_templates' ) ),
-				'dashicons dashicons-edit',
-				'margin-top: 3px;',
-				esc_html( __( 'Insert Template', 'tinymce_templates' ) )
-			);
-		}
+    $button_html = '<a class="%s" href="#" data-editor="%s" title="%s">';
+    $button_html .= '<span class="%s" style="%s"></span> %s';
+    $button_html .= '</a>';
+    printf(
+      $button_html,
+      'button button-tinymce-templates',
+      esc_attr( $editor_id ),
+      esc_attr( __( 'Insert Template', 'tinymce_templates' ) ),
+      'dashicons dashicons-edit',
+      'margin-top: 3px;',
+      esc_html( __( 'Insert Template', 'tinymce_templates' ) )
+    );
 	}
 
 	/**
@@ -341,7 +335,7 @@ class TinyMCE_Templates
 	 * @param  none
 	 * @return none
 	 */
-	private function register_post_type()
+	public function register_post_type()
 	{
 		$args = array(
 			'label' => __( 'Templates', 'tinymce_templates' ),
@@ -366,7 +360,7 @@ class TinyMCE_Templates
 			'show_ui' => true,
 			'capability_type' => 'post',
 			'hierarchical' => false,
-			'menu_position' => 100,
+			'menu_position' => apply_filters( 'tinymce_templates_menu_position', 64 ),
 			'rewrite' => false,
 			'show_in_nav_menus' => false,
 			'register_meta_box_cb' => array( $this, 'add_meta_box' ),
@@ -635,5 +629,6 @@ class TinyMCE_Templates
 
 } // end class tinymceTemplates
 
+$tinymce_templates = new TinyMCE_Templates; // Instantiate singleton
 
 // eof

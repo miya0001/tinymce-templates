@@ -604,8 +604,10 @@ class TinyMCE_Templates
 			// Find a template with the ID
 			$p = array();
 			foreach ( $templates as $tpl ) {
-				if ( intval( $tpl['id'] ) != intval( $_GET['template_id'] ) ) continue;
-				$p = $tpl;
+				if ( intval( $tpl['id'] ) == intval( $_GET['template_id'] ) ) {
+					$p = $tpl;
+					break;
+				}
 			}
 
 			if ( $p ) {

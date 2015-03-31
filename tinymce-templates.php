@@ -375,6 +375,7 @@ class TinyMCE_Templates
 				'editor',
 				'revisions',
 				'author',
+				'page-attributes',
 			)
 		);
 		register_post_type( $this->post_type, $args );
@@ -576,8 +577,7 @@ class TinyMCE_Templates
 		$p = array(
 			'post_status' => 'publish',
 			'post_type'   => $this->post_type,
-			'orderby'     => 'date',
-			'order'       => 'DESC',
+			'orderby'     => array( 'menu_order' => 'ASC', 'date' => 'DESC' ),
 			'numberposts' => -1,
 		);
 
@@ -589,7 +589,8 @@ class TinyMCE_Templates
 			$ID = intval( $p->ID );
 			$name = esc_html( apply_filters( 'tinymce_template_title', $p->post_title ) );
 			$desc = esc_html( apply_filters( 'tinymce_template_excerpt', $p->post_excerpt ) );
-			$templates[ $ID ] = array(
+			$templates[] = array(
+				'id'           => $ID,
 				'title'        => $name,
 				'is_shortcode' => get_post_meta( $ID, 'insert_as_shortcode', true ),
 				'content'      => $p->post_content,
@@ -599,8 +600,15 @@ class TinyMCE_Templates
 		$templates = apply_filters( 'tinymce_templates_post_objects', $templates );
 
 		if ( isset( $_GET['template_id'] ) && $_GET['template_id'] ) {
-			if ( isset( $templates[ $_GET['template_id'] ] ) && $templates[ $_GET['template_id'] ] ) {
-				$p = $templates[ $_GET['template_id'] ];
+
+			// Find a template with the ID
+			$p = array();
+			foreach ( $templates as $tpl ) {
+				if ( intval( $tpl['id'] ) != intval( $_GET['template_id'] ) ) continue;
+				$p = $tpl;
+			}
+
+			if ( $p ) {
 				$content = apply_filters(
 					'tinymce_templates',
 					$p['content'],

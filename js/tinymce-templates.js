@@ -97,7 +97,7 @@ var tinymceTemplates;
 			}).done(function(data){
 				$.each(data, function(key, tpl){
 					var option = $('<option />');
-					$(option).attr('value', key);
+					$(option).attr('value', tpl.id);
 					$(option).text(tpl.title);
 					$('#tinymce-templates-list').append(option);
 				});

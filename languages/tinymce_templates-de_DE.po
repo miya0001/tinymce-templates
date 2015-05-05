@@ -1,158 +1,99 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Copyright (C) 2015 TinyMCE Templates
+# This file is distributed under the same license as the TinyMCE Templates package.
 msgid ""
 msgstr ""
-"Project-Id-Version: TinyMCE Templates 1.1.1\n"
+"Project-Id-Version: TinyMCE Templates 4.3.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
 "POT-Creation-Date: 2015-01-15 02:05:20+00:00\n"
-"PO-Revision-Date: 2011-05-02 14:57+0100\n"
-"Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
-"Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: German\n"
+"PO-Revision-Date: 2015-05-05 17:50+0100\n"
+"Last-Translator: Nebojsa Simic\n"
+"Language-Team: \n"
+"Language: de_AT\n"
+"X-Generator: Poedit 1.7.5\n"
 
-#: tinymce-templates.php:203 tinymce-templates.php:206
-#: tinymce-templates.php:518 tinymce-templates.php:527
-#, fuzzy
+#: tinymce-templates.php:203 tinymce-templates.php:206 tinymce-templates.php:518
+#: tinymce-templates.php:527
 msgid "Insert Template"
-msgstr "Neue Vorlagen erstellen"
+msgstr "Vorlage hinzufügen"
 
-#: tinymce-templates.php:255 tinymce-templates.php:273
-#: tinymce-templates.php:290
+#: tinymce-templates.php:255 tinymce-templates.php:273 tinymce-templates.php:290
 msgid "Copy to a new template"
-msgstr ""
+msgstr "In eine neue Vorlage kopieren"
 
 #: tinymce-templates.php:343 tinymce-templates.php:345
 msgid "Templates"
 msgstr "Vorlagen"
 
 #: tinymce-templates.php:346
-#, fuzzy
 msgid "Add New Template"
-msgstr "Neue Vorlagen erstellen"
+msgstr "Eine neue Vorlage hinzufügen"
 
 #: tinymce-templates.php:347
-#, fuzzy
 msgid "Edit Template"
-msgstr "Vorlagen bearbeiten"
+msgstr "Vorlage bearbeiten"
 
 #: tinymce-templates.php:348
 msgid "Add New"
-msgstr "Erstellen"
+msgstr "Hinzufügen"
 
 #: tinymce-templates.php:349
-#, fuzzy
 msgid "New Template"
-msgstr "Neue Vorlagen erstellen"
+msgstr "Neue Vorlage"
 
 #: tinymce-templates.php:350
-#, fuzzy
 msgid "View Template"
-msgstr "Vorlage speichern"
+msgstr "Vorlagen ansehen"
 
 #: tinymce-templates.php:351
 msgid "No templatess found."
-msgstr ""
+msgstr "Keine Vorlagen"
 
 #: tinymce-templates.php:352
 msgid "No templates found in Trash."
-msgstr ""
+msgstr "Keine Vorlagen im Papierkorb"
 
 #: tinymce-templates.php:356
-#, fuzzy
 msgid "Search Templates"
-msgstr "Vorlage speichern"
+msgstr "Vorlagen suchen"
 
 #: tinymce-templates.php:389
 msgid "Insert as Shortcode"
-msgstr ""
+msgstr "Als Shortcode hinzufügen"
 
 #: tinymce-templates.php:398
 msgid "Translators"
-msgstr ""
+msgstr "Übersetzer"
 
 #: tinymce-templates.php:417 tinymce-templates.php:420
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: tinymce-templates.php:418 tinymce-templates.php:421
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: tinymce-templates.php:526
 msgid "Note: The template will be inserted as shortcode."
-msgstr ""
+msgstr "Diese Vorlage wird als Shortcode hinzugefügt"
 
 #. Plugin Name of the plugin/theme
-#, fuzzy
 msgid "TinyMCE Templates"
-msgstr "TinyMCE-Vorlagen"
+msgstr "TinyMCE Vorlagen"
 
-#. #-#-#-#-#  tinymce_templates.pot (TinyMCE Templates 4.3.2)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  tinymce_templates.pot (TinyMCE Templates 4.3.2)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "http://miya0001.github.io/tinymce-templates/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"TinyMCE Templates plugin will enable to use HTML template on WordPress "
-"Visual Editor."
+"TinyMCE Templates plugin will enable to use HTML template on WordPress Visual "
+"Editor."
 msgstr ""
 
 #. Author of the plugin/theme
 msgid "Takayuki Miyauchi"
 msgstr ""
-
-#, fuzzy
-#~ msgid "Insert template"
-#~ msgstr "Neue Vorlagen erstellen"
-
-#~ msgid "Shared"
-#~ msgstr "Geteilt"
-
-#~ msgid "Share"
-#~ msgstr "Teilen"
-
-#~ msgid "Private"
-#~ msgstr "Privat"
-
-#~ msgid "Templates permanently deleted."
-#~ msgstr "Vorlagen dauerhaft entfernt."
-
-#~ msgid "Name"
-#~ msgstr "Name"
-
-#~ msgid "Description"
-#~ msgstr "Beschreibung"
-
-#~ msgid "Author"
-#~ msgstr "Autor"
-
-#~ msgid "Delete checked items"
-#~ msgstr "Ausgewählte Elemente entfernen"
-
-#~ msgid "Template saved."
-#~ msgstr "Vorlagen gespeichert."
-
-#~ msgid "All entry must not be blank."
-#~ msgstr "Bitte füllen Sie alle Felder aus."
-
-#~ msgid "Template Name"
-#~ msgstr "Name der Vorlage"
-
-#~ msgid "Template Description"
-#~ msgstr "Beschreibung der Vorlage"
-
-#~ msgid "Template Contents"
-#~ msgstr "Inhalt der Vorlage"
-
-#~ msgid "Edit"
-#~ msgstr "Bearbeiten"

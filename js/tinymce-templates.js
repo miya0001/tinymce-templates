@@ -8,7 +8,7 @@ var tinymceTemplates;
 
 		init: function()
 		{
-			$('#button-tinymce-templates').bind('click', function(e){
+			$(document).on('click', '.button-tinymce-templates', function(e){
 				e.preventDefault();
 				tinymceTemplates.get_template_list();
 				tinymceTemplates.open();
@@ -127,7 +127,14 @@ var tinymceTemplates;
 				dataType: 'json',
 				data: args
 			}).done(function(data){
-				var content_css = tinyMCEPreInit.mceInit.content.content_css;
+        var tm = tinyMCEPreInit.mceInit;
+        var content_css = '';
+        for ( var i in tm ) {
+          if ( tm[i].content_css ) {
+            content_css = tm[i].content_css;
+            break;
+          }
+        }
 				var styles = content_css.replace(/(\s+)/g, "").split(',');
 
 				var html = '<!DOCTYPE html><html><head>';

@@ -65,7 +65,7 @@ var tinymceTemplates;
 					for (var i=0; i<tags.length; i++) {
 						var tag = tags[i].match(/[a-zA-Z0-9_]+/);
 						if ('content' === tag[0]) {
-							is_content = '</p><p>[/template]';
+							is_content = '[/template]';
 							continue;
 						}
 						args.push(tag[0] + '=""');
@@ -73,9 +73,9 @@ var tinymceTemplates;
 				}
 
 				if (0 < args.length) {
-					html = '<p>[template id="' + tinymceTemplates.template_id + '" ' + args.join(' ')+']' + is_content + '</p>';
+					html = '[template id="' + tinymceTemplates.template_id + '" ' + args.join(' ')+']' + is_contentz;
 				} else {
-					html = '<p>[template id="' + tinymceTemplates.template_id + '"]' + is_content + '</p>';
+					html = '[template id="' + tinymceTemplates.template_id + '"]' + is_content;
 				}
 
 				wp.media.editor.insert(html);
@@ -127,8 +127,7 @@ var tinymceTemplates;
 				dataType: 'json',
 				data: args
 			}).done(function(data){
-				var content_css = tinyMCEPreInit.mceInit.content.content_css;
-				var styles = content_css.replace(/(\s+)/g, "").split(',');
+				var styles = tinymce_templates_editor_stylesheets;
 
 				var html = '<!DOCTYPE html><html><head>';
 				html += '<style>body{ padding: 0 !important; margin: 20px !important; }</style>';

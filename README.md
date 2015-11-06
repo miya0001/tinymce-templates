@@ -1,4 +1,4 @@
-# Simple Map
+# TinyMCE Templates
 
 [![Build Status](https://travis-ci.org/miya0001/tinymce-templates.svg)](https://travis-ci.org/miya0001/tinymce-templates)
 [![](https://img.shields.io/wordpress/plugin/dt/tinymce-templates.svg)](https://wordpress.org/plugins/tinymce-templates/)

@@ -2,8 +2,8 @@
 Contributors: miyauchi
 Tags: tinymce, Visual Editor, template
 Requires at least: 4.0
-Tested up to: 4.3
-Stable tag: 4.4.2
+Tested up to: 4.4
+Stable tag: 4.4.3
 
 TinyMCE Template plugin will enable to use HTML template on WordPress Visual Editor.
 
@@ -62,6 +62,10 @@ add_filter( 'tinymce_templates_enable_media_buttons', function(){
 4. Copy to new template from Admin Bar.
 
 == Changelog ==
+
+= 4.4.3 =
+
+* Tested on WordPress 4.4.
 
 = 4.4.0 =
 

@@ -8,7 +8,7 @@ var tinymceTemplates;
 
 		init: function()
 		{
-			$('#button-tinymce-templates').bind('click', function(e){
+			$(document).on('click', '.button-tinymce-templates', function(e){
 				e.preventDefault();
 				tinymceTemplates.get_template_list();
 				tinymceTemplates.open();

@@ -207,7 +207,7 @@ class TinyMCE_Templates
 			printf(
 				$button_html,
 				'button-tinymce-templates',
-				'button',
+				'button button-tinymce-templates',
 				esc_attr( $editor_id ),
 				esc_attr( __( 'Insert Template', 'tinymce_templates' ) ),
 				'dashicons dashicons-edit',

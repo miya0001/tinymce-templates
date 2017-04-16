@@ -18,7 +18,15 @@ class TinyMCE_Templates_Test extends WP_UnitTestCase
 		) );
 		$templates = $tinymce_templates->get_templates();
 
-		$this->assertTrue( isset( $templates[ $post_id ] ) );
+		// Find a template with the ID
+		$found = false;
+		foreach ( $templates as $tpl ) {
+			if ( isset( $tpl['id'] ) && intval( $tpl['id'] ) == $post_id ) {
+				$found = true;
+				break;
+			}
+		}
+		$this->assertTrue( $found );
 
 		$_GET['template_id'] = $post_id;
 		$templates = $tinymce_templates->get_templates();

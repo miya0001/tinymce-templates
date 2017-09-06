@@ -13,7 +13,7 @@ matrix:
 
 env:
   matrix:
-    - WP_VERSION=trunk WP_MULTISITE=0
+    - WP_VERSION=nightly WP_MULTISITE=0
     - WP_VERSION=latest WP_MULTISITE=0
     - WP_VERSION=4.0 WP_MULTISITE=0
   global:

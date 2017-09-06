@@ -1,0 +1,103 @@
+# Copyright (C) 2015 TinyMCE Templates
+# This file is distributed under the same license as the TinyMCE Templates package.
+msgid ""
+msgstr ""
+"Project-Id-Version: TinyMCE Templates 4.3.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/tinymce-templates\n"
+"POT-Creation-Date: 2015-01-15 02:05:20+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-09-05 23:22+0200\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.3\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: hu_HU\n"
+
+#: tinymce-templates.php:203 tinymce-templates.php:206
+#: tinymce-templates.php:518 tinymce-templates.php:527
+msgid "Insert Template"
+msgstr "Sablon Beillesztés"
+
+#: tinymce-templates.php:255 tinymce-templates.php:273
+#: tinymce-templates.php:290
+msgid "Copy to a new template"
+msgstr "Új sablonba másolás"
+
+#: tinymce-templates.php:343 tinymce-templates.php:345
+msgid "Templates"
+msgstr "Sablonok"
+
+#: tinymce-templates.php:346
+msgid "Add New Template"
+msgstr "Új sablon hozzáadása"
+
+#: tinymce-templates.php:347
+msgid "Edit Template"
+msgstr "Sablon szerkesztése"
+
+#: tinymce-templates.php:348
+msgid "Add New"
+msgstr "Új hozzáadása"
+
+#: tinymce-templates.php:349
+msgid "New Template"
+msgstr "Új Sablon"
+
+#: tinymce-templates.php:350
+msgid "View Template"
+msgstr "Sablon megtekintése"
+
+#: tinymce-templates.php:351
+msgid "No templatess found."
+msgstr "Nincsenek sablonok."
+
+#: tinymce-templates.php:352
+msgid "No templates found in Trash."
+msgstr "Nincsenek sablonok a Lomtárban."
+
+#: tinymce-templates.php:356
+msgid "Search Templates"
+msgstr "Sablon keresés"
+
+#: tinymce-templates.php:389
+msgid "Insert as Shortcode"
+msgstr "Beillesztés mint Shortcode"
+
+#: tinymce-templates.php:398
+msgid "Translators"
+msgstr "Fordítók"
+
+#: tinymce-templates.php:417 tinymce-templates.php:420
+msgid "Yes"
+msgstr "Igen"
+
+#: tinymce-templates.php:418 tinymce-templates.php:421
+msgid "No"
+msgstr "Nem"
+
+#: tinymce-templates.php:526
+msgid "Note: The template will be inserted as shortcode."
+msgstr "Megjegyzés: A sablon shortcodeként fog beillesztődni."
+
+#. Plugin Name of the plugin/theme
+msgid "TinyMCE Templates"
+msgstr "TinyMCE Templates"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://miya0001.github.io/tinymce-templates/"
+msgstr "http://miya0001.github.io/tinymce-templates/"
+
+#. Description of the plugin/theme
+msgid ""
+"TinyMCE Templates plugin will enable to use HTML template on WordPress "
+"Visual Editor."
+msgstr ""
+"TinyMCE Templates plugin kibővíti a Wordpress Visual Editorját, így "
+"mostmár HTML sablonokat is tudsz használni."
+
+#. Author of the plugin/theme
+msgid "Takayuki Miyauchi"
+msgstr "Takayuki Miyauchi"

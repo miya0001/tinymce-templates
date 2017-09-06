@@ -4,7 +4,7 @@ Plugin Name: TinyMCE Templates
 Plugin URI: http://miya0001.github.io/tinymce-templates/
 Description: TinyMCE Templates plugin will enable to use HTML template on WordPress Visual Editor.
 Author: Takayuki Miyauchi
-Version: 4.8.0
+Version: 4.8.1
 Author URI: http://miya0001.github.io/tinymce-templates/
 Domain Path: /languages
 Text Domain: tinymce_templates
@@ -95,6 +95,10 @@ class TinyMCE_Templates
 		'Riant' => array(
 			'lang' => 'zh_CN',
 			'url'  => 'http://www.notidea.com/'
+		),
+		'Sch-Tomi' => array(
+			'lang' => 'hu_HU',
+			'url'  => 'https://github.com/Sch-Tomi'
 		),
 	);
 

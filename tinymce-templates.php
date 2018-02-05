@@ -620,8 +620,11 @@ class TinyMCE_Templates
 					'tinymce_templates_preview',
 					$p['content']
 				);
+				if( apply_filters( 'tinymce_templates_is_wpautop_disabled', false ) === false ){
+					$content = wpautop( $content );
+				}
 				return array(
-					'content'      => wpautop( $content ),
+					'content'      => $content,
 					'preview'      => $preview,
 					'is_shortcode' => $p['is_shortcode'],
 				);

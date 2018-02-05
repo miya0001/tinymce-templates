@@ -583,10 +583,6 @@ class TinyMCE_Templates
 
 	public function get_templates()
 	{
-		global $tinymce_templates_conf;
-		if( !isset( $tinymce_templates_conf['use_wpautop'] )){
-			$tinymce_templates_conf['use_wpautop'] = true;
-		}
 		$p = array(
 			'post_status' => 'publish',
 			'post_type'   => $this->post_type,
@@ -624,7 +620,7 @@ class TinyMCE_Templates
 					'tinymce_templates_preview',
 					$p['content']
 				);
-				if( $tinymce_templates_conf['use_wpautop'] === true ){
+				if( apply_filters( 'tinymce_templates_is_wpautop_disabled', false ) === false ){
 					$content = wpautop( $content );
 				}
 				return array(
